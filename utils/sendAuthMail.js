@@ -71,15 +71,16 @@ export async function sendEmail({ email, number }) {
                 </tbody></table>
             `,
         };
-        await new Promise((resolve, reject) => {
-            transporter.sendMail(mailData, (err, info) => {
+        return new Promise((resolve, reject) => {
+            transporter.sendMail(mailData, (err) => {
                 if (err) {
                     reject(err);
                 } else {
-                    resolve(info);
+                    resolve({success : true});
                 }
             });
         });
+
     } catch (err) {
         return err
     }

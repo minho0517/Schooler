@@ -25,16 +25,19 @@ export async function POST(req) {
             number : authNumberData.authNumber,
             email : authNumberData.email
         }
-        await sendEmail(mailBody)
-        .catch((error) => {
-            return NextResponse.json('메일 전송에 실패함', { status: 500 });
-        }); 
-
         const returnBody = {
             createdAt : authNumberData.createdAt,
             email : authNumberData.email
         }
-        return NextResponse.json(returnBody, {status : 200})
+        await new Promise((resolve, reject) => {
+            sendEmail(mailBody);
+            resolve('success')
+        })
+        .catch((error) => {
+            return NextResponse.json('메일 전송에 실패함', { status: 500 });
+        }); 
+
+        return NextResponse.json(returnBody, {status : 200});
         
     } catch (err) {
         return NextResponse.json("에러 발생", {status : 500})
