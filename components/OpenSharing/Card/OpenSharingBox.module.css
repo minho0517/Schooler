@@ -1,0 +1,121 @@
+.box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.list {
+    overflow: scroll;
+    width: 100%;
+    height: 400px;
+    display: flex;
+}
+.listWrapper {
+    width: 100%;
+    display: flex;
+    overflow: scroll;
+    flex-direction: column-reverse;
+}
+.listWrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.input {
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+}
+.inputBox {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f5f7f8;
+}
+.chatInput {
+    width: 100%;
+    resize: none;
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+}
+
+.joinBtn {
+    top: 0;
+    left: 0;
+    z-index: 3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.item {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+    margin: 5px 0;
+}
+.mine {
+    justify-content: right;
+    flex-direction: row-reverse;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.head {
+    display: flex;
+    align-items: center;
+}
+.userId {
+    font-size: 12px;
+    color: #333;
+    font-weight: 400;
+}
+.chatItem {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+.mine .chatItem{
+    flex-direction: row-reverse;
+}
+.content {
+    max-width: 69%;
+    padding: 12px 15px;
+    background-color: #f5f7f8;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 7px;
+    margin: 3px 0;
+}
+.chatItem:only-child .content {
+    margin: 0;
+}
+.mine .head {
+    display: none;
+}
+.time {
+    display: flex;
+    flex-direction: column;
+    color: #94969b;
+    margin: 2px 7px;
+}
+.time > span {
+    font-size: 11px;
+}
+
+.loaderWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

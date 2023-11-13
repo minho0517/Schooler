@@ -1,0 +1,245 @@
+.cardItem {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.card {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.05);
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card:hover .type {
+    color: #fd6f22 ;
+}
+.wrapper {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+.type {
+    color: #e1e1e1;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px;
+    transition: all .2s;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    width: 100%;
+}
+.head {
+    display: flex;
+    align-items: center;
+}
+.activityLabel {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 13px 0 5px 0;
+}
+.topic {
+    color: #fd6f22;
+    font-size: 15px;
+    font-weight: 500;
+    margin-right: 7px;
+}
+.activity {
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+    margin-bottom: 7px;
+}   
+.message {
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+}
+ 
+.activityInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0 10px;
+}
+.title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.75rem;
+    color: #111;   
+    margin-bottom: 20px;
+}
+.content {
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    height: 45px;
+    overflow: hidden;
+    word-break: break-all;
+}
+.timeInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    padding-left: 20px;
+}
+.time {
+    font-size: 13px;
+    font-weight: 400;
+    color: #999;
+    word-break: keep-all;
+    word-wrap: normal;
+    justify-self: right;
+}
+
+.likeContent {
+    margin-right: 10px;
+    color: #222;
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+}
+.likeContent > span {
+    line-height: 1.75em;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+.commentParent {
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+}
+.parent {
+    font-size: 15px;
+    font-weight: 500;
+    color: #222;
+    line-height: 1.75em;
+    margin-right: 10px;
+}
+
+.comment {
+    font-size: 16.5px;
+    font-weight: 700;
+    line-height: 1.75rem;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+
+.setting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.cardItem:hover .setting {
+    display: flex;
+}
+.settingBtn {
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .2s;
+    padding: 10px;
+    color: #5f6368;
+    margin: 7px 0;
+}
+.settingBtn:hover {
+    background-color: rgba(0,0,0,.05);
+}
+
+@media screen and (max-width : 450px) {
+    .wrapper {
+        padding: 14px 10px;
+        padding-right: 5px;
+    }
+    .timeInfo {
+        display: none;
+    }
+    .type {
+        padding: 0 5px;
+    }
+    .type > svg {
+        width: 20px;
+        height: auto;
+    }
+    .parent {
+        font-size: 13px;
+        line-height: 1.5em;
+        margin-right: 7px;
+    }
+    .topic {
+        font-size: 13px;
+        line-height: 1.5em;
+        margin-right: 5px;
+    }
+    .message {
+        font-size: 13px;
+        line-height: 1.5em;
+    }
+    .comment {
+        font-size: 14px;
+        margin-bottom: 0;
+        line-height: 1.5em;
+        margin-top: 5px;
+    }
+    .commentParent {
+        margin-bottom: 0;
+    }
+    .likeContent > span {
+        font-size: 13px;
+        line-height: 1.5em;
+    }
+    .likeContent {
+        margin-bottom: 0;
+        margin-right: 7px;
+    }
+    .activity {
+        margin-bottom: 0;
+    }
+    .activityLabel {
+        padding: 0;
+        align-items: center;
+    }
+    .setting {
+        margin-right: 8px;
+    }
+    .settingBtn {
+        padding: 7px;
+    }
+    .settingBtn > svg {
+        width: 20px;
+        height: auto;
+    }
+    .title {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .content {
+        font-size: 13px;
+        height: 40px;
+    }
+    .activityInfo {
+        padding: 0;
+    }
+}

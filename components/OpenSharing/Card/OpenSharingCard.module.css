@@ -1,0 +1,62 @@
+.card {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.wrapper {
+    padding: 0 18px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 25px;
+    border-radius: 10px;
+    /* border-bottom: 1px solid #eee; */
+    /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, .05); */
+}
+.title   {
+    display: flex;
+    align-items: center;
+    color: #222;
+}
+.title > h4 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-left: 7px;
+    position: relative;
+    top: 1.5px;
+}
+.memberNum {
+    display: flex;
+    align-items: flex-end;
+    color: #333;
+}
+.memberNum > span {
+    margin-left: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    top: 4.5px;
+}
+.blank {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blank > span {
+    font-size: 15px;
+    font-weight: 500;
+    color: #94969b;
+}

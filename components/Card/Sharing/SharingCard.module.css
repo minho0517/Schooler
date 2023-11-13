@@ -1,0 +1,209 @@
+.card {
+    width: calc(50% - 10px);
+    display: flex;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.05);
+    border-radius: 10px;
+    margin: 10px 0;
+    position: relative;
+}
+.wrapper {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+}
+.topic {
+    font-weight: 600;
+    font-size: 13px;
+    color: #FD6F22; /* fd6f22b4 */
+}
+.bookmarkBtn {
+    position: absolute;
+    top: 19px;
+    right: 20px;
+    z-index: 4;
+    color: #999;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 2px 0;
+    margin-left: 7px;
+    background-color: transparent;
+    transition: all .2s;
+}
+.bookmarkBtn.active {
+    color: #FD6F22;
+}
+.bookmarkBtn.active:hover {
+    color: #FD6F22;
+}
+.bookmarkBtn:hover {
+    color: #666;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.title {
+    color: #222;
+    margin: 5px 0;
+    height: 45px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.previewContent {
+    color: #777;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 10px 0;
+    height: 65px;
+    overflow: hidden;
+    font-size: 14px;
+    word-break: break-all;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pastTime {
+    font-weight: 400;
+    font-size: 12px;
+    color: #999;
+    margin-right: 12px;
+}
+.writer {
+    color: #999;
+    font-size: 12px;
+    font-weight: 400;
+}
+.activeGroup {
+    display: flex;
+    align-items: center;
+}
+.activeRecord {
+    display: flex;
+    align-items: center;
+    color: #FD6F22;
+    margin-left: 10px;
+}
+.activeRecord > span {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 5px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.activeGroup {
+    display: flex;
+}
+.main .info {
+    margin-top: 15px;
+}
+
+.profile.card {
+    width: 100%;
+}
+.profile > .pastTime {
+    margin: 0;
+}
+.cardBtnGroup {
+    padding: 20px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cardBtn {
+    width: 100%;
+    border: none;
+    text-align: center;
+    padding: 13px 0;
+    background-color: #f2f2f2;
+    font-size: 14px;
+    color: #222;
+    font-weight: 500;
+    margin: 5px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cardBtn > span {
+    margin-left: 7px;
+}
+.cardBtn:hover {
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, .09);
+}
+.cardBtn:hover > svg {
+    transition: all .3s;
+}
+.cardBtn:hover > svg {
+    transform: scale(105%);
+}
+
+@media screen and (max-width : 450px) {
+    .card {
+        width: 100%;
+        margin: 5px 0;
+    }
+    .wrapper {
+        padding: 18px;
+    }
+    .topic {
+        font-size: 12px;
+    }
+    .title {
+        font-size: 17px;
+        height: 40px;
+        margin: 2px 0;
+        width: 94%;
+    }
+    .previewContent {
+        font-size: 13px;
+        height: 55px;
+        margin: 5px 0;
+    }
+    .writer {
+        font-size: 12px;
+    }
+    .activeRecord > span {
+        font-size: 13px;
+    }
+    .info {
+        margin-top: 10px;
+    }
+    .bookmarkBtn {
+        top: 13px;
+    }
+    .bookmarkBtn > svg {
+        width: 12px;
+    }
+    .profile.card .previewContent {
+        height: 40px;
+    }
+    .profile.card .pastTime {
+        margin: 0;
+    }
+    .profile.card .wrapper {
+        width: 100%;
+    }
+    .cardBtnGroup {
+        display: none;
+    }
+}

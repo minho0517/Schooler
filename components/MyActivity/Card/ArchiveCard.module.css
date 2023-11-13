@@ -1,0 +1,82 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+}
+.topic {
+    font-weight: 600;
+    font-size: 13px;
+    color: #FD6F22; /* fd6f22b4 */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.title {
+    color: #222;
+    margin: 5px 0;
+    height: 45px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.previewContent {
+    color: #777;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 10px 0;
+    height: 65px;
+    overflow: hidden;
+    font-size: 14px;
+    word-break: break-all;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pastTime {
+    font-weight: 400;
+    font-size: 12px;
+    color: #999;
+    margin-right: 12px;
+}
+.writer {
+    color: #999;
+    font-size: 12px;
+    font-weight: 400;
+}
+.activeGroup {
+    display: flex;
+    align-items: center;
+}
+.activeRecord {
+    display: flex;
+    align-items: center;
+    color: #FD6F22;
+    margin-left: 10px;
+}
+.activeRecord > span {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 5px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.expireDate {
+    font-size: 13px;
+    font-weight: 400;
+    color: #999;
+}

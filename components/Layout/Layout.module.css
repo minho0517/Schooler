@@ -1,0 +1,27 @@
+.page {
+    width: calc(100% - 270px);
+    left: 270px;
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 80px;
+}
+.wrapper {
+    width: 100%;
+    max-width: 1300px;
+}
+
+@media screen and (max-width : 1300px) {
+    .page {
+        width: calc(100% - 82px);
+        left: 82px;
+    }
+}
+
+@media screen and (max-width : 450px) {
+    .page {
+        width: 100%;
+        left: 0;
+    }
+}

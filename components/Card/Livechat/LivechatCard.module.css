@@ -1,0 +1,112 @@
+.card {
+    display: flex;
+    height: 240px;
+    background-color: white;
+    border-radius: 15px;
+    transition: all 0.2s;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.05);
+    cursor: pointer;
+}
+.card:hover {
+    transform: scale(102%);
+    box-shadow: 0 0 20px 0 rgba(0,0,0, 0.1);
+}
+.wrapper {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    flex-direction: column;
+}
+.top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.title {
+    display: flex;
+    align-items: center;
+}
+.title > p {
+    color: #222;
+    font-size: 20px;
+    font-weight: 800;
+}
+.activeUser {
+    display: flex;
+    align-items: center;
+    color: #FD6F22;
+}
+.activeUser > span {
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 4px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    top: 1.5px;
+}
+.tagList {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    max-height: 61px;
+    overflow: hidden;
+}
+.tag {
+    font-size: 14px;
+    padding: 5px 10px;
+    margin: 2px;
+    font-weight: 500;
+    border-radius: 5px;
+    background-color: #fd6f22b4;
+    color: #fff;
+}
+
+.previewChat {
+    margin: 15px 0;
+    background-color: #f5f7f8;
+    max-height: 58px;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+}
+.previewChat_wrapper {
+    width: 100%;
+    display: flex;
+    margin: 8px 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+}
+.previewChat {
+    font-size: 13px;
+    color: #111;
+    font-weight: 500;
+    line-height: 1.5;
+    text-overflow: ellipsis;
+    vertical-align: text-top;
+    overflow: hidden;
+}
+.previewChat > svg {
+    margin-top: -3px;
+}
+
+.activeChat {
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+    color: #FD6F22;
+}
+.activeChat > span {
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 5px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    top: 1.5px;
+}

@@ -1,0 +1,108 @@
+.card {
+    margin-top: 10px;
+    position: sticky;
+    top: 30px;
+    width: 100%;
+    height: 500px;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.05);
+    border-radius: 10px;
+}
+.wrapper {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+}
+.search {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.searchBox {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.searchBtn {
+    margin-right: 10px;
+    border: none;
+    padding: 5px;
+    color: #222;
+    background-color: transparent;
+    cursor: pointer;
+}
+.searchInput {
+    width: 100%;
+    border: none;
+    display: flex;
+    font-size: 16px;
+}
+.searchInput:focus {
+    outline: none;
+}
+.inputUnderline {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inputUnderline::after {
+    content: "";
+    width: 100%;
+    max-width: 0;
+    height: 2px;
+    background-color: #FD6F22;
+}
+.searchInput:focus + .inputUnderline::after {
+    max-width: 100%;
+    transition: all .25s;
+}
+
+.report {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title {
+    display: flex;
+    align-items: center;
+    color: #333;
+}
+.title > h4 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-left: 7px;
+}
+.detailInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.reportBox {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

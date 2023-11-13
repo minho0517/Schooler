@@ -1,0 +1,66 @@
+
+.header {
+    width: 100%;
+    border-bottom: 2px solid #dfe1e4;
+    margin-bottom: 22px;
+}
+.title {
+    display: flex;
+    align-items: center;
+    padding-bottom: 28px;
+}
+.tag {
+    display: flex;
+    align-items: center;
+    color: #222;
+}
+.tag > h3 {
+    font-size: 25px;
+    margin-left: 3px;
+}
+.tag > svg {
+    position: relative;
+    top: 0.5px;
+}
+
+.result {
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+}
+.resultTag {
+    color: #333;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+}
+.resultTag > span {
+    font-size: 14px;
+    font-weight: 500;
+}
+.resultTag > svg {
+    position: relative;
+    top: 0.5px;
+}
+.resultLabel {
+    color: #222;
+    font-size: 14px;
+}
+.filter_btn {
+    display: flex;
+    align-items: center;
+    color: #666;
+    cursor: pointer;
+}
+.filter_btn > span {
+    font-size: 14px;
+    margin-left: 2px;
+    font-weight: 500;
+}
+

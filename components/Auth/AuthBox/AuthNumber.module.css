@@ -1,0 +1,109 @@
+.box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.authHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.authTitle {
+    font-size: 25px;
+    margin-bottom: 3px;
+}
+.sendInfo {
+    font-size: 15px;
+}
+.sendInfo > span {
+    color: #FD6F22;
+    font-weight: 600;
+}
+.authWrapper {
+    display: flex;
+    flex-direction: column;
+}
+.authInput {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+}
+.authInputBox {
+    border: none;
+    font-size: 30px;
+    letter-spacing: 20px;
+    padding: 20px 0;
+    box-sizing: border-box;
+    font-weight: 500;
+    width: fit-content;
+    text-align: center;
+}
+.authInfo {
+    margin-top: 7px;
+    display: flex;
+    align-items: center;    
+}
+.limitTime {
+    font-size: 14px;
+    color: #555;
+}
+.resendBtn {
+    margin-left: 7px;
+    font-size: 13px;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    background-color: #e1e1e1;
+    cursor: pointer;
+}
+.isResended {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 7px;
+}
+
+.submitBtn {
+    margin-top: 15px;
+    background-color: #FD6F22;
+    color: white;
+    font-weight: 500;
+    border: none;
+    height: 52px;
+    padding-top: 3px;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all .2s;
+    cursor: pointer;
+}
+.submitBtn:hover {
+    background-color: #fd6f22b1;
+}
+.submitBtn.disabled {
+    background-color: #fd6f2290;
+}
+
+.loader {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #fff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 

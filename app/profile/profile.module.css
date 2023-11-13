@@ -1,0 +1,178 @@
+.page {
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 30px 0 15px;
+}
+.myInfo {
+    width: 100%;
+}
+.myInfoWrapper {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.info {
+    display: flex;
+    align-items: center;
+}
+.infoImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #dbdbdb;
+    height: 140px;
+    width: 140px;
+    overflow: hidden;
+    margin-right: 25px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid #eee;
+}
+.infoCommon {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.infoId {
+    font-size: 30px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 2px;
+}
+.infoSchool {
+    font-size: 17px;
+    font-weight: 500;
+    color: #FD6F22;
+}
+.infoName {
+    font-size: 17px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 3px;
+}
+
+.infoBtnGroup {
+    display: flex;
+}
+.shareBtn {
+    margin-right: 15px;    
+    padding: 11px 25px;
+    border-radius: 7px;
+    background-color:#FD6F22;
+    color: #fff;
+    transition: all .2s;
+}
+.shareBtn:hover {
+    background-color: #fd6f22dd;
+}
+.shareBtn > span {
+    margin-left: 7px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.shareBtn > svg {
+    position: relative;
+    top: 2px;
+}
+
+.profileBtnGroup {
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+}
+.profileBtnGroup.mobile {
+    display: none;
+}
+.profileBtn {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 7px;
+    background-color: #eee;
+    color: #111;
+    transition: all .2s;
+    text-wrap: nowrap;
+}
+.profileBtn:nth-child(2) {
+    margin: 0 7px;
+}
+.profileBtn:hover, .profileBtn:active {
+    background-color: rgba(0,0,0, .1);
+}
+
+.myActivity {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    width: calc(68% - 15px);
+}
+
+.sub {
+    position: sticky;
+    top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: calc(32% - 15px);
+}
+
+@media screen and (max-width : 450px) {
+    .wrapper {
+        padding: 0 15px;
+    }
+    .infoImg {
+        width: 68px;
+        height: 68px;
+        margin-right: 15px;
+    }
+    .infoId {
+        font-size: 23px;
+        margin-bottom: 1px;
+    }
+    .infoName {
+        font-size: 14px;
+        margin-bottom: 1px;
+    }
+    .infoSchool {
+        font-size: 14px;
+    }
+    .shareBtn {
+        display: none;
+    }
+    .main {
+        width: 100%;
+    }
+    .sub {
+        display: none;
+    }
+    .profileBtnGroup {
+        display: none;
+        margin-top: 10px;
+        margin-left: 85px;
+    }
+    .profileBtnGroup.mobile {
+        display: flex;
+    }
+    .profileBtn {
+        font-size: 13px;
+        padding: 8px 18px;
+    }
+    .myActivity {
+        margin-top: 35px;
+    }
+}

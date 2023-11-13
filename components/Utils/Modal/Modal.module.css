@@ -1,0 +1,171 @@
+.modal {
+    position: fixed;
+    z-index: 15;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.relativeWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.modalWrapper {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all .15s;
+    background-color: rgba(0,0,0,0.2);
+}
+.modalWrapper.active {
+    opacity: 1;
+}
+
+.box {
+    background-color: white;
+    z-index: 3;
+    width: 370px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all .15s;
+}
+.box.menuModal {
+    width: 350px;
+}
+.box.active {
+    opacity: 1;
+    transition: all .2s;
+    transform: translateY(0);
+}
+.wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.message {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.title {
+    font-weight: 600;
+    font-size: 19px;
+    color: #222;
+}
+.description {
+    font-size: 15px;
+    color: #999;
+    margin-top: 14px;
+    text-align: center;
+    line-height: 1.5;
+}
+.btnGroup {
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+}
+.button {
+    width: 50%;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 15px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 5px;
+    background-color: transparent;
+    transition: all .25s;
+    color: #222;
+}
+.button:hover {
+    background-color: rgba(0,0,0,.05);
+}
+.deleteBtn {
+    color: white;
+    background-color: #FD6F22;
+}
+.deleteBtn:hover {
+    background-color: #fd6f22c3;
+}
+
+.menuBtn {
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    padding: 20px 0;
+    color: #222;
+    background-color: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menuBtn.redMenu {
+    color: #ED4956;
+}
+.menuBtn:hover {
+    background-color: rgba(0,0,0,.03);
+}
+.menuUnderline {
+    width: 100%;
+    height: 1px;
+    background-color: #eee;
+    border-radius: 1px;
+    border: none;
+}
+.menuUnderline:last-child {
+    display: none;
+}
+
+@media screen and (max-width : 450px) {
+    .box {
+        width: 300px;
+    }
+    .wrapper {
+        padding: 18px;
+    }
+    .box.menuModal {
+        width: 300px;
+    }
+    .message {
+        margin: 15px 0;
+    }
+    .title {
+        font-size: 17px;
+    }
+    .description {
+        font-size: 13px;
+    }
+    .btnGroup {
+        margin: 0;
+    }
+    .button {
+        font-size: 14px;
+        padding: 13px 0;
+        border-radius: 7px;
+    }
+}

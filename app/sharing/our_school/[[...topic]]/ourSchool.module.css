@@ -1,0 +1,25 @@
+.page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.listWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.loadingWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.cardList {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}

@@ -1,0 +1,209 @@
+ 
+.post_content {
+    width: 100%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    height: auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.post_content_wrapper {
+    width: 100%;
+    height: auto;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.bookmarkBtn {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #222;
+    transition: all .2s;
+    background-color: transparent;
+}
+.bookmarkBtn.active {
+    color: #FD6F22;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid 1px #eee;
+    padding-bottom: 30px;
+}
+.topic {
+    font-weight: 600;
+    font-size: 14px;
+}
+.title {
+    font-weight: 700;
+    font-size: 25px;
+    margin: 15px 0;
+}
+.name {
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin: 5px 0;
+}
+.name > a {
+    text-decoration: none;
+    color: #FD6F22;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    width: 100%;
+}
+.infoItem {
+    font-size: 14px;
+    font-weight: 500;
+    color: #94969b;
+    text-decoration: none;
+    margin-right: 13px;
+    display: flex;
+    align-items: center;
+}
+.infoItem > span {
+    margin-left: 4px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 30px;
+}
+.article {
+    font-size: 16px;
+    line-height: 1.75rem;
+    white-space: pre-wrap;
+    margin-bottom: 50px;
+}
+.article > a {
+    word-break: break-all;
+}
+.tags {
+    display: flex;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.tag {
+    border-radius: 10px;
+    background-color: white;
+    color: #37acc9;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .2s;
+    margin-right: 10px;
+    text-decoration: none;
+    margin-bottom: 3px;
+}
+
+.btn_group {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.actionBtn {
+    border: none;
+    background-color: #f2f2f2;
+    border-radius: 25px;
+    padding: 9px 15px;
+    cursor: pointer;
+    transition: all .2s;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    color: #111;
+}
+.actionBtn:hover {
+    background-color: rgba(0, 0, 0, .09);
+}
+.actionBtn.active {
+    background-color: #FD6F22;
+    color: white;
+}
+.actionBtn > span {
+    margin: 0 2px 0 5px;
+    font-size: 17px;
+    font-weight: 500;
+}
+.actionBtn.moreBtn {
+    padding: 7px 8px;
+    border-radius: 50%;
+}
+
+
+@media screen and (max-width : 450px) {
+    .topic {
+        font-size: 13px;
+    }
+    .post_content_wrapper {
+        margin: 30px 20px;
+    }
+    .title {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+    .name {
+        font-size: 12px;
+    }
+    .head {
+        padding-bottom: 20px;
+    }
+    .article {
+        font-size: 15px;
+        margin-bottom: 35px;
+    }
+    .bookmarkBtn {
+        top: -5px;
+    }
+    .bookmarkBtn > svg {
+        width: 12px;
+    }
+    .info {
+        margin-top: 10px;
+    }
+    .infoItem {
+        font-size: 12px;
+    }
+    .infoItem > svg {
+        width: 14px;
+    }
+    .content {
+        padding-top: 20px;
+    }
+    .tag {
+        font-size: 15px;
+    }
+    .tags {
+        margin: 0 0 20px 0;
+    }
+    .btn_group {
+        margin: 0;
+    }
+    .actionBtn {
+        padding: 7px 15px;
+    }
+    .actionBtn > svg {
+        width: 22px;
+    }
+    .actionBtn.moreBtn {
+        padding: 5px 8px;
+    }
+}

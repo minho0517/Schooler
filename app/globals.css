@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+}
+/* FD6F22 */
+
+/* 로딩 스피너 사이트 */
+/* https://cssloaders.github.io/ */
+
+
+@font-face {
+    font-family: 'NanumBarunGothic', 'Malgun Gothic','맑은 고딕', '돋움' sans-serif;
+    src: url('/public/font/nanum-barun-gothic/NanumBarunGothic.ttf') format('truetype'),
+    url('/public/font/nanum-barun-gothic/NanumBarunGothic.otf') format('opentype');
+}
+
+* {
+    -webkit-tap-highlight-color : transparent !important;
+}
+
+a, span, h1, h2, h3, h4, h5, p, textarea, button {
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    font-family: Pretendard;
+    /* font-family: 'NanumBarunGothic', sans-serif; */
+    transform: skew(-0.1deg);
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+}
+input, textarea {
+    -webkit-text-size-adjust: 100%;
+}
+
+.swiper-button-disabled {
+    opacity: 30%;
+}
+
+
+
+
+.errorPage {
+    top: 0;
+    left: 0;
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+}
+.errorStatus {
+    display: flex;
+    align-items: center;
+}
+.errorNum {
+    font-size: 120px;
+}
+.errorLogo {
+    width: 85px;
+    height: 100px;
+    border-radius: 50px;
+    margin: 0 5px;
+}
+.errorTitle {
+    margin-top: 30px;
+    font-size: 27px;
+}
+.errorDescription {
+    margin-top: 10px;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+.errorLink {
+    font-size: 16px;
+    color: #FD6F22;
+    font-weight: 500;
+}

@@ -1,0 +1,282 @@
+.page {
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.title {
+    height: 25px;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    color: #333;
+}
+.logo {
+    display: none;
+    margin: 20px 0;
+    width: 50px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+    padding-top: 5px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+.wrapper > hr {
+    width: 100%;
+    border: none;
+    background-color: #efefef;  
+    height: 1px;
+    margin: 10px 0;
+}
+.section_wrapper {
+    width: calc(100% * 4 + 20px * 3);
+    display: flex;
+    align-items: center;
+    transition: all .2s ease-in-out;
+    position: relative;
+    box-sizing: content-box;
+    justify-content: space-between;
+} 
+.section {
+    width: calc((100% - (20px * 3)) / 4);
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.inputWrapper {
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+.inputTitle {
+    font-size: 13px;
+    color: #999;
+    font-weight: 500;
+    margin: 5px;
+    display: none;
+}
+.inputBox {
+    box-sizing: border-box;
+    font-size: 15px;
+    font-weight: 500;
+    width: 100%;
+    padding: 18px 15px 15px 15px;
+    border-radius: 5px;
+    border: solid 1px #e0e0e0;
+    transition: all .1s;
+}
+
+.inputBox:focus {
+    outline: solid 2px #FD6F22;
+    outline-offset: -1px;
+}
+.notValidate:focus {
+    outline: solid 2px #ED4956;
+}
+.notValidate {
+    border-color: #ED4956;
+}
+
+.sectionInfo {
+    display: flex;
+    height: max-content;
+    justify-content: space-between;
+    align-items: center;
+}
+.message {
+    font-size: 13px;
+    font-weight: 500;
+    color: #777;
+}
+.hideBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    color: #777;
+    cursor: pointer;
+}
+
+.submitBtn {
+    width: 100%;
+    background-color: #FD6F22;
+    color: white;
+    font-weight: 500;
+    border: none;
+    height: 52px;
+    padding-top: 3px;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all .2s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submitBtn:hover {
+    background-color: #fd6f22b1;
+}
+.submitBtn.disabled {
+    background-color: #fd6f2290;
+}
+
+.helpLink {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+.helpLink > a {
+    color: #777;
+    font-size: 14px;
+}
+.helpLink > hr {
+    height: 80%;
+    width: 1px;
+    border: none;
+    background-color: #efefef;
+    margin: 0 10px;
+}
+
+.moveLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid #e1e1e1; */
+    border-radius: 5px;
+    padding: 15px 0 12px 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+.moveLink > a {
+    margin-left: 7px;
+    color: #FD6F22;
+    font-weight: 500;
+}
+
+.schoolInput {
+    width: 100%;
+    position: relative;
+}
+.cancelSchoolBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-45%);
+    right: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #333;
+}
+.schoolList {
+    margin-top: 10px;
+    width: 100%;
+    height: 150px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+}
+.schoolItem {
+    padding: 12px 10px;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.schoolItem:hover {
+    background-color: rgba(0,0,0,.03);
+}
+.schoolName {
+    font-size: 15px;
+    color: #222;
+    font-weight: 500;
+    margin-right: 7px;
+}
+.schoolRegion {
+    font-size: 13px;
+    color: #999;
+}
+
+.lastSection {
+    justify-content: center;
+    align-items: center;
+}
+.welcomeTitle {
+    font-size: 25px;
+    color: #222;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.welcomeTitle > span {
+    color: #FD6F22;
+    font-size: 26px;
+}
+.welcomeDes {
+    color: #555;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.loader {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #fff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+@media screen and (max-width : 450px) {
+    .header {
+        margin: 0;
+    }
+    .logo {
+        display: block;
+    }
+}
