@@ -194,7 +194,7 @@ export default function Page() {
                                 <input onChange={onCheckPwHandler} disabled={section !== 0 && true} value={checkPw.value} type={pwHidden ? "password" : "text"} placeholder="비밀번호를 확인해주세요" autoComplete="off" className={`${styles.inputBox} ${checkPw.vaildate === false && styles.notValidate}`}></input>
                             </div>
                             <div className={styles.inputWrapper}>
-                                <input onChange={onEmailHandler} disabled={section !== 0 && true} value={email.value} type="text" placeholder="이메일을 입력해주세요" autoComplete="off" className={`${styles.inputBox} ${email.vaildate === false && styles.notValidate}`}></input>
+                                <input onChange={onEmailHandler} disabled={section !== 0 && true} value={email.value} type="email" placeholder="이메일을 입력해주세요" autoComplete="off" className={`${styles.inputBox} ${email.vaildate === false && styles.notValidate}`}></input>
                             </div>
                         </div>     
                         <button onClick={nextBtn} disabled={submitBtn || isSending} className={`${styles.submitBtn} ${submitBtn && styles.disabled}`}>{isSending ? <div className={styles.loader}></div> : "다음" }</button>

@@ -10,7 +10,7 @@ const config = {
 const nextConfig = withPWA({
     dest: "public",
     // disable: !isProduction,
-    runtimeCaching: runtimeCaching,
+    runtimeCaching: [],
 }) (config);
 
 module.exports = nextConfig
