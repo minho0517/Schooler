@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    if: ${{ github.ref == 'refs/heads/develop' }}
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: [self-hosted,Linux,X64,런너이름]
 
     strategy:
