@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: [self-hosted,Linux,X64,schooler-server-runner]
+    runs-on: [self-hosted,Linux,X64, "schooler-server-runner" ]
 
     strategy:
       matrix:
