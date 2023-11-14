@@ -1,4 +1,4 @@
-name: 스쿨러/schooler
+name: 빌드/배포
 
 on:
   push:
