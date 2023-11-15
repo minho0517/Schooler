@@ -2,12 +2,10 @@
 
 import SharingCard from '@/components/Card/Sharing/SharingCard';
 import styles from './all.module.css';
-import { useInfiniteQuery } from '@tanstack/react-query';
 import { useRef } from 'react';
 import useObserver from '@/hooks/useObserver';
 import BlankWrapper from '@/components/Utils/Blank/BlankWrapper';
 import Loader from '@/components/Utils/Loader/Loader';
-import axios from 'axios';
 import { useGetQuery } from '@/hooks/useGetQuery';
 
 export default function Page({params}) {
