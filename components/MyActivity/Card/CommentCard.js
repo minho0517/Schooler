@@ -15,6 +15,8 @@ export default function CommentCard({data, removeHandler}) {
         modalHandler();
     }
 
+    
+
     return (
         <div className={styles.cardItem}>
             <div className={styles.card}>
@@ -24,10 +26,10 @@ export default function CommentCard({data, removeHandler}) {
                         <div className={styles.head}>
                             <div className={styles.activityLabel}>
                                 <div className={styles.commentParent}>
-                                    <span className={styles.parent}>{data.depth === 0 ? data.post[0].title : '"' + data.comment[0].content + '"'}</span>
+                                    <span className={styles.parent}>{data.depth === 0 ? [data.post[0] ? data.post[0].title : "삭제된 게시물"] : '"' + data.comment[0].content + '"'}</span>
                                 </div>
                                 <div className={styles.activity}>
-                                    {data.depth === 0 && <span className={styles.topic}>{data.post[0].topic}</span>}
+                                    {data.depth === 0 && <span className={styles.topic}>{data.post[0]?.topic}</span>}
                                     <span className={styles.message}>{data.depth === 0 ? "셰어링에 댓글" : "에 답글"}을 남겼습니다</span>
                                 </div>
                             </div>

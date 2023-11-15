@@ -5,6 +5,9 @@ const runtimeCaching = require("next-pwa/cache");
 
 
 const config = {
+    experimental: {
+        webpackBuildWorker: true,
+    },
 }
 
 const nextConfig = withPWA({
