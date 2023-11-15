@@ -18,10 +18,10 @@ export default async function OpenSharingCard({data}) {
                 </div>
             </div>
             <div className={styles.wrapper}>
-                {/* {data.isActive ? 
+                {data.isActive ? 
                 <OpenSharingBox isJoined={data.isJoined} roomId={data.roomId} /> :
-                <div className={styles.blank}><span>오픈 셰어링이 비활성화되었습니다</span></div>} */}
-                {<div className={styles.blank}><span>문제점이 발견되어 해결 중에 있습니다.</span></div> }
+                <div className={styles.blank}><span>오픈 셰어링이 비활성화되었습니다</span></div>}
+                {/* {<div className={styles.blank}><span>문제점이 발견되어 해결 중에 있습니다.</span></div> } */}
             </div>
         </div>
     )

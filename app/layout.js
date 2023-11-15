@@ -26,12 +26,12 @@ export default async function RootLayout({ children }) {
       <body>
         <Providers>
           <LoadingProviders>
-            {/* <SocketProvider> */}
+            <SocketProvider>
               <Layout>
                 {children}
               </Layout>
               <div id="portal"></div>
-            {/* </SocketProvider> */}
+            </SocketProvider>
           </LoadingProviders>
         </Providers>
       </body>

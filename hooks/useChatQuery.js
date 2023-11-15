@@ -14,8 +14,6 @@ export const useChatQuery = ({
         return data;
     }
 
-    console.log(isConnected)
-
     const { data, fetchNextPage, isFetchingNextPage, hasNextPage, status } = useInfiniteQuery(
         queryKey, fetchData, {
         refetchOnWindowFocus : false,
