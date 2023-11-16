@@ -46,11 +46,16 @@ export default async function handler(req, res) {
         });
         await message.save();
 
+        const messageData = {
+            ...message,
+            userId : profile.id,
+        }
+
         const roomKey = `chat:${roomId}:messages`;
 
-        res?.socket?.server?.io?.emit(roomKey, message);
+        res?.socket?.server?.io?.emit(roomKey, messageData);
 
-        return res.status(200).json(message)
+        return res.status(200).json(messageData)
     } catch (error) {
         console.log(error)
         return res.status(500).json({ msg : "메시지 전송 중 오류 발생"})

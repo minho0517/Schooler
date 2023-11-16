@@ -81,6 +81,9 @@ export const useChatSocket = ({
                                 user_id : message.user_id,
                                 mine : String(data.user.id) === String(message.user_id) ? true : false,
                             },
+                            user : [{
+                                id : message.userId,
+                            }],
                             chatItems : [
                                 message,
                             ],
