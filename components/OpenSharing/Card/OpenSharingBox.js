@@ -130,7 +130,7 @@ export function ChatItem({data}) {
         <div className={`${styles.item} ${data._id.mine && styles.mine}`}>
             <div className={styles.wrapper}>
                 {!data._id.mine && <div className={styles.head}>
-                    <span className={styles.userId}>{new identify(data.user[0].id).name()}</span>
+                    <span className={styles.userId}>{new identify(data?.user[0]?.id).name()}</span>
                 </div>}
                 {data.chatItems.map((e, i) => (
                     <div key={i} className={styles.chatItem}>
@@ -139,7 +139,7 @@ export function ChatItem({data}) {
                         </div>
                         {data.chatItems.length - 1 === i &&
                             <div className={styles.time}>
-                                <span>{new identify(data.chatItems[0].createdAt).hourMin()}</span>
+                                <span>{new identify(data?.chatItems[0]?.createdAt).hourMin()}</span>
                             </div>
                         }
                     </div>

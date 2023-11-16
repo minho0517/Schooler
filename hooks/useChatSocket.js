@@ -58,7 +58,7 @@ export const useChatSocket = ({
                 const dateTimeString = message.createdAt;
                 const date = new Date(dateTimeString);
                 const formattedDateTime = date.toISOString().slice(0, 16).replace("T", " ");
-                const groupExist = newData[0][0]?._id.datetime === formattedDateTime && newData[0][0]?._id.user_id === message.user_id;
+                const groupExist = newData[0][0]?._id.datetime === formattedDateTime && newData[0][0]?._id.user_id === message.user_id ? true : false;
                 if(groupExist) {
                     newData[0] = newData[0].map((item) => {
                         if(item._id.user_id === message.user_id && item._id.datetime === formattedDateTime) {
@@ -71,7 +71,7 @@ export const useChatSocket = ({
                             }
                         } else {
                             return item;
-                        } 
+                        }
                     });
                 } else {
                     newData[0] = [
