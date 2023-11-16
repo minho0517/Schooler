@@ -55,7 +55,7 @@ export async function POST(req, {params}) {
         });
         await newComment.save();
 
-        await ChatItem.deleteMany({});
+        // await ChatItem.deleteMany({});
 
         return NextResponse.json({status : 200});
 

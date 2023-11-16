@@ -1,4 +1,4 @@
-import { useSocket } from "@/components/Provider/socket-provider"
+import { useSocket } from "@/components/Provider/socket-provider";
 import { useQueryClient } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
 import { useEffect } from "react";
@@ -60,17 +60,20 @@ export const useChatSocket = ({
                 const formattedDateTime = date?.toISOString().slice(0, 16).replace("T", " ");
                 const groupExist = newData[0][0]?._id.datetime === formattedDateTime && newData[0][0]?._id.user_id === message.user_id ? true : false;
                 if(groupExist) {
-                    newData[0] = newData[0].map((item) => {
-                        if(item._id.user_id === message.user_id && item._id.datetime === formattedDateTime) {
+                    newData[0] = newData[0].map((items) => {
+                        if(items._id.user_id === message.user_id && items._id.datetime === formattedDateTime) {
+                            const isAlready = items.chatItems.some((item) => item._id === message._id);
                             return {
-                                ...item,
-                                chatItems : [
-                                    ...item.chatItems,
+                                ...items,
+                                chatItems : isAlready ? [
+                                    ...items.chatItems,
+                                ] : [
+                                    ...items.chatItems,
                                     message,
                                 ]
                             }
                         } else {
-                            return item;
+                            return items;
                         }
                     });
                 } else {
