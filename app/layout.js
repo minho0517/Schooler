@@ -4,6 +4,7 @@ import LoadingProviders from '@/components/Provider/loading-provider';
 import Layout from '@/components/Layout/Layout';
 import IntroImg from "@/public/image/schooler-logo-icon.png";
 import { SocketProvider } from '@/components/Provider/socket-provider';
+import AuthSession from '@/components/Provider/auth-provider';
 
 export const metadata = { 
   title: '스쿨러',
@@ -24,16 +25,18 @@ export default async function RootLayout({ children }) {
         <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Gugi&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet"></link>  
       </head>
       <body>
-        <Providers>
-          <LoadingProviders>
-            <SocketProvider>
-              <Layout>
-                {children}
-              </Layout>
-              <div id="portal"></div>
-            </SocketProvider>
-          </LoadingProviders>
-        </Providers>
+        <AuthSession>
+          <Providers>
+            <LoadingProviders>
+              <SocketProvider>
+                <Layout>
+                  {children}
+                </Layout>
+                <div id="portal"></div>
+              </SocketProvider>
+            </LoadingProviders>
+          </Providers>
+        </AuthSession>
       </body>
     </html>
   )

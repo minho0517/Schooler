@@ -8,7 +8,7 @@ export default async function middleware(request) {
     if (session === null) {
         return NextResponse.redirect(process.env.ABSOLUTE_URL + "/auth/login")
     } else {
-        return NextResponse.rewrite(process.env.ABSOLUTE_URL + request.nextUrl.pathname)
+        return
     }
 
 }

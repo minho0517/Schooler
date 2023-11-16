@@ -172,7 +172,7 @@ export default function Page() {
                 password: data.password,
                 redirect: false,
             });
-        })
+        });
     }
 
     return (

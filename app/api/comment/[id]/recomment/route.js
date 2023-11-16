@@ -11,6 +11,7 @@ import LikeItem from "@/config/schema/LikeItem";
 import BookmarkItem from "@/config/schema/BookmarkItem";
 import PostItem from "@/config/schema/PostItem";
 import SchoolItem from "@/config/schema/SchoolItem";
+import ChatItem from "@/config/schema/ChatItem";
 
 
 export async function GET(req, {params}) {
@@ -43,7 +44,7 @@ export async function POST(req, {params}) {
     try {
 
         await dbConnect();
-        // await PostItem.findByIdAndUpdate(id, { $inc : {comments : 1} });
+        // await LikeItem.updateMany({ user_id : '652d53d1210bd53ea62876e8' }, { user_id : new ObjectId('6554f3320212f1b709d40efd') });
 
         const newComment = new CommentItem({
             user_id : new ObjectId(user),
@@ -52,31 +53,9 @@ export async function POST(req, {params}) {
             post_id : new ObjectId(data.post_id),
             content : data.content,
         });
-        await newComment.save()
+        await newComment.save();
 
-        
-        // const response = await PostItem.updateMany({},    [
-        //     { $set : { school: new ObjectId('653537b00aed77e6948e3162')} },
-        // ]);
-
-        // const newSchool = new SchoolItem({
-        //     name : "헤이븐기독학교",
-        //     type : "alternative",
-        // })
-        // await newSchool.save();
-
-        // const newUser = new User({
-        //     id : "Trolligwunaa",
-        //     password : await bcrypt.hash("Trollson2008", 12),
-        //     name : "손재원",
-        //     phone: "010-7637-3989",
-        //     email : "2027.jaewon.son@haven.or.kr",
-        //     school : {
-        //         schoolName : "헤이븐기독학교",
-        //         schoolCode : "",
-        //     },
-        // });
-        // await newUser.save();
+        await ChatItem.deleteMany({});
 
         return NextResponse.json({status : 200});
 

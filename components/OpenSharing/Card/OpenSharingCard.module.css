@@ -60,3 +60,52 @@
     font-weight: 500;
     color: #94969b;
 }
+
+.mobileWrapper {
+    box-sizing: border-box;
+    margin: 25px 20px;
+}
+.container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #f5f7f8;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 65px;
+    border-radius: 10px;
+}
+.message {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 7px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+.userId {
+    font-size: 12px;
+    word-break: keep-all;
+    margin-left: 15px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+@media screen and (max-width : 450px) {
+    .header {
+        padding: 0;
+    }
+    .title > h4 {
+        font-size: 16px;
+    }
+    .memberNum > span {
+        font-size: 15px;
+    }
+    .memberNum > svg {
+        width: 10px;
+        height: auto;
+    }
+}

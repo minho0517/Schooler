@@ -8,6 +8,8 @@ import { identify } from "@/utils/identity";
 import { useChatSocket } from "@/hooks/useChatSocket";
 import useObserver from "@/hooks/useObserver";
 import Loader from "@/components/Utils/Loader/Loader";
+import BlankWrapper from "@/components/Utils/Blank/BlankWrapper";
+import { useQueryClient } from "@tanstack/react-query";
 
 export default function OpenSharingBox({isJoined, roomId}) {
 
@@ -56,7 +58,6 @@ export default function OpenSharingBox({isJoined, roomId}) {
         try {
             axios.post(`/api/socket/opensharing/messages?roomId=${roomId}`, data)
             .then((res) => {
-                console.log(res)
                 if(res.status === 200) {
                     setMessage('');
                     event.target.focus();
@@ -74,6 +75,8 @@ export default function OpenSharingBox({isJoined, roomId}) {
         return;
     }
 
+    const queryClient = useQueryClient();
+
     const top = useRef();
 
     const onIntersect = ([entry]) => entry.isIntersecting && fetchNextPage();
@@ -87,8 +90,8 @@ export default function OpenSharingBox({isJoined, roomId}) {
         <div className={styles.box}>
             <div className={styles.list}>
                 <div className={styles.listWrapper}>
-                    {status === "loading" && <div className={styles.loaderWrapper}><Loader border={4} size={35}/></div> }
-                    {/* {data?.pages[0].length === 0 && <BlankWrapper message={"당신의 일상이나 고민을 셰어해보세요!"} />} */}
+                    {status === "loading" && <div className={styles.loaderWrapper}><Loader border={3} size={30}/></div> }
+                    {data?.pages[0].length === 0 && <BlankWrapper size={15} height={400} message={"셰어링에 실시간으로 공감해보세요!"} />}
                     {data?.pages.map((group, i) => (
                         <Fragment key={i}>
                             {group.map((e, i) => (

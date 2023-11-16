@@ -26,6 +26,12 @@
     height: 570px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
 }
+.livechatCard.mobile {
+    display: none;
+    position: static;
+    height: auto;
+    margin-top: 20px;
+}
 
 @media screen and (max-width : 450px) {
     .wrapper {
@@ -36,6 +42,10 @@
         width: 100%;
     }
     .livechatCard {
+        display: none;
         width: 100%;
+    }
+    .livechatCard.mobile {
+        display: flex;
     }
 }

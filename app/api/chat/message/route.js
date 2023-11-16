@@ -21,7 +21,7 @@ export async function GET(req) {
         const room_id = new mongoose.Types.ObjectId(roomId);
         const chatList = await ChatItem.aggregate([
             { $match : { room_id : room_id } },
-            { $sort : { _id : -1 } },
+            { $sort : { _id : 1 } },
         ])
         .group({
             _id: {
