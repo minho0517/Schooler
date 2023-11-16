@@ -47,7 +47,7 @@ export default async function handler(req, res) {
         await message.save();
 
         const messageData = {
-            ...message,
+            ...message._doc,
             userId : profile.id,
         }
 

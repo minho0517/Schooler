@@ -57,7 +57,7 @@ export const useChatSocket = ({
                 const newData = [...oldData.pages];
                 const dateTimeString = message.createdAt;
                 const date = new Date(dateTimeString);
-                const formattedDateTime = date.toISOString().slice(0, 16).replace("T", " ");
+                const formattedDateTime = date?.toISOString().slice(0, 16).replace("T", " ");
                 const groupExist = newData[0][0]?._id.datetime === formattedDateTime && newData[0][0]?._id.user_id === message.user_id ? true : false;
                 if(groupExist) {
                     newData[0] = newData[0].map((item) => {
