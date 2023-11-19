@@ -1,0 +1,93 @@
+.box {
+    height: calc(100% - 100px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.loaderWrapper {
+    position: absolute;
+    z-index: 7;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loaderListWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.list {
+    overflow: scroll;
+    width: 100%;
+    height: calc(100% - 80px);
+    display: flex;
+}
+.listWrapper {
+    width: 100%;
+    display: flex;
+    overflow: scroll;
+    flex-direction: column-reverse;
+    padding-top: 50px;
+}
+.listWrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.chatInput {
+    width: 100%;
+    z-index: 4;
+    padding: 10px 0;
+    margin: 20px 0;
+    background-color: #f5f7f8;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.input {
+    width: 100%;
+    resize: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+}
+.sendBtn {
+    font-size: 15px;
+    padding: 10px 22px;
+    font-weight: 500;
+    border: none;
+    border-radius: 7px;
+    background-color: #FD6F22;
+    margin-right: 10px;
+    color: white;
+    word-wrap: normal;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all .2s;
+}
+.sendBtn:hover {
+    background-color: #fd6f22b1;
+}
+.sendBtn:disabled {
+    background-color: #fd6f2290;
+}
+
+@media screen and (max-width : 450px) {
+    .box {
+        height: calc(100% - 85px);
+    }
+    .chatInput {
+        margin: 10px 0;
+    }
+    .chatInput:focus {
+        position: fixed;
+        bottom: 0;
+    }
+}

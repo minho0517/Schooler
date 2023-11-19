@@ -1,38 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import styles from "./OpenSharingCard.module.css";
-import axios from "axios";
 import { useChatQuery } from "@/hooks/useChatQuery";
 import { useChatSocket } from "@/hooks/useChatSocket";
 import { FaRegComments, FaUser } from "react-icons/fa6";
 import Link from "next/link";
 import { identify } from "@/utils/identity";
-import { useSocket } from "@/components/Provider/socket-provider";
 
-export default function MoblieOpenSharingCard({isJoined, roomId, countMember}) {
-
-    const [isJoin, setIsJoin] = useState(isJoined);
-    const joinOpensharing = () => {
-        if(!isJoin) {
-            const response = confirm("오픈셰어링에 참가하시겠습니까?");
-            if(response) {
-                axios.post(`/api/post/${roomId}/opensharing`)
-                .then((res) => {
-                    if(res.status === 200) {
-                        setIsJoin(true);
-                    } else {
-                        alert('오류가 발생했습니다. 나중에 다시 시도해주세요')
-                    }
-                });
-            }
-            else {
-                return
-            }
-        } else {
-            return 
-        }
-    }
+export default function MoblieOpenSharingCard({ roomId, countMember}) {
 
     const apiUrl = `/api/chat/message?roomId=${roomId}`;
     const queryKey = [`chat:${roomId}`];
@@ -44,7 +19,7 @@ export default function MoblieOpenSharingCard({isJoined, roomId, countMember}) {
     useChatSocket({ queryKey, addKey, updateKey })
 
     return (
-        <div className={styles.card}>
+        <Link href={`/contact/${roomId}`} className={styles.card}>
             <div className={styles.mobileWrapper}>
                 <div className={styles.header}>
                     <div className={styles.title}>
@@ -68,6 +43,6 @@ export default function MoblieOpenSharingCard({isJoined, roomId, countMember}) {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }

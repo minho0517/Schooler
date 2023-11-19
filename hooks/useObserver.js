@@ -4,10 +4,11 @@ export default function useObserver({
     target, 
     onIntersect,
     root = null,
-    rootMargin = "100px", 
+    rootMargin = "50px", 
     threshold = 1.0,
 }) {
     useEffect(() => {
+
         let observer
 
         if (target && target.current) {
@@ -16,5 +17,5 @@ export default function useObserver({
         }
 
         return () => observer && observer.disconnect()
-    }, [target, rootMargin, threshold])
+    }, [root, target, rootMargin, threshold])
 }

@@ -48,6 +48,18 @@
     padding: 7px;
     cursor: pointer;
 }
+.utilBtn {
+    display: none;
+    color: #FD6F22;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+.utilBtn:hover {
+    background-color: rgba(0,0,0,.03);
+}
 
 @media screen and (max-width : 450px) {
     .header {
@@ -58,5 +70,8 @@
     }
     .shareBtn {
         display: none;
+    }
+    .utilBtn {
+        display: flex;
     }
 }

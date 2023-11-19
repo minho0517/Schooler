@@ -4,6 +4,7 @@ import ChatItem from "@/config/schema/ChatItem";
 import JoinChatItem from "@/config/schema/JoinChatItem";
 import PostItem from "@/config/schema/PostItem";
 import User from "@/config/schema/User";
+import { ObjectId } from "mongodb";
 import { getServerSession } from "next-auth";
 
 
@@ -35,7 +36,11 @@ export default async function handler(req, res) {
         }
         const isJoined = await JoinChatItem.exists({ user_id : userId, room_id : roomId });
         if(!isJoined) {
-            return res.status(404).json({ error : "방에 참가하지 않은 유저입니다"})
+            const newJoin = new JoinChatItem({
+                room_id : new ObjectId(roomId),
+                user_id : new ObjectId(userId),
+            });
+            await newJoin.save();
         }
 
         const message = new ChatItem({

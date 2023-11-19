@@ -15,8 +15,8 @@ export default function SharingList() {
     const [subject, setSubject] = useState(0);
 
     const menu = [
-        {subject : "sharing", msg : "아직 공유한 셰어링이 없습니다"},
-        {subject : "bookmark", msg : "즐겨찾기가 비어있습니다"}
+        {subject : "sharing", msg : "아직 공유한 셰어링이 없습니다", title : "셰어링"},
+        {subject : "bookmark", msg : "즐겨찾기가 비어있습니다", title : "즐겨찾기"}
     ]
 
     const apiUrl = `/api/my/activity/${menu[subject].subject}?`;
@@ -90,8 +90,9 @@ export default function SharingList() {
         <div className={styles.page}>
             <div className={styles.header}>
                 <div className={styles.menuWrapper}>
-                    <div ref={el => menuRef.current[0] = el} onClick={() => subjectHandler(0)} className={styles.menu}><span>셰어링</span></div>
-                    <div ref={el => menuRef.current[1] = el} onClick={() => subjectHandler(1)} className={styles.menu}><span>즐겨찾기</span></div>
+                    {menu.map((item, i) => (
+                        <div key={i} ref={el => menuRef.current[i] = el} onClick={() => subjectHandler(i)} className={styles.menu}><span>{menu[i].title}</span></div>
+                    ))}
                 </div>
                 <div ref={underlineRef} className={styles.underline}></div>
             </div>

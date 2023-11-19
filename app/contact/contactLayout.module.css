@@ -1,0 +1,200 @@
+.page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+.wrapper {
+    height: 100%;
+    width: 100%;
+    padding: 0 30px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+.header {
+    width: 320px;
+    height: 100%;
+    padding-right: 15px;
+    border-right: 1px solid #e0e0e0;
+}
+.navbar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+}
+.titleHeader {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 25px 12px;
+    box-sizing: border-box;
+}
+.goBackBtn {
+    display: none;
+    align-items: center;
+    color: #222;
+    padding: 7px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+.currentUser {
+    font-size: 28px;
+    font-weight: 700;
+}
+.menuheader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #efefef;
+    margin-bottom: 15px;
+    background-color: white;
+    position: relative;
+}
+.menuWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.menu {
+    width: calc(100% / 2);
+    padding: 0 10px;
+    padding-bottom: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transition: all .15s ;
+}
+.menu.active {
+    color: #FD6F22;
+    font-weight: 600;
+}
+.underline {
+    position: absolute;
+    left: 0;
+    bottom: -1.5px;
+    border-radius: 5px;
+    width: auto;
+    height: 3px;
+    background-color: #FD6F22;
+    transition: all .15s ease-out;
+}
+.listWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.loadingWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+.list::-webkit-scrollbar {
+    display: none;
+}
+.roomItem {
+    width: 100%;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all .2s;
+}
+.roomItem:hover {
+    background-color: rgba(0,0,0, .02);
+}
+.roomItemWrapper {
+    width: 100%;
+    padding: 19px 17px;
+    box-sizing: border-box;
+}
+.roomTitle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 7px;
+}
+.roomName {
+    color: #111;
+    font-weight: 600;
+    font-size: 16px;
+    overflow: hidden;
+    height: 20px;
+}
+.count {
+    color: #777;
+    font-size: 14px;
+}
+.roomInfo {
+    display: flex;
+    align-items: center;
+}
+.recentMessage {
+    max-height: 17px;
+    overflow: hidden;
+    font-size: 14px;
+    color: #999;
+    margin-right: 5px;
+}
+.messagePasttime {
+    font-size: 13px;
+    color: #bcbcbc;
+    white-space: nowrap;
+}
+
+.messageContainer {
+    width: calc(100% - 335px);
+    height: 100%;
+}
+
+@media screen and (max-width : 450px) {
+    .menu {
+        font-size: 14px;
+        padding-bottom: 12px;
+    }
+    .wrapper {
+        padding: 0 15px;
+    }
+    .menuPage .header {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        padding: 0;
+    }
+    .chatPage .header {
+        display: none;
+        width: 100%;
+    }
+    .menuPage .messageContainer {
+        display: none;
+    }
+    .chatPage .messageContainer {
+        display: block;
+        width: 100%;
+    }
+    .currentUser {
+        font-size: 25px;
+    }
+    .navbar {
+        margin-top: 0;
+    }
+    .titleHeader {
+        padding: 21px 0 22px 0;
+    }
+    .goBackBtn {
+        display: flex;
+        margin-right: 10px;
+    }
+}

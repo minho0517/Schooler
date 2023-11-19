@@ -12,6 +12,7 @@ import BookmarkItem from "@/config/schema/BookmarkItem";
 import PostItem from "@/config/schema/PostItem";
 import SchoolItem from "@/config/schema/SchoolItem";
 import ChatItem from "@/config/schema/ChatItem";
+import JoinChatItem from "@/config/schema/JoinChatItem";
 
 
 export async function GET(req, {params}) {
@@ -56,6 +57,7 @@ export async function POST(req, {params}) {
         await newComment.save();
 
         // await ChatItem.deleteMany({});
+        // await JoinChatItem.deleteMany({});
 
         return NextResponse.json({status : 200});
 

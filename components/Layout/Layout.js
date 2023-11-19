@@ -15,8 +15,8 @@ export default function Layout({children}) {
             <>{children}</> :
             <>
             <Header />
-            <MoblieHeader />
-            <div className={styles.page}>
+            {pathname.includes('/contact') ? "" : <MoblieHeader />}
+            <div className={`${styles.page} ${pathname.includes('/contact') && styles.fullPage}`}>
                 <div className={styles.wrapper}>
                     {children}
                 </div>

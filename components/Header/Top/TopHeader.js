@@ -1,6 +1,6 @@
 "use client"
 
-import { FaAngleLeft, FaChevronLeft, FaMagnifyingGlass, FaPenToSquare } from "react-icons/fa6";
+import { FaAngleLeft, FaChevronLeft, FaMagnifyingGlass, FaPaperPlane, FaPenToSquare, FaRegComments } from "react-icons/fa6";
 import styles from "./TopHeader.module.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -17,6 +17,7 @@ function TopHeader() {
                     </div> */}
                 </div>
                 <div className={styles.util_wrapper}>
+                    <Link href={"/contact"} className={styles.utilBtn}><FaRegComments size={30}/></Link>
                     <Link href="/share" className={styles.shareBtn}><FaPenToSquare size={15}/><span>글쓰기</span></Link>
                 </div>
             </div>

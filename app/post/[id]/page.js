@@ -48,12 +48,12 @@ export default async function Page({params : {id}}) {
                 <div className={styles.main}>
                     <PostMain data={data.data} countTotal={data.totalComments} isLiked={data.isLiked} isBookmark={data.isBookmark} />
                     {data.data.livechat && <div className={`${styles.livechatCard} ${styles.mobile}`}>
-                        <MoblieOpenSharingCard roomId={data.data._id} isJoined={data.isJoined} countMember={data.countMember} />
+                        <MoblieOpenSharingCard roomId={data.data._id} countMember={data.countMember} />
                     </div>}
                     <PostComment countTotal={data.totalComments} countRecomments={data.totalRecomments}  postId={id}/>
                 </div>
                 <div className={styles.livechatCard}>
-                    <OpenSharingCard data={{ isActive : data.data.livechat, roomId : data.data._id, isJoined: data.isJoined, countMember : data.countMember}} />
+                    <OpenSharingCard data={{ isActive : data.data.livechat, roomId : data.data._id, countMember : data.countMember}} />
                 </div>
             </div>
         </div>

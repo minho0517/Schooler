@@ -139,6 +139,15 @@ class identify  {
       
         return elements;
     }
+
+    text(maxLength) {
+        const inputStr = this.body;
+        if (inputStr.length > maxLength) {
+            return inputStr.substring(0, maxLength - 3) + "...";
+        } else {
+            return inputStr;
+        }
+    }
 }
 
 export {identify}
