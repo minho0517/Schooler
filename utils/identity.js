@@ -39,7 +39,7 @@ class identify  {
 
     name() {
         const writer = this.body
-        const name = String(writer).slice(0,1) + "*".repeat(String(writer).length - 1);
+        const name = String(writer).slice(0,3) + "*".repeat(String(writer).length - 3);
         return name;
     }
 

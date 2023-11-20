@@ -20,7 +20,7 @@ export const config = {
     '/edit/:path*', 
     '/profile/:path*', 
     '/sharing/:path*',
-    '/livechat/:path*',
+    '/contact/:path*',
     '/school/:path*',
     '/my_activity/:path*'
     ]

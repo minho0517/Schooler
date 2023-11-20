@@ -26,16 +26,18 @@ export async function GET(req) {
                 { path : 'user_id', select : "id school"},
                 { path : 'comments', select : "_id"}
             ],
-        })
+        });
+
         const sharingList = bookmarkList.map((e) => {
-            e.bookmark_what.user_id.id = new identify(e.bookmark_what.user_id.id).name();
+            e._doc.bookmark_what.user_id.id = new identify(e.bookmark_what.user_id.id).name();
             return e.bookmark_what;
         });
 
-        return NextResponse.json(sharingList, {status : 200})
+        return NextResponse.json(bookmarkList, {status : 200})
 
     } catch(err) {
-        throw new Error(err)
+        console.log(err)
+        return NextResponse.json(err, {status: 500})
     }
 
 }

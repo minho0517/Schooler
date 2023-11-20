@@ -14,28 +14,29 @@ export async function GET(req) {
         const query = req.nextUrl.searchParams;
         const page = query.get('page');
         const roomId = query.get('roomId');
-        const perPage = 10;
+        const perPage = 20;
 
         await dbConnect();
 
         const room_id = new mongoose.Types.ObjectId(roomId);
-        const chatList = await ChatItem.aggregate([
+        const chatData = await ChatItem.aggregate([
             { $match : { room_id : room_id } },
-            { $sort : { _id : 1 } },
+            { $sort : { _id : -1 } },
         ])
         .group({
             _id: {
+                user_id: '$user_id',
                 datetime: {
                     $dateToString: {
                         format: '%Y-%m-%d %H:%M',
                         date: '$createdAt',
                     },
                 },
-                user_id: '$user_id',
+                
             },
             chatItems: { $push: '$$ROOT' },
         })
-        .sort({ '_id.datetime': -1 })
+        .sort({ 'chatItems.createdAt': -1 })
         .addFields({
             '_id.mine': {
                 $eq: ['$_id.user_id', new mongoose.Types.ObjectId(userId)]
@@ -55,7 +56,47 @@ export async function GET(req) {
         })
         .sort({ 'chatItems.createdAt': -1 })
         .skip((page - 1) * perPage) 
-        .limit(perPage);
+        .limit(perPage)
+        .facet({
+            result : [
+                {
+                    $unwind: '$chatItems'
+                },
+                {
+                    $group: {
+                        _id: {
+                            id : '$chatItems._id',
+                            user_id : '$_id.user_id',
+                            datetime : '$_id.datetime',
+                            mine : '$_id.mine',
+                        },
+                        user: { $first: '$user' },
+                        chatItems: { $push: '$chatItems' }
+                    }
+                },
+                {
+                    $sort: { '_id.id': -1 }
+                },
+            ]
+        })
+
+        let chatList = [];
+
+        for(var i=0; i < chatData[0].result.length; i++) {
+            const prevData = chatList[chatList.length - 1];
+            const currentData = chatData[0].result[i];
+            if(prevData && String(prevData._id.user_id) === String(currentData._id.user_id) && prevData._id.datetime === currentData._id.datetime) {
+                prevData.chatItems = [
+                    ...currentData.chatItems,
+                    ...prevData.chatItems,
+                ]
+            } else {
+                chatList = [
+                    ...chatList,
+                    currentData,
+                ]
+            }
+        }
         
         return NextResponse.json(chatList, {status : 200})
     } catch(err) {

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Fragment, useEffect, useRef, useState } from 'react';
 import styles from './contactLayout.module.css';
@@ -11,7 +11,7 @@ import Loader from '@/components/Utils/Loader/Loader';
 import BlankWrapper from '@/components/Utils/Blank/BlankWrapper';
 import { FaChevronLeft, FaUser } from 'react-icons/fa6';
 
-export default function contactLayout({ children }) {
+export default function ContactLayout({ children }) {
 
     const router = useRouter();
     const pathname = usePathname();
@@ -45,6 +45,10 @@ export default function contactLayout({ children }) {
     }
 
     useEffect(() => {
+        setSubject(0)
+    }, [])
+
+    useEffect(() => {
         menuRef.current[subject].classList.add(styles.active);
         menuRef.current.forEach((el, i) => {
             if (i !== subject && el && el.classList.contains(styles.active)) {
@@ -67,7 +71,7 @@ export default function contactLayout({ children }) {
                     <div className={styles.navbar}>
                         <div className={styles.titleHeader}>
                             <button onClick={() => router.push('/sharing/all')} className={styles.goBackBtn}><FaChevronLeft size={20} /></button>
-                            <div className={styles.currentUser}><span>didalsgh</span></div>
+                            <div className={styles.currentUser}><span>나의 컨택트</span></div>
                         </div>
                         <div className={styles.menuheader}>
                             <div className={styles.menuWrapper}>

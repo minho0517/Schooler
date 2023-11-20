@@ -13,7 +13,7 @@ export default function ProfileBtn() {
 
     const logoutHandler = () => {
         signOut();
-        window.location.href = "/auth/login";
+        window.location.href = `/auth/login`;
     }
 
     const modalMenu = [

@@ -14,7 +14,7 @@ export default function ChatHeader({data, id}) {
     return (
         <div className={styles.header}>
             <div className={styles.move}>
-                <button onClick={() => router.push('/contact')} className={styles.goBackBtn}><FaChevronLeft size={20}/></button>
+                <button onClick={() => router.back()} className={styles.goBackBtn}><FaChevronLeft size={20}/></button>
             </div>
             <Link href={`/post/${id}`} className={styles.roomInfo}>
                 <div className={styles.main}>

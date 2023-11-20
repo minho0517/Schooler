@@ -35,6 +35,7 @@ export const authOptions = {
                 token.user = {};
                 token.user.id = user._id
                 token.user.role = user.role
+                token.user.userId = user.id
             }
             return token;
         },

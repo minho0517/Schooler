@@ -8,6 +8,7 @@ import { NextResponse } from "next/server";
 import { authOptions } from "../../auth/[...nextauth]/route";
 import User from "@/config/schema/User";
 import JoinChatItem from "@/config/schema/JoinChatItem";
+import ChatItem from "@/config/schema/ChatItem";
 
 export async function GET(req, {params}) {
 
@@ -89,6 +90,10 @@ export async function DELETE(req, {params}) {
         await PostItem.findByIdAndUpdate(id, { $set: { deleted : true, expirationDate: expirationDate }}, { new: true });
         await CommentItem.deleteMany({ post_id : id });
         await LikeItem.deleteMany({ like_what : id });
+        await BookmarkItem.deleteMany({ bookmark_what : id });
+        await JoinChatItem.deleteMany({ room_id : id });
+        await ChatItem.deleteMany({ room_id : id });
+
         return NextResponse.json({status:200})
     } catch (err) {
         return NextResponse.json(err)
