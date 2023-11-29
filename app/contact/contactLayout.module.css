@@ -51,7 +51,6 @@
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #efefef;
-    margin-bottom: 15px;
     background-color: white;
     position: relative;
 }
@@ -109,6 +108,7 @@
     flex-direction: column;
     width: 100%;
     height: auto;
+    padding: 10px 0;
 }
 .roomItem {
     width: 100%;

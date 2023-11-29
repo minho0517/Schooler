@@ -10,18 +10,18 @@ export async function GET(req) {
     const query = req.nextUrl.searchParams;
     const postId = query.get("post");
     const user = query.get("user"); 
-
     try {
         await dbConnect();
         const data = await PostItem.findById(postId).exec();
-        if(String(data.user_id) !== user) {
+        const userInfo = await User.findById(user);
+        if(userInfo.role !== "Admin" &&  String(data.user_id) !== String(user)) {
             return NextResponse.json({msg: "권한이 없습니다"}, {status : 400});
         }
         return NextResponse.json(data, {status : 200});
 
 
     } catch (err) {
-        throw err
+        return NextResponse.json(err, {status : 500})
     }
 }
 
@@ -47,7 +47,6 @@ export async function POST(req) {
 
         return NextResponse.json({msg: "포스트 성공"}, {status: 200})
     } catch (error) {
-        console.log(error)
         return NextResponse.json({msg: "포스트 중 오류가 발생했습니다"}, {status: 500})
     }
 }

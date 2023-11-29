@@ -45,7 +45,6 @@ export async function POST(req, {params}) {
 
         await dbConnect();
         // await LikeItem.updateMany({ user_id : '652d53d1210bd53ea62876e8' }, { user_id : new ObjectId('6554f3320212f1b709d40efd') });
-
         const newComment = new CommentItem({
             user_id : new ObjectId(userId),
             depth : 1,

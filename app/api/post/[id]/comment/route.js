@@ -2,6 +2,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import dbConnect from "@/config/db";
 import CommentItem from "@/config/schema/CommentItem";
 import PostItem from "@/config/schema/PostItem";
+import User from "@/config/schema/User/User";
 import { identify } from "@/utils/identity";
 import { addNotification } from "@/utils/notification/addNotification";
 import { ObjectId } from "mongodb";
@@ -17,10 +18,11 @@ export async function GET(req, {params}) {
     try {
 
         await dbConnect();
+        const userInfo = await User.findById(user).exec();
         const commentList = await CommentItem.find({ post_id : id, depth : 0 }).sort({ _id : -1 }).skip((page - 1) * 5).limit(5)
         .populate('user_id', 'id school').populate('likes').populate('recomments','parent_id');
         commentList.map((comment) => {
-            if(String(comment.user_id._id) === user) comment._doc.mine = true;
+            if(String(comment.user_id._id) === user || userInfo.role === "Admin") comment._doc.mine = true;
             comment.user_id.id = new identify(comment.user_id.id).name();
             comment._doc.isLiked = comment.likes.some((like) => String(like.user_id) === user)
         });

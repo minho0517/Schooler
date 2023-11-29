@@ -40,11 +40,20 @@ function Providers({ children }) {
         setPushEnabled();
     }, []);
 
-  return (
-    <QueryClientProvider client={client}>
-        {children}
-    </QueryClientProvider>
-  );
+    useEffect(() => {
+        const messageListener = (event) => {
+            const url = event.data.url;
+            window.location.href = url;
+        }
+        navigator.serviceWorker.addEventListener("message", messageListener);
+        return () => navigator.serviceWorker.removeEventListener("message", messageListener);
+    }, [])
+
+    return (
+        <QueryClientProvider client={client}>
+            {children}
+        </QueryClientProvider>
+    );
 }
 
 export default Providers;

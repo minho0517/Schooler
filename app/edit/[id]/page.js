@@ -14,6 +14,7 @@ const fetchData = async (id) => {
 export default async function Page({params : {id}}) {
 
     const prevData = await fetchData(id);
+
     if(prevData.status === 400) {
         alert(prevData.msg);
         redirect('/');

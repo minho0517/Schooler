@@ -10,6 +10,13 @@ const LikeSchema = new Schema({
         type : Schema.Types.ObjectId,
         required : true,
     },
+    type : {
+        type : String,
+        enum : ['Sharing', 'Comment'],
+    },
+    post_id : {
+        type : Schema.Types.ObjectId,
+    }
 },
 {timestamps : true}
 );

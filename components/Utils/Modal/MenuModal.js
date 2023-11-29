@@ -3,6 +3,7 @@ import { Fragment, useEffect, useState } from "react";
 import styles from "./Modal.module.css";
 import usePreventScroll from "@/hooks/usePreventScroll";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 
 export default function MenuModal({menuList, cancel}) {
@@ -21,6 +22,14 @@ export default function MenuModal({menuList, cancel}) {
         setTimeout(() => cancel(), 200)
     }
 
+    const router = useRouter();
+
+    const linkHandler = (link) => {
+        setActive(false);
+        setTimeout(() => cancel(), 200)
+        router.push(link)
+    }
+
 
     return (
         <div className={styles.modal}>
@@ -30,7 +39,7 @@ export default function MenuModal({menuList, cancel}) {
                     <div className={styles.wrapper}>
                         {menuList.map((e, i) => (
                             <Fragment key={i}>
-                            {e.component === "link" && <Link onClick={cancelHandler} href={e.link} className={styles.menuBtn} >{e.title}</Link> }
+                            {e.component === "link" && <button onClick={() => linkHandler(e.link)} className={styles.menuBtn} >{e.title}</button> }
                             {e.component === "button" && <button onClick={e.handler} className={`${styles.menuBtn} ${e.type === "delete" && styles.redMenu}`}>{e.title}</button>}
                             <hr className={styles.menuUnderline}></hr>
                             </Fragment>                        

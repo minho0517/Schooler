@@ -2,10 +2,10 @@
 
 import { useState, useRef, useEffect } from "react";
 import styles from "./Writing.module.css";
-import { FaAngleDown, FaCaretDown, FaPlus, FaXmark } from "react-icons/fa6";
+import { FaAngleDown, FaCaretDown, FaXmark } from "react-icons/fa6";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { BlankTopHeader, GoBackHeader } from "../Header/Top/TopHeader";
+import { GoBackHeader } from "../Header/Top/TopHeader";
 
 export default function Writing({data}) {
 
@@ -26,7 +26,6 @@ export default function Writing({data}) {
 
     const onWritingHandler = (event) => {
         event.target.style.height = "auto";
-        // event.target.style.height = event.target.scrollHeight + 2 + "px";
         postBtnDisabledHandler()
     }
     const livechatHandler = (event) => {

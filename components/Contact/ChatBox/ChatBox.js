@@ -49,6 +49,7 @@ export default function ChatBox({ id }) {
             .then((res) => {
                 if(res.status === 200) {
                     setMessage('');
+                    event.target.focus();
                 }
             })
         } catch(err) {

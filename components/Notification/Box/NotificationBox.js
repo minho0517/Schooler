@@ -13,6 +13,8 @@ import NotificationCard from "../Card/NotificationCard";
 
 export default function NotificationBox({subscription, closeHandler}) {
 
+    usePreventScroll();
+
     const [active, setActive] = useState(false);
     const [hasSubscription, setHasSubscription] = useState(subscription);
 
@@ -42,8 +44,6 @@ export default function NotificationBox({subscription, closeHandler}) {
         }
     }
 
-    if(hasSubscription === undefined) return null;
-
     const apiUrl = `/api/notification/list?`;
     const queryKey = ['get-Notification'];
     const { data, fetchNextPage, status, isFetchingNextPage } = useGetQuery({ apiUrl, queryKey });
@@ -57,8 +57,7 @@ export default function NotificationBox({subscription, closeHandler}) {
         onIntersect,
     });
 
-    usePreventScroll();
-
+    if(hasSubscription === undefined) return null;
 
     return (
         <div className={`${styles.box} ${active && styles.open}`}>

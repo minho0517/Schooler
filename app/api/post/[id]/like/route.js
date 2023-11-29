@@ -27,6 +27,8 @@ export async function POST(req, {params}) {
             const like = new LikeItem({
                 user_id : new ObjectId(userId),
                 like_what : new ObjectId(id),
+                type : "Sharing",
+                post_id : new ObjectId(id),
             });
             await like.save();
             const notiData = [{
