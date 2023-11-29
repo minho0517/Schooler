@@ -12,7 +12,8 @@ const config = {
 
 const nextConfig = withPWA({
     dest: "public",
-    // disable: !isProduction,
+    register: true,
+    skipWaiting: true,
     runtimeCaching: [],
 }) (config);
 

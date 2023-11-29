@@ -10,6 +10,8 @@ import { identify } from '@/utils/identity';
 import Loader from '@/components/Utils/Loader/Loader';
 import BlankWrapper from '@/components/Utils/Blank/BlankWrapper';
 import { FaChevronLeft, FaUser } from 'react-icons/fa6';
+import { useChatSocket } from '@/hooks/useChatSocket';
+import { useChatQuery } from '@/hooks/useChatQuery';
 
 export default function ContactLayout({ children }) {
 
@@ -26,11 +28,11 @@ export default function ContactLayout({ children }) {
     const apiUrl = `/api/contact/list?type=${menu[subject].subject}`
     const queryKey = ['get-contactList', menu[subject].subject];
 
-    const { data, hasNextPage, isFetchingNextPage, fetchNextPage, status } = useGetQuery({ apiUrl, queryKey });
+    const { data, hasNextPage, isFetchingNextPage, fetchNextPage, status } = useChatQuery({ apiUrl, queryKey });
 
     const bottom = useRef();
 
-    const onIntersect = ([entry]) => entry.isIntersecting && fetchNextPage();
+    const onIntersect = ([entry]) => entry.isIntersecting && fetchNextPage(); 
 
     useObserver({
         target: bottom,
@@ -83,30 +85,18 @@ export default function ContactLayout({ children }) {
                         </div>
                     </div>
                     <div className={styles.list}>
-                        {status === "loading" && <div className={styles.loadingWrapper}><Loader size={35} border={4} /></div>}
-                        {data?.pages.map((page, i) => (
-                            <Fragment key={i}>
-                                {page?.map((item, i) => (
-                                    <Link key={i} href={`/contact/${item.room.room_id}`} className={styles.roomItem}>
-                                        <div className={styles.roomItemWrapper}>
-                                            <div className={styles.roomTitle}>
-                                                <div className={styles.roomName}><span>{new identify(item.room.room_info[0]?.title).text(23)}</span></div>
-                                                <div className={styles.count}><FaUser size={10}/> <span>{item.room.memberCount.length}</span></div>
-                                            </div>
-                                            <div className={styles.roomInfo}>
-                                                {item.latestMessage[0] ? <>
-                                                <span className={styles.recentMessage}>{item.latestMessage[0].content}</span>
-                                                <span className={styles.messagePasttime}> · {new identify(item.latestMessage[0].createdAt).pastTime()} </span></>:
-                                                <span className={styles.recentMessage}>메시지를 보내보세요</span>
-                                                }
-                                            </div>
-                                        </div>
-                                    </Link>
-                                ))}
-                            </Fragment>
-                        ))}
-                        {data?.pages[0].length === 0 && <BlankWrapper size={15} message={"컨택트가 존재하지 않습니다"} />}
-                        <div ref={bottom}></div>
+                        <div className={styles.listWrapper}>
+                            {status === "loading" && <div className={styles.loadingWrapper}><Loader size={35} border={4} /></div>}
+                            {data?.pages.map((page, i) => (
+                                <Fragment key={i}>
+                                    {page?.map((item, i) => (
+                                        <MenuItem key={i} data={item} />
+                                    ))}
+                                </Fragment>
+                            ))}
+                            {data?.pages[0].length === 0 && <BlankWrapper size={15} message={"컨택트가 존재하지 않습니다"} />}
+                            <div ref={bottom}></div>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.messageContainer}>
@@ -114,5 +104,26 @@ export default function ContactLayout({ children }) {
                 </div>
             </div>
         </div>
+    )
+}
+
+function MenuItem({data}) {
+
+    return (
+        <Link href={`/contact/${data.room.room_id}`} className={styles.roomItem}>
+            <div className={styles.roomItemWrapper}>
+                <div className={styles.roomTitle}>
+                    <div className={styles.roomName}><span>{new identify(data.room.room_info[0]?.title).text(23)}</span></div>
+                    <div className={styles.count}><FaUser size={10}/> <span>{data.room.memberCount.length}</span></div>
+                </div>
+                <div className={styles.roomInfo}>
+                    {data.latestMessage[0] ? <>
+                    <span className={styles.recentMessage}>{data.latestMessage[0].content}</span>
+                    <span className={styles.messagePasttime}> · {new identify(data.latestMessage[0].createdAt).pastTime()} </span></>:
+                    <span className={styles.recentMessage}>메시지를 보내보세요</span>
+                    }
+                </div>
+            </div>
+        </Link>
     )
 }

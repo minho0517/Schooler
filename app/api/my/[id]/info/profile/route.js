@@ -1,5 +1,5 @@
 import dbConnect from "@/config/db";
-import User from "@/config/schema/User";
+import User from "@/config/schema/User/User";
 import { NextResponse } from "next/server";
 
 

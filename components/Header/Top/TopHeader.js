@@ -1,14 +1,15 @@
 "use client"
 
-import { FaAngleLeft, FaChevronLeft, FaMagnifyingGlass, FaPaperPlane, FaPenToSquare, FaRegComments } from "react-icons/fa6";
+import { FaChevronLeft, FaMagnifyingGlass, FaRegComments } from "react-icons/fa6";
 import styles from "./TopHeader.module.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import NotificationBtn from "@/components/Notification/Notification";
 
 function TopHeader() {
-    
+        
     return (
-        <div className={styles.header}>
+        <div className={`${styles.header} ${styles.sticky}`}>
             <div className={styles.wrapper}>
                 <div className={styles.search_wrapper}>
                     {/* <div className={styles.search}>
@@ -17,8 +18,9 @@ function TopHeader() {
                     </div> */}
                 </div>
                 <div className={styles.util_wrapper}>
-                    <Link href={"/contact"} className={styles.utilBtn}><FaRegComments size={30}/></Link>
-                    <Link href="/share" className={styles.shareBtn}><FaPenToSquare size={15}/><span>글쓰기</span></Link>
+                    <button className={styles.utilBtn}><FaMagnifyingGlass size={24}/></button>
+                    <NotificationBtn />
+                    <Link href={"/contact"} className={`${styles.utilBtn} ${styles.mobile}`}><FaRegComments size={32}/></Link>
                 </div>
             </div>
         </div>

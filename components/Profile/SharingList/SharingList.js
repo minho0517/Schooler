@@ -105,7 +105,7 @@ export default function SharingList() {
                         ))}
                     </Fragment>
                 ))}
-                {data?.pages[0].length === 0 && <BlankWrapper message={menu[subject].msg} />}
+                {data?.pages[0].length === 0 && <BlankWrapper size={15} message={menu[subject].msg} />}
             </div>
             {isFetchingNextPage && <div className={styles.loadingWrapper}><Loader size={45} border={5} /></div>}
             <div ref={bottom}></div>

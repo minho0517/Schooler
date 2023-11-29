@@ -2,7 +2,8 @@
 import { Fragment, useEffect, useState } from "react";
 import styles from "./Modal.module.css";
 import usePreventScroll from "@/hooks/usePreventScroll";
-import { Link } from "next13-progressbar";
+import Link from "next/link";
+
 
 export default function MenuModal({menuList, cancel}) {
 

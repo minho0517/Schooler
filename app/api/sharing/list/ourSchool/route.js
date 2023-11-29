@@ -1,6 +1,6 @@
 import dbConnect from "@/config/db";
 import PostItem from "@/config/schema/PostItem";
-import User from "@/config/schema/User";
+import User from "@/config/schema/User/User";
 import { identify } from "@/utils/identity";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";

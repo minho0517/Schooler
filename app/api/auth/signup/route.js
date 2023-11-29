@@ -1,6 +1,6 @@
 import dbConnect from "@/config/db";
 import SchoolItem from "@/config/schema/SchoolItem";
-import User from "@/config/schema/User";
+import User from "@/config/schema/User/User";
 import { ObjectId } from "mongodb";
 import { NextResponse } from "next/server";
 import bcrypt from 'bcrypt';

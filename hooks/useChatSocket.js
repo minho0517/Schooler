@@ -47,6 +47,35 @@ export const useChatSocket = ({
         });
 
         socket.on(addKey, (message) => {
+            const queryList = queryClient.getQueryCache().queries;
+            const result = queryList.filter(obj => obj.queryKey?.includes('get-contactList'));
+            queryClient.setQueryData(result.queryKey, (oldData) => {
+                if(!oldData || !oldData.pages || oldData.pages.length === 0){
+                    return {
+                        pages : [message]
+                    }
+                }
+
+                const newData = [...oldData.pages];
+                const data = newData.map((page) => {
+                    return page.map((item) => {
+                        if(item.room.room_id === String(message.room_id)) {
+                            return {
+                                ...item,
+                                latestMessage : [
+                                    message,
+                                ]
+                            }
+                        } else {
+                            return item;
+                        }
+                    })
+                });
+                return {
+                    ...oldData, 
+                    pages : data,
+                };
+            });
             queryClient.setQueryData(queryKey, (oldData) => {
                 if(!oldData || !oldData.pages || oldData.pages.length === 0){
                     return {

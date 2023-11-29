@@ -2,6 +2,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import dbConnect from "@/config/db";
 import CommentItem from "@/config/schema/CommentItem";
 import LikeItem from "@/config/schema/LikeItem";
+import NotificationItem from "@/config/schema/User/NotificationItem";
 import mongoose from "mongoose";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
@@ -90,6 +91,7 @@ export async function DELETE(req) {
         await CommentItem.findOneAndDelete({ user_id : userId, _id : id});
         await CommentItem.deleteMany({ parent_id : id });
         await LikeItem.deleteMany({ like_what : id });
+        await NotificationItem.deleteMany({ activity : id });
 
         return NextResponse.json({status: 200})
 

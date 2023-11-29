@@ -15,7 +15,7 @@
 .title {
     display: flex;
     align-items: center;
-    height: 80px;
+    height: 70px;
     width: 0;
 }
 .title > a {

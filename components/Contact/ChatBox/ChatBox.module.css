@@ -37,6 +37,9 @@
 .listWrapper::-webkit-scrollbar {
     display: none;
 }
+.list::-webkit-scrollbar {
+    display: none;
+}
 
 .chatInput {
     width: 100%;

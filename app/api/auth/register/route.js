@@ -1,6 +1,6 @@
 import dbConnect from "@/config/db";
 import AuthNumberItem from "@/config/schema/Auth/AuthNumberItem";
-import User from "@/config/schema/User";
+import User from "@/config/schema/User/User";
 import { sendEmail } from "@/utils/sendAuthMail";
 import { NextResponse } from "next/server";
 

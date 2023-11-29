@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 import PostItem from "@/config/schema/PostItem";
 import { ObjectId } from "mongodb";
 import dbConnect from "@/config/db";
-import User from "@/config/schema/User";
+import User from "@/config/schema/User/User";
 
 export async function GET(req) {
     const query = req.nextUrl.searchParams;

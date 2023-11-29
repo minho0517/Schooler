@@ -49,7 +49,6 @@ export default function LivechatList({buttonGroup}) {
                     swiper.navigation.init();
                     swiper.navigation.update()
                 });
-
             }}>
                 <SwiperSlide className={styles.card}><LivechatCard /></SwiperSlide>
                 <SwiperSlide className={styles.card}><LivechatCard /></SwiperSlide>

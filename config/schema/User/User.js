@@ -30,6 +30,9 @@ const UserSchema = new Schema({
         default : 'User',
         enum : ['Admin', 'User']
     },
+    pushSubscribe : {
+        type : Object,
+    }
 }, 
 {timestamps : true}
 );

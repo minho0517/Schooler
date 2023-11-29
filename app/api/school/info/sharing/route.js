@@ -1,7 +1,7 @@
 import dbConnect from "@/config/db";
 import PostItem from "@/config/schema/PostItem";
 import SchoolItem from "@/config/schema/SchoolItem";
-import User from "@/config/schema/User";
+import User from "@/config/schema/User/User";
 import { ObjectId } from "mongodb";
 import { NextResponse } from "next/server";
 

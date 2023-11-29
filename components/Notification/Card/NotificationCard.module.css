@@ -1,0 +1,49 @@
+.card {
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+    transition: all .2s;
+    border-radius: 10px;
+}
+.card:hover {
+    background-color: rgba(0,0,0,.02);
+}
+.wrapper {
+    width: 100%;
+    padding: 15px 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+.type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e1e1e1;
+    margin-right: 15px;
+    transition: all .2s;
+}
+.card:hover .type {
+    color: #FD6F22;
+}
+.title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.description {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.timeInfo {
+    font-size: 12px;
+    font-weight: 500;
+    color: #999;
+    white-space: nowrap;
+}

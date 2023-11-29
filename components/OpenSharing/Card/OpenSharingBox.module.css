@@ -20,6 +20,9 @@
 .listWrapper::-webkit-scrollbar {
     display: none;
 }
+.list::-webkit-scrollbar {
+    display: none;
+}
 
 .input {
     width: 100%;

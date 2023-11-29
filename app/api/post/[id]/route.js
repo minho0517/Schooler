@@ -6,7 +6,7 @@ import PostItem from "@/config/schema/PostItem";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 import { authOptions } from "../../auth/[...nextauth]/route";
-import User from "@/config/schema/User";
+import User from "@/config/schema/User/User";
 import JoinChatItem from "@/config/schema/JoinChatItem";
 import ChatItem from "@/config/schema/ChatItem";
 

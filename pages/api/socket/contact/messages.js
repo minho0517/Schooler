@@ -3,7 +3,9 @@ import dbConnect from "@/config/db";
 import ChatItem from "@/config/schema/ChatItem";
 import JoinChatItem from "@/config/schema/JoinChatItem";
 import PostItem from "@/config/schema/PostItem";
-import User from "@/config/schema/User";
+import User from "@/config/schema/User/User";
+import { pushNotification } from "@/utils/notification/pushNotification";
+import axios from "axios";
 import { ObjectId } from "mongodb";
 import { getServerSession } from "next-auth";
 
@@ -30,7 +32,7 @@ export default async function handler(req, res) {
             return res.status(400).json({ error : "내용이 없습니다"})
         }
 
-        const room = await PostItem.exists({ _id : roomId });
+        const room = await PostItem.findById(roomId);
         if(!room) {
             return res.status(404).json({ error : "해당 오픈 셰어링을 찾을 수 없습니다"})
         }
@@ -57,6 +59,19 @@ export default async function handler(req, res) {
         }
 
         const roomKey = `chat:${roomId}:messages`;
+
+        const notiData = {
+            roomId,
+            messageData,
+        }
+        const pushData = {
+            pushData : notiData,
+            type : "Contact",
+            userId,
+            roomId,
+        }
+
+        await pushNotification(pushData);
 
         res?.socket?.server?.io?.emit(roomKey, messageData);
 

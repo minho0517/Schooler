@@ -1,9 +1,9 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import dbConnect from "@/config/db";
 import CommentItem from "@/config/schema/CommentItem";
-import LikeItem from "@/config/schema/LikeItem";
 import PostItem from "@/config/schema/PostItem";
 import { identify } from "@/utils/identity";
+import { addNotification } from "@/utils/notification/addNotification";
 import { ObjectId } from "mongodb";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
@@ -36,17 +36,26 @@ export async function GET(req, {params}) {
 export async function POST(req, {params}) {
     const { id } = params;
     const data = await req.json()
-    const user = (await getServerSession(authOptions)).user.id;
+    const userId = (await getServerSession(authOptions)).user.id;
+    const owner = await PostItem.findById(id).exec();
     try {
 
         await dbConnect();
-        // await PostItem.findByIdAndUpdate(id, { $inc : {comments : 1} });
         const newComment = new CommentItem({
-            user_id : new ObjectId(user),
+            user_id : new ObjectId(userId),
             post_id : new ObjectId(id),
             content : data.content,
         });
-        await newComment.save()
+        await newComment.save();
+        const notiData = [{
+            user_id : new ObjectId(owner.user_id),
+            type : "Comment",
+            url : `/post/${id}`,
+            body : newComment.content,
+            title : "회원님의 셰어링에 댓글을 남겼습니다",
+            activity : new ObjectId(newComment._id),
+        }]
+        await addNotification(notiData, userId)
 
         return NextResponse.json({status : 200});
 

@@ -6,7 +6,7 @@ export const useGetQuery = ({
     queryKey,
 }) => {
     const fetchData = async ({pageParam = 1}) => {
-        const response = await axios.get(apiUrl + `&page=${pageParam}`, {maxBodyLength : 2000});
+        const response = await axios.get(apiUrl + `&page=${pageParam}`);
         const data = response.data;
         return data;
     }

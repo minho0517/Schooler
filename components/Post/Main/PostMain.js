@@ -42,7 +42,7 @@ export default function PostMain({data, countTotal, isLiked, isBookmark}) {
             setCountLike(countLike + 1);
         }
 
-        axios.post(`/api/post/${data._id}/like`)
+        axios.post(`/api/post/${data._id}/like?whose=${data.user_id}`)
     }
 
 

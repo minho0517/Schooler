@@ -1,35 +1,38 @@
-"use client"
-
 import styles from './page.module.css'
 import Link from 'next/link'
-import { HiOutlineChatAlt2, HiOutlineViewGrid, HiOutlineViewGridAdd } from 'react-icons/hi';
-import { useRef } from 'react';
 import { FaAngleLeft, FaAngleRight, FaPaperclip, FaRotate, FaSchoolFlag } from 'react-icons/fa6';
 import LivechatList from '@/components/LivechatList/LivechatList';
+import { getServerSession } from 'next-auth';
+import { authOptions } from './api/auth/[...nextauth]/route';
+import { subscribeUser } from '@/utils/serviceWorker';
 
 
-export default function Home() {
+export default async function Home() {
 
-  const navigationPrevEl = useRef(null);
-  const navigationNextEl = useRef(null);
-  const btnGroup = {
-    next : navigationNextEl,
-    prev : navigationPrevEl,
-  }
+  const user = await getServerSession(authOptions);
 
   return (
     <div className={styles.page}>
       <div className={styles.page_wrapper}>
-        <section className={styles.container}>
+        {user && <section className={styles.container}>
           <div className={styles.section_header}>
-            <Link href='/sharing/livechat' className={styles.section_title}>
-              <HiOutlineChatAlt2 size={25}/>
-              <h3>LIVECHAT 라이브챗</h3>
+            <Link href='/follow' className={styles.section_title}>
+              <h3>우리 학교 소식</h3>
             </Link>
             <div className={styles.action_group}>
               <div className={styles.actionBtn} id={styles.update}><FaRotate size={20}/></div>
-              <div className={styles.actionBtn} ref={navigationPrevEl}><FaAngleLeft size={23}/></div>
-              <div className={styles.actionBtn} ref={navigationNextEl}><FaAngleRight size={23}/></div>
+            </div>
+          </div>
+        </section>}
+        <section className={styles.container}>
+          <div className={styles.section_header}>
+            <Link href='/sharing/livechat' className={styles.section_title}>
+              <h3>라이브챗</h3>
+            </Link>
+            <div className={styles.action_group}>
+              <div className={styles.actionBtn} id={styles.update}><FaRotate size={20}/></div>
+              <div className={styles.actionBtn}><FaAngleLeft size={23}/></div>
+              <div className={styles.actionBtn}><FaAngleRight size={23}/></div>
             </div>
           </div>
           {/* <LivechatList buttonGroup={btnGroup} /> */}
@@ -37,19 +40,7 @@ export default function Home() {
         <section className={styles.container}>
           <div className={styles.section_header}>
             <Link href='/sharing' className={styles.section_title}>
-              <HiOutlineViewGridAdd size={25}/>
-              <h3>SHARING 셰어링</h3>
-            </Link>
-            <div className={styles.action_group}>
-              <div className={styles.actionBtn} id={styles.update}><FaRotate size={20}/></div>
-            </div>
-          </div>
-        </section>
-        <section className={styles.container}>
-          <div className={styles.section_header}>
-            <Link href='/follow' className={styles.section_title}>
-              <FaSchoolFlag size={23}/>
-              <h3>SCHOOL 우리 학교 소식</h3>
+              <h3>셰어링</h3>
             </Link>
             <div className={styles.action_group}>
               <div className={styles.actionBtn} id={styles.update}><FaRotate size={20}/></div>
