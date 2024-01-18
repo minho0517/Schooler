@@ -17,6 +17,10 @@ const ChatSchema = new Schema({
     },
     fileUrl : {
         type : String,
+    },
+    type : {
+        type : String,
+        enum : ['Opensharing','Personal'],
     }
 },
 {timestamps : true}

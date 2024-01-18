@@ -107,10 +107,6 @@
     text-align: center;
     vertical-align: middle;
 }
-
-.activeGroup {
-    display: flex;
-}
 .main .info {
     margin-top: 15px;
 }

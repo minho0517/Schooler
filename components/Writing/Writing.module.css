@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-bottom: 50px;
 }
 
 .form_wrapper {
@@ -16,6 +17,9 @@
     flex-direction: column;
     width: 70%;
     margin-right: 30px;
+    overflow: hidden;
+    padding: 0 2px;
+    box-sizing: border-box;
 }
 .input_topic {
     position: relative;
@@ -380,6 +384,115 @@ input:checked + .checkSlider:before {
     cursor: auto;
 }
 
+.image_input_wrapper {
+    margin-top: 5px;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+.image_input_wrapper::-webkit-scrollbar {
+    display: none;
+}
+.imageInputBox {
+    z-index: 5;
+    background-color: white;
+    position: sticky;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 2px);
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imageInputBox.active {
+    width: 200px;
+}
+.imageInput {
+    display: none;
+}
+.imageLabel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    cursor: pointer;
+    transition: all .2s;
+}
+.imageLabel:hover {
+    background-color: rgba(0,0,0, 0.02);
+}
+.imageLabel > span {
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 5px;
+}
+.imageList {
+    width: calc(100% - 210px);
+    display: flex;
+    height: 100%;
+    margin-left: 10px;
+    overflow: scroll;
+    border-radius: 10px;
+}
+.imageListWrapper {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+.imageList::-webkit-scrollbar {
+    display: none;
+}
+.imageItem {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 10px;
+    position: relative;
+}
+.imageItem:last-child {
+    margin: 0;
+}
+.preImg {
+    width: 100%;
+    height: auto;
+}
+.imageItemWrapper {
+    width: 100%;
+    position: absolute;
+    top: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.removeImgBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    padding: 3px;
+    cursor: pointer;
+    color: #555;
+    margin-right: 10px;
+}
+.imageItemWrapper > span {
+    font-size: 15px;
+    color: #555;
+    margin-left: 10px;
+    padding: 3px;
+}
 
 @media screen and (max-width : 450px) {
     .form_wrapper {

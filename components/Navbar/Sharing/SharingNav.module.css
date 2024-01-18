@@ -2,7 +2,8 @@
 .topics {
     display: flex;
     align-items: center;
-    position: relative;
+    position: sticky;
+    top: 0;
     width: 100%;
     overflow: hidden;
     padding: 10px 0;

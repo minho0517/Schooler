@@ -45,6 +45,9 @@ const PostSchema = new Schema({
         required : true,
         type : Schema.Types.ObjectId,
         ref : 'SchoolItem',
+    },
+    images : {
+        type : Array,
     }
 },
 {timestamps : true}

@@ -1,0 +1,105 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.box {
+    width: calc(50% - 10px);
+    display: flex;
+    border-radius: 15px;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.05);
+    margin: 10px 0;
+}
+.boxWrapper {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+}
+.boxHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.topic {
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+    display: flex;
+    align-items: center;
+}
+.moveBtn {
+    color: #222;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.boxList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: calc(50px * 5 + 5px * 5);
+}
+.item {
+    display: flex;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,.02);
+    margin-bottom: 5px;
+}
+.itemWrapper {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+}
+.title {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    overflow: hidden;
+    color: #111;
+    white-space: nowrap;
+}
+.activeGroup {
+    width: 130px;
+    display: flex;
+    align-items: center;
+}
+.activeRecord {
+    display: flex;
+    align-items: center;
+    color: #FD6F22;
+    margin-left: 10px;
+}
+.activeRecord > span {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 5px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+@media screen and (max-width : 800px) {
+    .box {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width : 450px) {
+    .title {
+        font-size: 15px;
+    }
+    .activeRecord > span {
+        font-size: 13px;
+    }
+    .activeRecord {
+        margin-left: 5px;
+    }
+}

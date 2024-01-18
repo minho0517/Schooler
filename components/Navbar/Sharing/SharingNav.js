@@ -77,22 +77,8 @@ export default function SharingNav({type}) {
         };
     }, [ totalSlide, currentSlide, perSlide]);
 
-    const links = [
-        { title : "베스트"},
-        { title : "수다"},
-        { title : "연애·썸"},
-        { title : "인간관계"},
-        { title : "공부·성적"},
-        { title : "학교생활"},
-        { title : "입시"},
-        { title : "진로"},
-        { title : "게임"},
-        { title : "여가·취미"},
-        { title : "학원"},
-        { title : "쇼핑·소비"},
-        { title : "스포츠"},
-        { title : "흑역사"},
-    ]
+    const links = require('/public/data/topic.json');
+
 
     return (
         <div className={`${styles.slider} ${styles.topics}`} ref={wrapperRef}>

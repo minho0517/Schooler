@@ -196,7 +196,8 @@
         margin-top: 0;
     }
     .titleHeader {
-        padding: 21px 0 22px 0;
+        padding: 0;
+        height: 60px;
     }
     .goBackBtn {
         display: flex;

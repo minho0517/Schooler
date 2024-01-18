@@ -20,6 +20,8 @@ export default function ProfileCard({data, deleteHandler, bookmarkHandler, menu}
         bookmarkHandler();
     }
 
+    data = data.bookmark_what ? data.bookmark_what : data;
+
     return (
         <div className={`${styles.card} ${styles.profile}`}>
             <Link href={'/post/' + data._id} className={styles.wrapper}>

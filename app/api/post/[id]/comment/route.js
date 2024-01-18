@@ -1,5 +1,6 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import dbConnect from "@/config/db";
+import ChatItem from "@/config/schema/ChatItem";
 import CommentItem from "@/config/schema/CommentItem";
 import PostItem from "@/config/schema/PostItem";
 import User from "@/config/schema/User/User";
@@ -57,7 +58,7 @@ export async function POST(req, {params}) {
             title : "회원님의 셰어링에 댓글을 남겼습니다",
             activity : new ObjectId(newComment._id),
         }]
-        await addNotification(notiData, userId)
+        await addNotification(notiData, userId);
 
         return NextResponse.json({status : 200});
 

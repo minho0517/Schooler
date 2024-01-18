@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import styles from "./Writing.module.css";
-import { FaAngleDown, FaCaretDown, FaXmark } from "react-icons/fa6";
+import { FaAngleDown, FaCaretDown, FaImage, FaPlus, FaXmark } from "react-icons/fa6";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { GoBackHeader } from "../Header/Top/TopHeader";
@@ -123,9 +123,28 @@ export default function Writing({data}) {
         setScope(value);
     }
 
+    const [selectedImages, setSelectedImages] = useState([]);
+  
+    const handleImageChange = (e) => {
+        const files = e.target.files;
+        if(files.length > 5) {
+            return
+        }
+        const newImages = Array.from(files).map((file) => URL.createObjectURL(file));
+        setSelectedImages([...newImages, ...selectedImages]);
+    };
 
+    const removeImageHandler = (indexToRemove) => {
+        setSelectedImages((prevImages) => {
+            const updatedImages = prevImages.filter((_, index) => index !== indexToRemove);
+            return updatedImages;
+        });
+    }
+
+    const [isloading, setIsLoading] = useState(false)
     // 게시물 업로드 
     const onSubmitHandler = async (e) => {
+        setIsLoading(true)
         const uploadData = {
             topic:  topic,
             title: title.current.value,
@@ -133,8 +152,16 @@ export default function Writing({data}) {
             tags : tags,
             livechat : livechat,
             scope : scope,
+            images : selectedImages,
         }
         setPostBtn(true)
+        const formData = new FormData();
+        for (let i = 0; i < selectedImages.length; i++) {
+            formData.append('images', selectedImages[i]);
+        }
+        const uploadResponse = await axios.post('/api/upload/image', formData);
+        uploadData.images = uploadResponse.data.imageUrls;
+
         if(data) {
             axios.put(`/api/post/${data._id}`,uploadData)
             .then((res) => {
@@ -157,7 +184,9 @@ export default function Writing({data}) {
     }
 
     return (
+
         <div className={styles.page}>       
+
             <GoBackHeader />         
             <div className={styles.form_wrapper}>
                 <div className={styles.content_wrapper}>
@@ -187,6 +216,25 @@ export default function Writing({data}) {
                     <div className={styles.input_wrapper}>
                         <textarea ref={content} onChange={onWritingHandler} className={styles.input} placeholder="내용을 입력해주세요" rows={15} id={styles.content}></textarea>
                     </div>
+                    {/* <div className={styles.image_input_wrapper}>
+                        <div className={`${styles.imageInputBox} ${selectedImages.length > 0 && styles.active}`}>
+                            <label for="image" className={styles.imageLabel}>{selectedImages.length > 0 ? <FaPlus size={30}/> : <><FaImage  size={30}/><span>이미지를 선택해주세요</span></>}</label>
+                            <input onChange={handleImageChange} type="file" id="image" name="image" accept="image/*" className={styles.imageInput} ></input>
+                        </div>
+                        {selectedImages.length > 0 && <div className={styles.imageList}>
+                            <div className={styles.imageListWrapper}>
+                                {selectedImages.map((image, i) => (
+                                    <div key={i} className={styles.imageItem}>
+                                        <img src={image} className={styles.preImg}></img>
+                                        <div className={styles.imageItemWrapper}>
+                                            <span>{selectedImages.length - i}</span>
+                                            <button onClick={() => removeImageHandler(i)} className={styles.removeImgBtn}> <FaXmark size={22}/></button>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>}
+                    </div> */}
                 </div>
                 <div className={styles.submit_card}>
                     <div className={styles.submit_wrapper}>

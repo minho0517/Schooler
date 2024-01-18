@@ -1,8 +1,10 @@
+"use client"
+
 import Link from 'next/link';
-import styles from './LivechatCard.module.css';
+import styles from './OpensharingCard.module.css';
 import {FaRegCommentDots, FaHashtag, FaUser} from "react-icons/fa6"
 
-export default function LivechatCard() {
+export default function OpensharingCard() {
     
     return (
         <Link className={styles.card} href='/'>

@@ -12,6 +12,7 @@ import SchoolItem from "@/config/schema/SchoolItem";
 import ChatItem from "@/config/schema/ChatItem";
 import JoinChatItem from "@/config/schema/JoinChatItem";
 import { addNotification } from "@/utils/notification/addNotification";
+import NotificationItem from "@/config/schema/User/NotificationItem";
 
 
 export async function GET(req, {params}) {

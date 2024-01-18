@@ -1,10 +1,11 @@
 import styles from './page.module.css'
-import Link from 'next/link'
-import { FaAngleLeft, FaAngleRight, FaPaperclip, FaRotate, FaSchoolFlag } from 'react-icons/fa6';
-import LivechatList from '@/components/LivechatList/LivechatList';
 import { getServerSession } from 'next-auth';
 import { authOptions } from './api/auth/[...nextauth]/route';
-import { subscribeUser } from '@/utils/serviceWorker';
+import { TopHeader } from '@/components/Header/Top/TopHeader';
+import Landing from '@/components/Home/Landing/Landing';
+import SharingBoxList from '@/components/BoxList/Sharing/SharingBoxList';
+import SchoolBoxList from '@/components/BoxList/School/SchoolBoxList';
+import OpenSharingList from '@/components/BoxList/OpenSharing/OpenSharingList';
 
 
 export default async function Home() {
@@ -13,39 +14,16 @@ export default async function Home() {
 
   return (
     <div className={styles.page}>
+      <TopHeader isLogin={!!user}/>
       <div className={styles.page_wrapper}>
-        {user && <section className={styles.container}>
-          <div className={styles.section_header}>
-            <Link href='/follow' className={styles.section_title}>
-              <h3>우리 학교 소식</h3>
-            </Link>
-            <div className={styles.action_group}>
-              <div className={styles.actionBtn} id={styles.update}><FaRotate size={20}/></div>
-            </div>
-          </div>
-        </section>}
+        {user ? <section className={styles.container}>
+          <SchoolBoxList />
+        </section> : <Landing />}
         <section className={styles.container}>
-          <div className={styles.section_header}>
-            <Link href='/sharing/livechat' className={styles.section_title}>
-              <h3>라이브챗</h3>
-            </Link>
-            <div className={styles.action_group}>
-              <div className={styles.actionBtn} id={styles.update}><FaRotate size={20}/></div>
-              <div className={styles.actionBtn}><FaAngleLeft size={23}/></div>
-              <div className={styles.actionBtn}><FaAngleRight size={23}/></div>
-            </div>
-          </div>
-          {/* <LivechatList buttonGroup={btnGroup} /> */}
+          <OpenSharingList/>
         </section>
         <section className={styles.container}>
-          <div className={styles.section_header}>
-            <Link href='/sharing' className={styles.section_title}>
-              <h3>셰어링</h3>
-            </Link>
-            <div className={styles.action_group}>
-              <div className={styles.actionBtn} id={styles.update}><FaRotate size={20}/></div>
-            </div>
-          </div>
+          <SharingBoxList />
         </section>
       </div>
     </div>

@@ -4,7 +4,6 @@ import Link from "next/link";
 import styles from "./login.module.css";
 import { useState } from "react";
 import { signIn } from 'next-auth/react';
-import { useRouter } from "next/navigation";
 import Image from 'next/image';
 import IntroImg from "@/public/image/schooler-logo-icon.png";
 
@@ -20,7 +19,6 @@ export default function Page() {
     const onPasswordHandler = (event) => {
         setPassword(event.currentTarget.value);
     }
-    const router = useRouter()
     const Login = async (e) => {
         if(!id) return alert("아이디를 입력해주세요");
         if(!password) return alert("비밀번호를 입력해주세요");

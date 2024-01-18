@@ -38,8 +38,8 @@ class identify  {
     }
 
     name() {
-        const writer = this.body
-        const name = String(writer).slice(0,3) + "*".repeat(String(writer).length - 3);
+        const user = this.body
+        const name = String(user).slice(0,1) + "*".repeat(String(user).length - 1);
         return name;
     }
 

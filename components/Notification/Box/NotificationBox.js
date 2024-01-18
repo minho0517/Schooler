@@ -10,10 +10,11 @@ import usePreventScroll from "@/hooks/usePreventScroll";
 import BlankWrapper from "@/components/Utils/Blank/BlankWrapper";
 import Loader from "@/components/Utils/Loader/Loader";
 import NotificationCard from "../Card/NotificationCard";
+import axios from "axios";
 
-export default function NotificationBox({subscription, closeHandler}) {
+export default function NotificationBox({subscription, exist, closeHandler}) {
 
-    usePreventScroll();
+    // usePreventScroll();
 
     const [active, setActive] = useState(false);
     const [hasSubscription, setHasSubscription] = useState(subscription);
@@ -23,7 +24,14 @@ export default function NotificationBox({subscription, closeHandler}) {
         setPushEnabled(event.target.checked)
     }
 
+    
+    const updateData = async () => {
+        const response = await axios.post("/api/notification/new");
+    }
+
     useEffect(() => {
+        console.log(exist)
+        if(exist) updateData();
         setActive(true)
     }, []);
 

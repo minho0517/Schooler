@@ -7,6 +7,7 @@ import axios from "axios";
 import { useInfiniteQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { CommentItem } from "./CommentItem/CommentItem";
 import Loader from "@/components/Utils/Loader/Loader";
+import BlankWrapper from "@/components/Utils/Blank/BlankWrapper";
 
 export default function PostComment({postId, countTotal, countRecomments}) {
 
@@ -132,7 +133,7 @@ export default function PostComment({postId, countTotal, countRecomments}) {
                             ))}
                         </Fragment>
                     ))}                    
-                    {data?.pages[0].length === 0 && <div className={styles.blank}><span>댓글로 게시물에 공감/답변해보세요!</span></div>}
+                    {data?.pages[0].length === 0 && <BlankWrapper size={15} message={"댓글로 게시물에 공감/답변해보세요!"}/>}
                     {isFetchingNextPage && <Loader size={25} border={3} />}
                     {fetchStatus === "idle" && moreComments > 0 &&
                     <button onClick={fetchNextPage} className={styles.moreBtn}>댓글 {moreComments}개 더보기</button>}
