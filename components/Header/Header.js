@@ -24,7 +24,7 @@ export default function Header() {
                 <hr className={styles.menu_line}></hr>
                 <li className={styles.menu}><Link href="/accounts/edit"><FaGear size={23}/><span>설정</span></Link></li>
                 <li className={styles.menu}><Link href="/support"><FaHeadset size={23}/><span>고객센터</span></Link></li>
-                <li className={styles.menu}><Link href="schooler-corp.com"><FaCircleInfo size={23}/><span>스쿨러 정보</span></Link></li>
+                <li className={styles.menu}><Link href="https://schooler-corp.com"><FaCircleInfo size={23}/><span>스쿨러 정보</span></Link></li>
             </div>
         </div>
       </header>

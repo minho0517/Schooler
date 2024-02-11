@@ -2,11 +2,12 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 .page_wrapper {
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
     padding: 0 30px;
 }
 .container {
@@ -62,5 +63,8 @@
 @media screen and (max-width : 450px) {
     .page_wrapper {
         padding: 0 15px;
+    }
+    .container {
+        margin-bottom: 0;
     }
 }

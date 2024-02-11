@@ -155,12 +155,12 @@ export default function Writing({data}) {
             images : selectedImages,
         }
         setPostBtn(true)
-        const formData = new FormData();
-        for (let i = 0; i < selectedImages.length; i++) {
-            formData.append('images', selectedImages[i]);
-        }
-        const uploadResponse = await axios.post('/api/upload/image', formData);
-        uploadData.images = uploadResponse.data.imageUrls;
+        // const formData = new FormData();
+        // for (let i = 0; i < selectedImages.length; i++) {
+        //     formData.append('images', selectedImages[i]);
+        // }
+        // const uploadResponse = await axios.post('/api/upload/image', formData);
+        // uploadData.images = uploadResponse.data.imageUrls;
 
         if(data) {
             axios.put(`/api/post/${data._id}`,uploadData)

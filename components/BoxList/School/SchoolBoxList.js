@@ -10,8 +10,8 @@ import SchoolTimetableBox from "./Card/SchoolTimetableBox";
 
 const fetchData = async () => {
     const userId = (await getServerSession(authOptions)).user.id;
-    const response = await fetch(`${process.env.ABSOLUTE_URL}/api/my/${userId}/school`,  {method : 'GET'});
-    return response.data;
+    const response = await fetch(`${process.env.ABSOLUTE_URL}/api/my/${userId}/info/school`,  {method : 'GET'});
+    return response.json();
 }
 
 export default async function SchoolBoxList() {
@@ -21,7 +21,7 @@ export default async function SchoolBoxList() {
     return (
         <div className={styles.list}>
             <div className={styles.wrapper}>
-                <SchoolNoticeBox />
+                <SchoolNoticeBox school={data} />
                 <SchoolLunchBox />
                 <SchoolTimetableBox />
             </div>

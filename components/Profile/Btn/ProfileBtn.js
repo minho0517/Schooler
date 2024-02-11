@@ -11,9 +11,8 @@ export default function ProfileBtn() {
 
     const { modal, modalHandler, portalElement } = useModal();
 
-    const logoutHandler = () => {
-        signOut();
-        window.location.href = `/auth/login`;
+    const logoutHandler = async () => {
+        const data = await signOut({redirect: false, callbackUrl: "/"})   
     }
 
     const modalMenu = [

@@ -10,3 +10,19 @@
     display: flex;
     justify-content: space-between;
 }
+.list::-webkit-scrollbar {
+    display: none;
+}
+
+@media screen and (max-width : 450px) {
+    .list {
+        padding: 20px 0;
+        overflow: auto;
+        z-index: 3;
+    }
+    .wrapper {
+        z-index: 5;
+        display: flex;
+        width: auto;
+    }
+}

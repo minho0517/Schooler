@@ -15,7 +15,7 @@ export default function SchoolLunchBox() {
                     <div className={styles.moveBtn}><FaAngleRight size={18}/></div>
                 </div>
                 <div className={styles.list}>
-                    <span className={styles.blank}>12월 13일 업데이트 예정</span>
+                    <span className={styles.blank}>2월 24일 업데이트 예정</span>
                 </div>
             </div>
         </div>
