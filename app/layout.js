@@ -3,7 +3,7 @@ import './globals.css';
 import Providers from '@/utils/provider';
 import LoadingProviders from '@/components/Provider/loading-provider';
 import Layout from '@/components/Layout/Layout';
-// import { SocketProvider } from '@/components/Provider/socket-provider';
+import { SocketProvider } from '@/components/Provider/socket-provider';
 import AuthSession from '@/components/Provider/auth-provider';
 
 export const metadata = { 
@@ -28,12 +28,12 @@ export default async function RootLayout({ children }) {
         <AuthSession>
           <Providers>
             <LoadingProviders>
-              {/* <SocketProvider> */}
+              <SocketProvider>
                 <Layout>
                   {children}
                 </Layout>
                 <div id="portal"></div>
-              {/* </SocketProvider> */}
+              </SocketProvider>
             </LoadingProviders>
           </Providers>
         </AuthSession>
