@@ -15,15 +15,15 @@ export default function Header() {
                 <li className={styles.menu}><Link href='/'><FaHouse size={23}/><span>홈</span></Link></li>
                 <li className={styles.menu}><Link href='/sharing/all'><IoGrid size={23}/><span>셰어링</span></Link></li>
                 <li className={styles.menu}><Link href='/contact'><FaRegPaperPlane size={23}/><span>컨택트</span></Link></li>
-                <li className={styles.menu}><Link href='/follow'><FaPaperclip size={23}/><span>팔로우</span></Link></li>
+                <li className={styles.menu}><Link href='/'><FaPaperclip size={23}/><span>팔로우</span></Link></li>
                 {/* <li className={styles.menu}><Link href='/festival'><FaRegCalendar size={23}/><span>페스티벌</span></Link></li> */}
                 <hr className={styles.menu_line}></hr>
                 <li className={styles.menu}><Link href='/share'><FaRegSquarePlus size={23}/><span>글쓰기</span></Link></li>
                 <li className={styles.menu}><Link href='/profile'><FaCircleUser size={23}/><span>프로필</span></Link></li>
                 <li className={styles.menu}><Link href='/my_activity/all'><FaRotateLeft size={23}/><span>내 활동</span></Link></li>
                 <hr className={styles.menu_line}></hr>
-                <li className={styles.menu}><Link href="/accounts/edit"><FaGear size={23}/><span>설정</span></Link></li>
-                <li className={styles.menu}><Link href="/support"><FaHeadset size={23}/><span>고객센터</span></Link></li>
+                <li className={styles.menu}><Link href="/"><FaGear size={23}/><span>설정</span></Link></li>
+                <li className={styles.menu}><Link href="/"><FaHeadset size={23}/><span>고객센터</span></Link></li>
                 <li className={styles.menu}><Link href="https://schooler-corp.com"><FaCircleInfo size={23}/><span>스쿨러 정보</span></Link></li>
             </div>
         </div>
