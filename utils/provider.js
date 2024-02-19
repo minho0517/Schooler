@@ -45,8 +45,12 @@ function Providers({ children }) {
             const url = event.data.url;
             window.location.href = url;
         }
-        navigator.serviceWorker.addEventListener("message", messageListener);
-        return () => navigator.serviceWorker.removeEventListener("message", messageListener);
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.addEventListener("message", messageListener);
+            return () => navigator.serviceWorker.removeEventListener("message", messageListener);
+        } else {
+            return
+        }
     }, [])
 
     return (

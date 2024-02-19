@@ -2,6 +2,9 @@ import { getReadyServiceWorker } from "../serviceWorker";
 
 export async function getCurrentPushSubscription() {
     const sw = await getReadyServiceWorker();
+    if(!sw) {
+        throw Error("서비스워커 지원안함")
+    }
     return sw.pushManager.getSubscription();
 } 
 
