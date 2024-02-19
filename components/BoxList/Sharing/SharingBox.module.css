@@ -100,6 +100,7 @@
         font-size: 13px;
     }
     .activeGroup {
+        width: 55px;
         justify-content: right;
     }
     .activeRecord {

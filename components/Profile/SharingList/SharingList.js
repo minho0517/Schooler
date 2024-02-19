@@ -101,7 +101,7 @@ export default function SharingList() {
                 {data?.pages?.map((group, i) => (
                     <Fragment key={i}>
                         {group?.map((e, i) => (
-                            <ProfileCard deleteHandler={() => deleteHandler(e.id)} bookmarkHandler={() => bookmarkHandler(e.id)} key={i} data={e} menu={menu[subject].subject} />
+                            <ProfileCard deleteHandler={() => deleteHandler(e.id)} bookmarkHandler={() => bookmarkHandler(e.bookmark_what._id)} key={i} data={e} menu={menu[subject].subject} />
                         ))}
                     </Fragment>
                 ))}

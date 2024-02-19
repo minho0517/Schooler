@@ -86,9 +86,8 @@ export async function DELETE(req) {
     const userId = (await getServerSession(authOptions)).user.id;
     
     try {
-
         await dbConnect();
-        await CommentItem.findOneAndDelete({ user_id : userId, _id : id});
+        await CommentItem.deleteOne({ _id : id});
         await CommentItem.deleteMany({ parent_id : id });
         await LikeItem.deleteMany({ like_what : id });
         await NotificationItem.deleteMany({ activity : id });

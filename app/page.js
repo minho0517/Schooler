@@ -19,9 +19,9 @@ export default async function Home() {
         {user ? <section className={styles.container}>
           <SchoolBoxList />
         </section> : <Landing />}
-        <section className={styles.container}>
+        {/* <section className={styles.container}>
           <OpenSharingList/>
-        </section>
+        </section> */}
         <section className={styles.container}>
           <SharingBoxList />
         </section>

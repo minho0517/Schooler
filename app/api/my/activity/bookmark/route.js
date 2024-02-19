@@ -16,7 +16,7 @@ export async function GET(req) {
     try {
         await dbConnect();
         
-        const bookmarkList =  await BookmarkItem.find({ user_id : userId }).sort({_id : -1}).skip((page - 1) * perPage).limit(perPage)
+        const bookmarkList = await BookmarkItem.find({ user_id : userId }).sort({_id : -1}).skip((page - 1) * perPage).limit(perPage)
         .populate({
             path : "bookmark_what",
             model : "PostItem",
@@ -28,10 +28,10 @@ export async function GET(req) {
             ],
         });
 
-        const sharingList = bookmarkList.map((e) => {
+        bookmarkList.map((e) => {
             e._doc.bookmark_what.user_id.id = new identify(e.bookmark_what.user_id.id).name();
-            return e.bookmark_what;
         });
+
 
         return NextResponse.json(bookmarkList, {status : 200})
 

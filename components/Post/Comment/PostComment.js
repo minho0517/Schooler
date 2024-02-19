@@ -45,7 +45,7 @@ export default function PostComment({postId, countTotal, countRecomments}) {
         return data;
     }
     const queryClient = useQueryClient();
-    const { data, fetchNextPage, isFetchingNextPage, status, fetchStatus } = useInfiniteQuery(
+    const { data, refetch, fetchNextPage, isFetchingNextPage, status, fetchStatus } = useInfiniteQuery(
         ['get-comments', postId], fetchData, {
         refetchOnWindowFocus : false,
         refetchOnMount : true,

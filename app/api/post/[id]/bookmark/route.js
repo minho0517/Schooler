@@ -13,6 +13,7 @@ export async function POST(req, {params}) {
 
     try {
         await dbConnect();
+
         const isBookmark = await BookmarkItem.exists({ bookmark_what : id, user_id : user });
         if(isBookmark) {
             await BookmarkItem.deleteOne({ bookmark_what : id, user_id : user })
