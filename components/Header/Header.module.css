@@ -21,7 +21,7 @@
     width: 42px;
     height: 42px;
     border-radius: 10px;
-    margin-left: 4px;
+    margin-left: 5.6px;
 }
 .title > a {
     display: flex;
@@ -30,7 +30,7 @@
 .title > a > span {
     font-size: 25px;
     font-weight: 800;
-    display: flex;
+    display: none;
     color: #FD6F22;
     margin-left: 15px;
 }

@@ -3,11 +3,13 @@
     height: 250px;
     border-radius: 15px;
     overflow: hidden;
-    background: linear-gradient(to bottom right,#fd6f22,#ffcba4);
     display: flex;
-    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 0 15px 20px 15px;
 }
 .wrapper {
+    border-radius: 15px;
+    background: linear-gradient(to bottom right,#fd6f22,#ffcba4);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,6 +17,7 @@
     box-sizing: border-box;
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
 }
 .titleHeader {
     display: flex;
@@ -40,8 +43,14 @@
     text-align: center;
 }
 
+.guide {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .btnGroup {
-    margin-top: 30px;
+    margin-bottom: 15px;
     display: none;
     align-items: center;
 }
@@ -72,6 +81,7 @@
     margin-left: 5px;
 }
 .message {
+    margin-top: 10px;
     font-size: 14px;
     font-weight: 500;
     color: #efefef;

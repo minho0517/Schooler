@@ -44,18 +44,20 @@ export default function Landing() {
                     <h2 className={styles.title}>안녕하세요, <span>스쿨러 알파테스트에 오신 걸 환영합니다!</span></h2>
                     <p className={styles.description}>모든 청소년을 위한 뉴커뮤니티 플랫폼으로서 커뮤니티의 진정한 의미를 실현시키며 새로운 패러다임의 커뮤니티 문화를 선도합니다</p>
                 </div>
-                <div className={styles.btnGroup}>
-                    <button onClick={handleDownload} className={styles.button}>
-                        <FaDownload size={18}/>
-                        <span>앱 다운로드</span>
-                    </button>
-                    <button onClick={() => router.push("/auth/login")} className={styles.button}>
-                        <FaSignInAlt size={18}/>
-                        <span>로그인</span>
-                    </button>
-                </div>
-                <div className={styles.message}>
-                    *사파리(IOS)의 경우, 앱 다운로드를 하기 위해선 <span>하단 공유 버튼 &gt; 홈 화면에 추가</span>를 클릭해주세요
+                <div className={styles.guide}>
+                    <div className={styles.btnGroup}>
+                        <button onClick={handleDownload} className={styles.button}>
+                            <FaDownload size={18}/>
+                            <span>앱 다운로드</span>
+                        </button>
+                        <button onClick={() => router.push("/auth/login")} className={styles.button}>
+                            <FaSignInAlt size={18}/>
+                            <span>로그인</span>
+                        </button>
+                    </div>
+                    <div className={styles.message}>
+                        *사파리(IOS)의 경우, 앱 다운로드를 하기 위해선 <span>하단 공유 버튼 &gt; 홈 화면에 추가</span>를 클릭해주세요
+                    </div>
                 </div>
             </div>
         </div>

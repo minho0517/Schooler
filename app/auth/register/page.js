@@ -28,22 +28,22 @@ export default function Page() {
 
     const onIdHandler = (event) => {
         const regExp = /^[ㄱ-ㅎ가-힣a-zA-Z0-9]{4,}$/;
-        setId({ value : event.target.value, vaildate : regExp.test(event.target.value) })
+        setId({ value : event.target.value.replace(/\s+/g, ''), vaildate : regExp.test(event.target.value) })
         submitBtnHandler();
     }
     const onPwHandler = (event) => {
         const regExp = /^.{6,}$/;
-        setPw({ value : event.target.value, vaildate : regExp.test(event.target.value) });
+        setPw({ value : event.target.value.replace(/\s+/g, ''), vaildate : regExp.test(event.target.value) });
         submitBtnHandler();
     }
     const onCheckPwHandler = (event) => {
         const isSame = event.target.value === pw.value ? true : false;
-        setCheckPw({ value : event.target.value, vaildate : isSame });
+        setCheckPw({ value : event.target.value.replace(/\s+/g, ''), vaildate : isSame });
         submitBtnHandler();
     }
     const onEmailHandler = (event) => {
         const regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-        setEmail({ value : event.target.value, vaildate : regExp.test(event.target.value) });
+        setEmail({ value : event.target.value.replace(/\s+/g, ''), vaildate : regExp.test(event.target.value) });
         submitBtnHandler();
     }
     const toggleHiddenHandler = () => {
@@ -102,7 +102,7 @@ export default function Page() {
     const [name, setName] = useState({value : '', vaildate : null});
     const onNameHandler = (event) => {
         const regExp = /^[가-힣]{2,4}$/;
-        setName({ value : event.target.value, vaildate : regExp.test(event.target.value) });
+        setName({ value : event.target.value.replace(/\s+/g, ''), vaildate : regExp.test(event.target.value) });
     }
 
     const [school, setSchool] = useState({ schoolName : '', schoolCode : '', schoolOffice : ''});
