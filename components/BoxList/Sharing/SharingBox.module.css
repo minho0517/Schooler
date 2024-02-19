@@ -3,12 +3,18 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 0 30px;
+    box-sizing: border-box;
 }
 .box {
-    width: calc(50% - 10px);
+    width: 100%;
     display: flex;
     border-radius: 15px;
     box-shadow: 0 0 20px 0 rgba(0,0,0,.05);
+    margin-top: 20px;
+}
+.home {
+    width: calc(50% - 10px);
     margin: 10px 0;
 }
 .boxWrapper {
@@ -24,16 +30,22 @@
     align-items: center;
     margin-bottom: 15px;
 }
-.topic {
+.topicTitle {
     font-size: 18px;
     font-weight: 700;
     color: #222;
     display: flex;
     align-items: center;
 }
+.topic {
+    margin-right: 7px;
+    color: #FD6F22;
+}
 .moveBtn {
     color: #222;
     padding: 2px;
+    position: relative;
+    top: 2px;
     cursor: pointer;
 }
 
@@ -87,14 +99,23 @@
 }
 
 @media screen and (max-width : 800px) {
-    .box {
+    .home {
         width: 100%;
     }
 }
 
 @media screen and (max-width : 450px) {
+    .wrapper {
+        padding: 0 15px;
+    }
     .title {
         font-size: 15px;
+    }
+    .home .topicTitle {
+        font-size: 18px;
+    }
+    .topicTitle {
+        font-size: 16px;
     }
     .activeRecord > span {
         font-size: 13px;

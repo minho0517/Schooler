@@ -37,10 +37,10 @@ export default function SharingBoxList() {
     return (
         <div className={styles.wrapper}>
             {topicList.map((e, i) => (
-                <div key={i} className={`${styles.box} ${styles.best}`}>
+                <div key={i} className={`${styles.box} ${styles.home}`}>
                     <div className={styles.boxWrapper}>
                         <div onClick={() => router.push(`/sharing/all/${e.title}`)} className={styles.boxHeader}>
-                            <div className={styles.topic}>{iconList[e.title]}  <span>{e.title}</span></div>
+                            <div className={styles.topicTitle}>{iconList[e.title]}  <span>{e.title}</span></div>
                             <div className={styles.moveBtn}><FaAngleRight size={18}/></div>
                         </div>
                         <div className={styles.boxList}>

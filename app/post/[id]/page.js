@@ -7,6 +7,7 @@ import OpenSharingCard from "@/components/OpenSharing/Card/OpenSharingCard";
 import { GoBackHeader } from "@/components/Header/Top/TopHeader";
 import { notFound } from "next/navigation";
 import MoblieOpenSharingCard from "@/components/OpenSharing/Card/OpenSharingCard.mobile";
+import PostRecommand from "@/components/Post/Recommand/PostRecommand";
 
 export async function fetchData(id) {
     const user = (await getServerSession(authOptions)).user.id;
@@ -51,6 +52,7 @@ export default async function Page({params : {id}}) {
                         <MoblieOpenSharingCard roomId={data.data._id} countMember={data.countMember} />
                     </div>}
                     <PostComment countTotal={data.totalComments} countRecomments={data.totalRecomments}  postId={id}/>
+                    <PostRecommand currentId={data.data._id} topic={data.data.topic} scope={data.data.scope}/>
                 </div>
                 <div className={styles.livechatCard}>
                     <OpenSharingCard data={{ isActive : data.data.livechat, roomId : data.data._id, countMember : data.countMember}} />

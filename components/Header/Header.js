@@ -3,13 +3,18 @@ import styles from './Header.module.css';
 import Link from 'next/link';
 import { FaRegComment, FaHouse, FaRegPaperPlane, FaPaperclip, FaRegCalendar, FaCircleUser, FaRotateLeft, FaGear, FaHeadset, FaCircleInfo, FaRegSquarePlus } from 'react-icons/fa6'
 import { IoGrid } from 'react-icons/io5';
+import IntroImg from "@/public/image/schooler-logo-icon.png";
+import Image from 'next/image';
 
 export default function Header() {
     return (
     <header className={styles.header}>
         <div className={styles.wrapper}>
             <div className={styles.title}>
-                <Link href='/'>스쿨러</Link>
+                <Link href='/'>
+                    <Image className={styles.logo} alt='logo' src={IntroImg}></Image>
+                    <span>스쿨러</span>
+                </Link>
             </div>
             <div className={styles.menu_list}>
                 <li className={styles.menu}><Link href='/'><FaHouse size={23}/><span>홈</span></Link></li>

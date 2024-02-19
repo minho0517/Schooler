@@ -11,7 +11,7 @@ export default function SharingLayout({ children }) {
 
   return (
     <div className={styles.page}>
-      <TopHeader />
+      <TopHeader type={"sharing"} />
       <div className={styles.wrapper}>
         {!pathname.includes('/tag') && <div className={styles.header}>
           <div className={styles.optionGroup}>

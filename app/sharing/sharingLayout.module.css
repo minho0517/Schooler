@@ -70,5 +70,6 @@
     }
     .header {
         margin-bottom: 3px;
+        display: none;
     }
 }

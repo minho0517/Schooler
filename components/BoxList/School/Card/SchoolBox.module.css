@@ -9,6 +9,9 @@
 .box:first-child {
     width: calc(45% - 5px);
 }
+.box:last-child {
+    margin: 0;
+}
 .wrapper {
     box-sizing: border-box;
     padding: 20px;

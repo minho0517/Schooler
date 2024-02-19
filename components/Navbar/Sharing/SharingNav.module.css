@@ -102,6 +102,9 @@
 }
 
 @media screen and (max-width : 450px) {
+    .topics {
+        padding-top: 0;
+    }
     .topic {
         font-size: 13px;
     }

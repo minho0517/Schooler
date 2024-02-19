@@ -47,7 +47,7 @@ export default function MoblieHeader() {
                 <li className={styles.menu}><Link href='/'><FaHouse size={23}/></Link></li>
                 <li className={styles.menu}><Link href='/sharing/all'><IoGrid size={23}/></Link></li>
                 <li className={`${styles.menu} ${styles.special}`}><Link href='/share'><FaRegSquarePlus size={27}/></Link></li>
-                <li className={styles.menu}><Link href='/follow'><FaPaperclip size={23}/></Link></li>
+                <li className={styles.menu}><Link href='/'><FaPaperclip size={23}/></Link></li>
                 <li className={styles.menu}><Link href='/profile'><FaCircleUser size={23}/></Link></li>
             </div>
         </header>

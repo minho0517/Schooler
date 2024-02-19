@@ -3,11 +3,13 @@
 import { FaChevronLeft, FaMagnifyingGlass, FaRegComments } from "react-icons/fa6";
 import styles from "./TopHeader.module.css";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import NotificationBtn from "@/components/Notification/Notification";
 import { useEffect, useState } from "react";
+import IntroImg from "@/public/image/schooler-logo-icon.png";
+import Image from "next/image";
 
-function TopHeader({ isLogin }) {
+function TopHeader({ isLogin, type }) {
 
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -24,6 +26,8 @@ function TopHeader({ isLogin }) {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    const pathname = usePathname()
         
     return (
         <div className={`${styles.header} ${isScrolled && styles.sticky}`}>
@@ -33,6 +37,16 @@ function TopHeader({ isLogin }) {
                         <input type="text" className={styles.searchInput} placeholder="검색어를 입력해주세요"></input>
                         <button className={styles.searchBtn}><FaMagnifyingGlass size={18}/></button>
                     </div> */}
+                    {type === "sharing" ? 
+                        <div className={styles.sharing_navbar}>
+                            <Link className={`${styles.sharing_option} ${pathname.includes('/sharing/all') ? styles.active : ""}`} href="/sharing/all">전체</Link>
+                            <hr className={styles.sharing_optionLine}></hr>
+                            <Link className={`${styles.sharing_option} ${pathname.includes('/sharing/our_school') ? styles.active : ""}`} href="/sharing/our_school">우리학교</Link>
+                        </div> :
+                        <Link className={styles.title} href='/'>
+                            <Image className={styles.logo} alt='logo' src={IntroImg}></Image>
+                        </Link>
+                    }
                 </div>
                 <div className={styles.util_wrapper}>
                     <button className={styles.utilBtn}><FaMagnifyingGlass size={24}/></button>

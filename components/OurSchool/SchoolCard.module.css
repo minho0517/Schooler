@@ -52,6 +52,7 @@
 
 @media screen and (max-width : 450px) {
     .card {
+        margin-top: 0;
         height: 100px;
     }
     .wrapper {
