@@ -84,14 +84,14 @@
 
 @media screen and (max-width : 450px) {
     .landing {
-        height: 400px;
+        height: 450px;
     }
     .wrapper {
         padding: 20px;
         justify-content: space-between;
     }
     .title {
-        font-size: 28px;
+        font-size: 27px;
         font-weight: 800;
         margin-bottom: 15px;
         line-height: 1.4;
