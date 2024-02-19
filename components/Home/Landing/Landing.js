@@ -54,6 +54,9 @@ export default function Landing() {
                         <span>로그인</span>
                     </button>
                 </div>
+                <div className={styles.message}>
+                    *사파리(IOS)의 경우, 앱 다운로드를 하기 위해선 <span>하단 공유 버튼 &gt; 홈 화면에 추가</span>를 클릭해주세요
+                </div>
             </div>
         </div>
     )

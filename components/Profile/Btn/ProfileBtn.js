@@ -13,6 +13,7 @@ export default function ProfileBtn() {
 
     const logoutHandler = async () => {
         const data = await signOut({redirect: false, callbackUrl: "/"})   
+        location.replace('/auth/login')
     }
 
     const modalMenu = [

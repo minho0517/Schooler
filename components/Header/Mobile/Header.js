@@ -1,26 +1,48 @@
+import checkDevice from '@/utils/checkDevice';
 import styles from './Header.module.css';
 
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { FaHouse, FaPaperclip, FaCircleUser, FaRegSquarePlus } from 'react-icons/fa6'
 import { IoGrid } from "react-icons/io5"
 
 export default function MoblieHeader() {
 
+    const [device, setDevice] = useState(null);
+    const [isFullScreen, setIsFullScreen] = useState(false);
+
     useEffect(() => {
-        if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
-            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            const isIPhoneX = window.matchMedia('(min-width: 375px) and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)').matches;
-        
-            if (isIPhoneX && isIOS) {
-                const header = document.querySelector('.header'); 
-                header.classList.add('iphone');
-            }
-        }
+        const device = checkDevice();
+        setDevice(device);
     }, []);
 
+    const handleFullScreenChange = () => {
+        const isFullScreen = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+        if (isFullScreen) {
+            setIsFullScreen(true)
+        } else {
+            setIsFullScreen(false)
+        }
+    };
+        
+    useEffect(() => {
+        document.addEventListener('fullscreenchange', handleFullScreenChange);
+        document.addEventListener('webkitfullscreenchange', handleFullScreenChange);
+        document.addEventListener('mozfullscreenchange', handleFullScreenChange);
+        document.addEventListener('MSFullscreenChange', handleFullScreenChange);
+        
+        return () => {
+            document.removeEventListener('fullscreenchange', handleFullScreenChange);
+            document.removeEventListener('webkitfullscreenchange', handleFullScreenChange);
+            document.removeEventListener('mozfullscreenchange', handleFullScreenChange);
+            document.removeEventListener('MSFullscreenChange', handleFullScreenChange);
+        };
+    }, []);
+
+    console.log(isFullScreen, device)
+
     return (
-        <header className={styles.header}>
+        <header className={`${styles.header} ${device === "IOS" && isFullScreen && styles.ios}`}>
             <div className={styles.wrapper}>
                 <li className={styles.menu}><Link href='/'><FaHouse size={23}/></Link></li>
                 <li className={styles.menu}><Link href='/sharing/all'><IoGrid size={23}/></Link></li>

@@ -71,19 +71,30 @@
 .title > span {
     margin-left: 5px;
 }
+.message {
+    font-size: 14px;
+    font-weight: 500;
+    color: #efefef;
+    margin-top: 0;
+}
+.message > span {
+    font-weight: 700;
+    color: #fff;
+}
 
 @media screen and (max-width : 450px) {
     .landing {
-        height: 350px;
+        height: 400px;
     }
     .wrapper {
         padding: 20px;
         justify-content: space-between;
     }
     .title {
-        font-size: 25px;
+        font-size: 28px;
+        font-weight: 800;
         margin-bottom: 15px;
-        line-height: 1.3;
+        line-height: 1.4;
     }
     .description {
         font-size: 15px;

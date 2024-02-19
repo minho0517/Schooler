@@ -13,9 +13,9 @@
     align-items: center;
     width: 100%;
     padding: 7px 0;
-    margin-bottom: 0;
+    margin-bottom: 3px;
 }
-.iphone .wrapper {
+.ios .wrapper {
     margin-bottom: 15px;
 }
 
@@ -30,10 +30,16 @@
     color: #111; /* #FD6F22 */
     border-radius: 7px;
     transition: all .2s;
-    font-size: 22px;
+    font-size: 25px;
 }
 .menu > a > svg {
+    width: 27px;
+    height: 27px;
     transition: all .2s;
+}
+.menu:nth-child(3) > a > svg {
+    width: 30px;
+    height: 30px;
 }
 .menu > a:active {
     background-color: rgba(0, 0, 0, 0.05);

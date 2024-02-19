@@ -12,7 +12,7 @@ export default function NotFound() {
       </div>
       <h2 className='errorTitle'>존재하지 않는 페이지입니다</h2>
       <p className='errorDescription'>클릭하신 링크가 잘못되었거나 페이지가 삭제되었습니다</p>
-      <button className='errorLink' href={"/"}>홈으로 돌아가기</button>
+      <Link className='errorLink' href={'/'}>홈으로 돌아가기</Link>
     </div>
   )
 }
