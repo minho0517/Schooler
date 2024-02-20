@@ -12,6 +12,7 @@ import BlankWrapper from '@/components/Utils/Blank/BlankWrapper';
 import { FaChevronLeft, FaUser } from 'react-icons/fa6';
 import { useChatSocket } from '@/hooks/useChatSocket';
 import { useChatQuery } from '@/hooks/useChatQuery';
+import { GoBackHeader } from '@/components/Header/Top/TopHeader';
 
 export default function ContactLayout({ children }) {
 
@@ -75,6 +76,9 @@ export default function ContactLayout({ children }) {
                             <button onClick={() => router.push('/sharing/all')} className={styles.goBackBtn}><FaChevronLeft size={20} /></button>
                             <div className={styles.currentUser}><span>나의 컨택트</span></div>
                         </div>
+                        <div className={styles.mobileHeader}>
+                            <GoBackHeader title={"컨택트"} button={<span></span>}/>
+                        </div>  
                         <div className={styles.menuheader}>
                             <div className={styles.menuWrapper}>
                                 {menu.map((item, i) => (

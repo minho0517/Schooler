@@ -1,14 +1,15 @@
 .header {
     box-sizing: content-box;
     width: 100%;
-    padding-top: 10px;
-    margin-top: 12px;
-    height: 75px;
+    height: 85px;
     background-color: #fff;
     border-bottom: solid 1px #efefef;
     display: flex;
     overflow: hidden;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    box-sizing: border-box;
 }
 .move {
     margin-right: 10px;
@@ -17,7 +18,7 @@
     display: none;
     align-items: center;
     color: #222;
-    padding: 7px;
+    padding: 5px;
     cursor: pointer;
     background-color: transparent;
     border: none;
@@ -26,13 +27,14 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    overflow: hidden;
     cursor: pointer;
 }
 .main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 .titleInfo {
     display: flex;
@@ -70,11 +72,10 @@
 }
 .content {
     width: 100%;
-    height: 25px;
     font-size: 15px;
     color: #555;
+    height: 20px;
     font-weight: 400;
-    line-height: 1.5;
 }
 
 .headerBtnGroup {
@@ -104,18 +105,21 @@
     }
     .header {
         height: 65px;
+        padding: 0 10px;
     }
     .main {
-        margin-bottom: 5px;
+        margin-bottom: 2px;
     }
     .topic {
-        font-size: 18px;
+        font-size: 16px;
+        margin-right: 5px;
     }
     .title {
-        font-size: 18px;
+        font-size: 17px;
     }
     .content {
         font-size: 14px;
+        height: 17px;
     }
     .pastTime {
         display: none;

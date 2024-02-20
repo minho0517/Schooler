@@ -37,3 +37,13 @@
     border-radius: 50%;
     background-color: #FD6F22;
 }
+
+@media screen and (max-width : 450px) {
+    .utilBtn {
+        width: 40px;
+        height: 40px;
+    }
+    .utilBtn > svg {
+        height: 27px;
+    }
+}

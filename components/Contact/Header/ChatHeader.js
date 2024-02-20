@@ -20,7 +20,7 @@ export default function ChatHeader({data, id}) {
                 <div className={styles.main}>
                     <div className={styles.titleInfo}>
                         <span className={styles.topic}>{data.opensharing.topic}</span>
-                        <h4 className={styles.title}>{new identify(data.opensharing.title).text(20)}</h4>
+                        <h4 className={styles.title}>{new identify(data.opensharing.title).text(40)}</h4>
                     </div>
                     <span className={styles.pastTime}>{new identify(data.opensharing.createdAt).pastTime()}</span>
                 </div>

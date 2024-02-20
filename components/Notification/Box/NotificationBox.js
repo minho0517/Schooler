@@ -11,6 +11,8 @@ import BlankWrapper from "@/components/Utils/Blank/BlankWrapper";
 import Loader from "@/components/Utils/Loader/Loader";
 import NotificationCard from "../Card/NotificationCard";
 import axios from "axios";
+import { GoBackHeader } from "@/components/Header/Top/TopHeader";
+import { useRouter } from "next/navigation";
 
 export default function NotificationBox({subscription, exist, closeHandler}) {
 
@@ -30,7 +32,6 @@ export default function NotificationBox({subscription, exist, closeHandler}) {
     }
 
     useEffect(() => {
-        console.log(exist)
         if(exist) updateData();
         setActive(true)
     }, []);
@@ -67,9 +68,34 @@ export default function NotificationBox({subscription, exist, closeHandler}) {
 
     if(hasSubscription === undefined) return null;
 
+    const router = useRouter();
+
+    useEffect(() => {
+        const handlePopstate = () => {
+            closeHandler()
+        };
+    
+        window.history.pushState(null, "", window.location.href);
+        window.addEventListener("popstate", handlePopstate);
+    
+        return () => {
+            window.removeEventListener("popstate", handlePopstate);
+        };
+    }, []);
+
     return (
         <div className={`${styles.box} ${active && styles.open}`}>
             <div className={styles.wrapper}>
+                <div className={styles.mobileHeader}>
+                    <GoBackHeader title={"알림"} button={
+                    <div className={styles.setting}>
+                        <label className={styles.checkSwitch}>
+                            <input checked={hasSubscription} onChange={enabledHandler} type="checkbox"></input>
+                            <span className={styles.checkSlider}></span>
+                        </label>
+                    </div>
+                    }/>
+                </div>
                 <div className={styles.header}>
                     <span className={styles.title}>
                         <div onClick={closeHandler} className={styles.goBackBtn}><FaChevronLeft size={20}/></div>

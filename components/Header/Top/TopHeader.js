@@ -1,6 +1,6 @@
 "use client"
 
-import { FaChevronLeft, FaMagnifyingGlass, FaRegComments } from "react-icons/fa6";
+import { FaChevronLeft, FaFaceSmile, FaMagnifyingGlass, FaRegComments, FaRegFaceSmile } from "react-icons/fa6";
 import styles from "./TopHeader.module.css";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -58,7 +58,58 @@ function TopHeader({ isLogin, type }) {
     )
 }
 
-function GoBackHeader() {
+function GoBackHeader({ title, button }) {
+
+    const router = useRouter();
+
+    const goBackHandler = () => {
+        router.back();
+    }
+
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            const isScrolled = scrollTop > 0;
+            setIsScrolled(isScrolled);
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    return (
+        <div className={`${styles.header} ${isScrolled && styles.sticky}`}>
+            <div className={styles.wrapper}>
+                <div onClick={goBackHandler} className={styles.headerBtn}><div className={styles.gobackBtn}><FaChevronLeft size={20}/></div></div>
+                <span className={styles.pageTitle}>{title}</span>
+                <div className={styles.headerBtn}>{button}</div>
+            </div>
+        </div>    
+    )
+}
+
+function TitleTopheader() {
+
+    const router = useRouter();
+
+    const goBackHandler = () => {
+        router.back();
+    }
+
+    return (
+        <div className={styles.header}>
+
+        </div>   
+    )
+
+}
+
+function BlankTopHeader() {
 
     const router = useRouter();
 
@@ -69,19 +120,11 @@ function GoBackHeader() {
     return (
         <div className={styles.header}>
             <div className={styles.wrapper}>
-                <div onClick={goBackHandler} className={styles.goBackBtn}><FaChevronLeft size={20}/></div>
+                <div onClick={goBackHandler} className={styles.headerBtn}><div className={styles.gobackBtn}><FaChevronLeft size={20}/></div></div>
+                <span className={styles.pageTitle}></span>
             </div>
-        </div>    
-    )
-}
-
-function BlankTopHeader() {
-
-    return (
-        <div className={styles.header}>
-            
         </div>
     )
 }
 
-export {TopHeader, BlankTopHeader, GoBackHeader};
+export {TopHeader, BlankTopHeader, GoBackHeader, TitleTopheader};

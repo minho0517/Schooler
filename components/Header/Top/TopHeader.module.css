@@ -18,6 +18,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 .title {
     display: none;
@@ -33,9 +34,10 @@
     display: none;
     align-items: center;
     height: 100%;
+    padding-left: 5px;
 }
 .sharing_option {
-    font-size: 24px;
+    font-size: 23px;
     font-weight: 700;
     color: #d2d2d2;
     transition: all .15s
@@ -99,12 +101,25 @@
     font-weight: 700;
 }
 
-.goBackBtn {
+.pageTitle {
+    color: #333;
+    font-size: 20px;
+    font-weight: 800;
+}
+.headerBtn {
     display: flex;
     align-items: center;
     color: #222;
-    padding: 7px;
+    width: 50px;
     cursor: pointer;
+}
+.gobackBtn {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+.headerBtn:last-child {
+    justify-content: right;
 }
 .utilBtn {
     display: flex;
@@ -137,14 +152,27 @@
     .title {
         display: flex;
     }
+    .pageTitle {
+        font-size: 17px;
+    }
     .header {
         height: 60px;
     }
     .wrapper {
-        padding: 1px 15px 0 15px;
+        padding: 1px 10px 0 10px;
     }
     .shareBtn {
         display: none;
+    }
+    .utilBtn {
+        width: 40px;
+        height: 40px;
+    }
+    .utilBtn:hover {
+        background-color: transparent;
+    }
+    .utilBtn > svg {
+        height: 25px;
     }
     .utilBtn.mobile {
         display: flex;

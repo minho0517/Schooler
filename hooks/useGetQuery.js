@@ -13,7 +13,7 @@ export const useGetQuery = ({
 
     const { data, fetchNextPage, isFetchingNextPage, hasNextPage, status } = useInfiniteQuery(
         queryKey, fetchData, {
-        refetchOnWindowFocus : false,
+        refetchOnWindowFocus : true,
         getNextPageParam: (lastPage, allPages) => {
             if (lastPage.length === 0) return undefined;
             return allPages.length + 1;

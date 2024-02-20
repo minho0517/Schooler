@@ -4,7 +4,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import PostComment from "@/components/Post/Comment/PostComment";
 import OpenSharingCard from "@/components/OpenSharing/Card/OpenSharingCard";
-import { GoBackHeader } from "@/components/Header/Top/TopHeader";
+import { BlankTopHeader, GoBackHeader } from "@/components/Header/Top/TopHeader";
 import { notFound } from "next/navigation";
 import MoblieOpenSharingCard from "@/components/OpenSharing/Card/OpenSharingCard.mobile";
 import PostRecommand from "@/components/Post/Recommand/PostRecommand";
@@ -44,7 +44,7 @@ export default async function Page({params : {id}}) {
       
     return (
         <div className={styles.page}>
-            <GoBackHeader />
+            <BlankTopHeader />
             <div className={styles.wrapper}>
                 <div className={styles.main}>
                     <PostMain data={data.data} countTotal={data.totalComments} isLiked={data.isLiked} isBookmark={data.isBookmark} />

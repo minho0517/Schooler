@@ -21,7 +21,7 @@ export default async function Page() {
     
     return (
         <div className={styles.page}>
-            <GoBackHeader />
+            <GoBackHeader title={"프로필"} button={<ProfileBtn/>}/>         
             <div className={styles.wrapper}>
                 <div className={styles.myInfo}>
                     <div className={styles.myInfoWrapper}>
@@ -40,7 +40,6 @@ export default async function Page() {
                         </div>
                         <div className={styles.infoBtnGroup}>
                             <Link href="/share" className={styles.shareBtn}><FaPenToSquare size={15}/><span>글쓰기</span></Link>
-                            <ProfileBtn/>
                         </div>
                     </div>
                 </div>

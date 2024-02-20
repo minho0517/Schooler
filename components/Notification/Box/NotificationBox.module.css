@@ -22,6 +22,9 @@
     display: flex;
     flex-direction: column;
 }
+.mobileHeader {
+    display: none;
+}
 .header {
     box-sizing: border-box;
     padding: 25px 25px 15px 25px;
@@ -127,9 +130,16 @@ input:checked + .checkSlider:before {
         top: 20px;
         left: 0;
     }
+    .mobileHeader {
+        display: flex;
+    }
     .header {
+        display: none;
         height: 60px;
         padding: 10px 15px 9px 15px;
+    }
+    .list {
+        margin: 0;
     }
     .goBackBtn {
         display: flex;

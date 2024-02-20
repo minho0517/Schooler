@@ -1,8 +1,13 @@
+.tipBtn {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
 .page {
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 50px;
 }
 
 .form_wrapper {
@@ -164,7 +169,7 @@
     border-radius: 10px;
     position: sticky;
     top: 30px;
-    box-shadow: 0 0 20px 0 rgba(0,0,0, 0.09);
+    box-shadow: 0 0 20px 0 rgba(0,0,0, 0.05);
     box-sizing: border-box;
     display: flex;
 }

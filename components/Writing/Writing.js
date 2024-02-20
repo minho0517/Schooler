@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import styles from "./Writing.module.css";
-import { FaAngleDown, FaCaretDown, FaImage, FaPlus, FaXmark } from "react-icons/fa6";
+import { FaAngleDown, FaCaretDown, FaImage, FaPlus, FaRegFaceSmile, FaXmark } from "react-icons/fa6";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { GoBackHeader } from "../Header/Top/TopHeader";
@@ -186,8 +186,7 @@ export default function Writing({data}) {
     return (
 
         <div className={styles.page}>       
-
-            <GoBackHeader />         
+            <GoBackHeader title={data?"수정하기" : "글쓰기"} button={<div className={styles.tipBtn}><FaRegFaceSmile size={22}/></div> } />         
             <div className={styles.form_wrapper}>
                 <div className={styles.content_wrapper}>
                     <div className={styles.input_topic}>

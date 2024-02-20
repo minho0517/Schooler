@@ -43,6 +43,7 @@ export default function NotificationBtn() {
         setOpen(!open)
         setNewExist(false)
     }
+  
 
     return (
         <div className={styles.container}>
