@@ -47,7 +47,8 @@
     width: 100%;
     display: flex;
     align-items: flex-end;
-    margin-left: 33px;
+    padding-left: 33px;
+    box-sizing: border-box;
 }
 .mine .chatItem{
     flex-direction: row-reverse;
@@ -61,6 +62,10 @@
     font-weight: 500;
     border-radius: 15px;
     margin: 3px 0;
+}
+.content > p > a {
+    white-space: normal;
+    word-break: break-all;
 }
 .chatItem:only-child .content {
     margin: 0;

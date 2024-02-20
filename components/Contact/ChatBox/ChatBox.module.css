@@ -86,7 +86,7 @@
 
 @media screen and (max-width : 450px) {
     .box {
-        height: calc(100% - 60px);
+        height: calc(100% - 75px);
     }
     .chatInput {
         margin: 10px 0;

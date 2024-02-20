@@ -21,6 +21,7 @@ export async function GET(req, {params}) {
         const userInfo = await User.findById(userId).exec();
         const post = await PostItem.findById(id).populate('user_id', 'id school').populate('likes','_id').exec();
         if(!post) return NextResponse.json({status : 404});
+        if(post.deleted && post.user_id._id !== userId && userInfo.role !== "Admin") return NextResponse.json(new Error('삭제된 게시물입니다'), {status : 404});
         if(post.scope === "우리학교" && String(post.school) !== String(userInfo.school.schoolCode)) return NextResponse.json(new Error('권한이 없습니다'), {status : 404});
         const totalComments = await CommentItem.countDocuments({ post_id : id });
         const totalRecomments = await CommentItem.countDocuments({ post_id : id, depth : 1});
@@ -40,7 +41,7 @@ export async function GET(req, {params}) {
             countMember,
         }, {status : 200});
     } catch (err) {
-        return NextResponse.json(err, {status : 404})
+        return NextResponse.json(err, {status : 500})
     }
 }
 

@@ -11,6 +11,23 @@
     display: flex;
     flex-direction: column;
 }
+.utilBtn {
+    color: #222;
+    transition: all .2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.utilBtn > svg {
+    transition: all .4s;
+}
+.utilBtn:active > svg {
+    transform: rotateZ(-90deg);
+}
 .header {
     width: 100%;
     display: flex;
@@ -20,7 +37,7 @@
 }
 .title {
     color: #222;
-    display: flex;
+    display: none;
     align-items: center;
     margin-bottom: 7px;
 }
@@ -45,7 +62,6 @@
     display: flex;
     align-items: center;
     position: relative;
-    padding: 10px 0;
 }
 .menuWrapper::-webkit-scrollbar {
     display: none;
@@ -84,7 +100,7 @@
 }
 .reportCard {
     position: sticky;
-    top: 30px;
+    top: 90px;
     width: 100%;
     box-shadow: 0 0 20px 0 rgba(0,0,0,.05);
     border-radius: 10px;

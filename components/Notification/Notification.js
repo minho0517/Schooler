@@ -47,7 +47,7 @@ export default function NotificationBtn() {
 
     return (
         <div className={styles.container}>
-            <button onClick={openHandler} className={styles.utilBtn}>{open ? <FaBell size={28}/> : <FaRegBell size={28}/>}{newExist && <span className={styles.badge}></span>}</button>
+            <div onClick={openHandler} className={styles.utilBtn}>{open ? <FaBell size={28}/> : <FaRegBell size={28}/>}{newExist && <span className={styles.badge}></span>}</div>
             {open && <NotificationBox closeHandler={closeHandler} exist={newExist} subscription={hasSubscription} />}
         </div>
     )

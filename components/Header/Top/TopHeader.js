@@ -49,7 +49,7 @@ function TopHeader({ isLogin, type }) {
                     }
                 </div>
                 <div className={styles.util_wrapper}>
-                    <button className={styles.utilBtn}><FaMagnifyingGlass size={24}/></button>
+                    <div className={styles.utilBtn}><FaMagnifyingGlass size={24}/></div>
                     {isLogin === false ? "" : <><NotificationBtn />
                     <Link href={"/contact"} className={`${styles.utilBtn} ${styles.mobile}`}><FaRegPaperPlane size={24}/></Link></>}
                 </div>
@@ -58,12 +58,16 @@ function TopHeader({ isLogin, type }) {
     )
 }
 
-function GoBackHeader({ title, button }) {
+function GoBackHeader({ title, button, url }) {
 
     const router = useRouter();
 
     const goBackHandler = () => {
-        router.back();
+        if(url?.length > 0) {
+            router.push(url);
+        } else {
+            router.back();
+        }
     }
 
     const [isScrolled, setIsScrolled] = useState(false);

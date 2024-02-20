@@ -6,10 +6,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaRotateLeft } from "react-icons/fa6";
 import ReportCard from "@/components/MyActivity/Report/ReportCard";
+import { useRouter } from "next/navigation";
 
 export default function Layout({children}) {
 
     const pathname = usePathname();
+
+    const router = useRouter();
 
     const menu = [
         {title : "전체", link : "all"},
@@ -21,9 +24,13 @@ export default function Layout({children}) {
         {title : "보관함", link : "archive"},
     ]
 
+    const refetchHandler = () => {
+        router.refresh();
+    }
+
     return (
         <div className={styles.page}>
-            <BlankTopHeader />
+            <GoBackHeader url={"/profile"} title={"내 활동 기록"} button={<button onClick={refetchHandler} className={styles.utilBtn}><FaRotateLeft size={20}/></button>}/>
             <div className={styles.wrapper}>
                 <div className={styles.header}>
                     <div className={styles.title}>
