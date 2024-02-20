@@ -1,5 +1,5 @@
 .box {
-    height: calc(100% - 100px);
+    height: calc(100% - 85px);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -86,7 +86,7 @@
 
 @media screen and (max-width : 450px) {
     .box {
-        height: calc(100% - 85px);
+        height: calc(100% - 60px);
     }
     .chatInput {
         margin: 10px 0;

@@ -50,6 +50,8 @@
     color: #222;
     padding: 2px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -69,11 +71,17 @@
 
 @media screen and (max-width : 450px) {
     .box {
-        width: 400px;
-        height: 280px;
+        width: 280px;
+        height: 250px;
         margin-right: 15px;
     }
+    .box:first-child {
+        width: 280px;
+    }
     .wrapper {
-        padding: 20px 15px;
+        padding: 18px 15px;
+    }
+    .title {
+        font-size: 17px;
     }
 }

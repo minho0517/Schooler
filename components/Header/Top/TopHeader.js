@@ -1,6 +1,6 @@
 "use client"
 
-import { FaChevronLeft, FaFaceSmile, FaMagnifyingGlass, FaRegComments, FaRegFaceSmile } from "react-icons/fa6";
+import { FaChevronLeft, FaMagnifyingGlass, FaRegComments, FaRegPaperPlane } from "react-icons/fa6";
 import styles from "./TopHeader.module.css";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -51,7 +51,7 @@ function TopHeader({ isLogin, type }) {
                 <div className={styles.util_wrapper}>
                     <button className={styles.utilBtn}><FaMagnifyingGlass size={24}/></button>
                     {isLogin === false ? "" : <><NotificationBtn />
-                    <Link href={"/contact"} className={`${styles.utilBtn} ${styles.mobile}`}><FaRegComments size={32}/></Link></>}
+                    <Link href={"/contact"} className={`${styles.utilBtn} ${styles.mobile}`}><FaRegPaperPlane size={24}/></Link></>}
                 </div>
             </div>
         </div>

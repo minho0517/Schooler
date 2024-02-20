@@ -20,7 +20,8 @@ export default function ChatItem({data, type}) {
         <div className={`${styles.item} ${data._id.mine && styles.mine} ${type === "card" && styles.card}`}>
             <div className={styles.wrapper}>
                 {!data._id.mine && <div className={styles.head}>
-                    <span className={styles.userId}>{new identify(data?.user[0]?.id).name()}</span>
+                    <div className={styles.userId}><span>{data?.user[0]?.id.slice(0,1)} </span></div>
+                    <span className={styles.school}>{data?.user[0]?.school.schoolName}</span>
                 </div>}
                 {data.chatItems.map((e, i) => (
                     <div key={i} className={styles.chatItem}>
