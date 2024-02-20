@@ -12,7 +12,6 @@ import Loader from "@/components/Utils/Loader/Loader";
 import NotificationCard from "../Card/NotificationCard";
 import axios from "axios";
 import { GoBackHeader } from "@/components/Header/Top/TopHeader";
-import { useRouter } from "next/navigation";
 
 export default function NotificationBox({subscription, exist, closeHandler}) {
 
@@ -25,6 +24,19 @@ export default function NotificationBox({subscription, exist, closeHandler}) {
         setHasSubscription(event.target.checked)
         setPushEnabled(event.target.checked)
     }
+
+    useEffect(() => {
+        const handlePopstate = () => {
+            closeHandler()
+        };
+    
+        window.history.pushState(null, "", window.location.href);
+        window.addEventListener("popstate", handlePopstate);
+    
+        return () => {
+            window.removeEventListener("popstate", handlePopstate);
+        };
+    }, []);
 
     
     const updateData = async () => {
@@ -67,21 +79,6 @@ export default function NotificationBox({subscription, exist, closeHandler}) {
     });
 
     if(hasSubscription === undefined) return null;
-
-    const router = useRouter();
-
-    useEffect(() => {
-        const handlePopstate = () => {
-            closeHandler()
-        };
-    
-        window.history.pushState(null, "", window.location.href);
-        window.addEventListener("popstate", handlePopstate);
-    
-        return () => {
-            window.removeEventListener("popstate", handlePopstate);
-        };
-    }, []);
 
     return (
         <div className={`${styles.box} ${active && styles.open}`}>
