@@ -31,7 +31,7 @@ export default function SharingBoxList() {
     }
 
     const apiUrl = "/api/sharing/list/home?";
-    const queryKey = ['get-sharingHomeList'];
+    const queryKey = ['get-sharingHomeList', 'home'];
     const { data, fetchNextPage, status, isFetchingNextPage } = useGetQuery({ apiUrl, queryKey });
     
     return (

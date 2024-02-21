@@ -7,8 +7,11 @@ import { SocketProvider } from '@/components/Provider/socket-provider';
 import AuthSession from '@/components/Provider/auth-provider';
 
 export const metadata = { 
-  title: '스쿨러',
+  title: '스쿨러 - 우리들만의 커뮤니케이션',
   description: '청소년을 위한 플랫폼',
+  icons: {
+    icon: "./image/schooler-logo-icon.png",
+  },
 }
 
 export default async function RootLayout({ children }) {
@@ -21,6 +24,7 @@ export default async function RootLayout({ children }) {
         <link rel="manifest" href="/manifest.json" />
         <meta name='theme-color' />
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1, width=device-width" />
+        <meta name="google-site-verification" content="prJR6Uu3G2AAOd2mj5RtiK2z5MFsyXhRT8dT1yhK444" />
         <link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'></link>
         <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Gugi&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet"></link>  
       </head>
