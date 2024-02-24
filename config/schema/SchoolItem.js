@@ -16,6 +16,9 @@ const SchoolSchema = new Schema({
     office : {
         type : String,
     },
+    address : {
+        type : String,
+    },
     data : {
         type : Object,
     },

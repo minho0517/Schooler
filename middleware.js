@@ -23,5 +23,6 @@ export const config = {
         '/contact/:path*',
         '/school/:path*',
         '/my_activity/:path*',
+        '/accounts/:path*'
     ]
 }

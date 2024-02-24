@@ -32,7 +32,7 @@ export default async function Page() {
                                 <span className={styles.infoName}>{data.name}</span>
                                 <Link href={"/school/" + data.school.schoolName} className={styles.infoSchool}>{data.school.schoolName}</Link>
                                 <div className={styles.profileBtnGroup}>
-                                    <Link href="/account/edit" className={styles.profileBtn}>프로필 편집</Link>
+                                    <Link href="/accounts/edit" className={styles.profileBtn}>프로필 편집</Link>
                                     <Link href="/my_activity/all" className={styles.profileBtn}>내 활동</Link>
                                     <Link href="/my_activity/archive" className={styles.profileBtn}>보관함</Link>
                                 </div>
@@ -44,7 +44,7 @@ export default async function Page() {
                     </div>
                 </div>
                 <div className={`${styles.profileBtnGroup} ${styles.mobile}`}>
-                    <Link href="/account/edit" className={styles.profileBtn}>프로필 편집</Link>
+                    <Link href="/accounts/edit" className={styles.profileBtn}>프로필 편집</Link>
                     <Link href="/my_activity/all" className={styles.profileBtn}>내 활동</Link>
                     <Link href="/my_activity/archive" className={styles.profileBtn}>보관함</Link>
                 </div>

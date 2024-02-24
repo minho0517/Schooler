@@ -1,0 +1,321 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.sectionHeader {
+    margin: 15px 0;
+}
+.sectionTitle {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.school {
+    border-radius: 15px;
+    background-color: #f5f5f5;
+    width: 100%;
+    align-items: center;
+    overflow: hidden;
+}
+.schoolWrapper {
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+}
+.schoolLogo {
+    color: #FD6F22;
+    margin-right: 30px;
+}
+.schoolInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+.schoolName {
+    font-size: 18px;
+    font-weight: 700;
+}
+.schoolAddress {
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+.schoolInput {
+    width: 100%;
+    max-height: 0;
+    height: auto;
+    transition: all .2s;
+}
+.schoolInput.open {
+    max-height: 300px;
+}
+.schoolInputWrapper {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0 25px 25px 25px;
+    width: 100%;
+}
+.keywordInput {
+    width: 100%;
+    position: relative;
+}
+.inputBox {
+    box-sizing: border-box;
+    font-size: 15px;
+    font-weight: 500;
+    width: 100%;
+    padding: 16px 15px 15px 15px;
+    border-radius: 5px;
+    border: solid 1px #e0e0e0;
+    transition: all .1s;
+    background-color: transparent;
+}
+.inputBox:focus {
+    outline: solid 2px #FD6F22;
+    outline-offset: -1px;
+}
+.cancelSchoolBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-45%);
+    right: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #333;
+}
+.schoolList {
+    margin-top: 10px;
+    width: 100%;
+    height: 150px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+}
+.schoolItem {
+    padding: 12px 10px;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.schoolItem:hover {
+    background-color: rgba(0,0,0,.03);
+}
+.schoolTitle {
+    font-size: 15px;
+    color: #222;
+    font-weight: 500;
+    margin-right: 7px;
+}
+.schoolRegion {
+    font-size: 13px;
+    color: #999;
+}
+
+.footer {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.infoMessage {
+    font-size: 13px;
+    font-weight: 500;
+    color: #999;
+    white-space: nowrap;
+}
+.actionBtn {
+    border-radius: 10px;
+    background-color: #FD6F22;
+    color: white;
+    font-weight: 600;
+    padding: 10px 0;
+    width: 120px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all .2s;
+    border: none
+}
+.actionBtn:hover {
+    background-color: #fd6f22dd;
+}
+.actionBtn:disabled {
+    background-color: #fd6f2290;
+}
+.cancelBtn {
+    color: #222;
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.setting {
+    border-radius: 15px;
+    box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0,0,0,.04);
+    display: flex;
+}
+.setting.disabled {
+    background-color: #efefef;
+}
+.setting.disabled .textInput {
+    color: #737373;
+}
+.settingWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+.textInput {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    font-size: 17px;
+    color: #111;
+    font-weight: 600;
+}
+
+
+.checkSwitch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 25px;
+}
+.checkSwitch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.checkSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+.checkSlider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 2.5px;
+    background-color: white;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+input:checked + .checkSlider {
+    background-color: #FD6F22;
+}
+input:focus + .checkSlider {
+    box-shadow: 0 0 1px #FD6F22;
+}
+input:checked + .checkSlider:before {
+    -webkit-transform: translateX(19px);
+    -ms-transform: translateX(19px);
+    transform: translateX(19px);
+}
+.checkSlider{
+    border-radius: 34px;
+}
+.checkSlider:before {
+    border-radius: 50%;
+}
+
+.loader {
+    width: 17px;
+    height: 17px;
+    border: 3px solid #fff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+@media screen and (max-width : 450px) {
+    .section {
+        margin-bottom: 10px;
+    }
+    .sectionHeader {
+        margin: 10px 0;
+    }
+    .sectionTitle {
+        font-size: 15px;
+    }
+    .settingWrapper {
+        padding: 18px 15px;
+    }
+    .setting {
+        border-radius: 10px;
+    }
+    .textInput {
+        font-size: 16px;
+    }
+    .schoolWrapper {
+        padding: 15px;
+    }
+    .schoolInputWrapper {
+        padding: 0 15px 15px 15px;
+    }
+    .schoolLogo {
+        margin-right: 15px;
+    }
+    .schoolLogo > svg {
+        width: 30px;
+    }
+    .schoolName {
+        font-size: 16px;
+    }
+    .schoolAddress {
+        font-size: 14px;
+    }
+    .actionBtn {
+        font-size: 13px;
+    }
+    .cancelBtn {
+        font-size: 13px;
+    }
+    .footer {
+        align-items: center;
+    }
+    .footer .actionBtn {
+        width: 80px;
+    }
+    .infoMessage {
+        font-size: 12px;
+    }
+}

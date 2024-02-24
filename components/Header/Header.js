@@ -27,7 +27,7 @@ export default function Header() {
                 <li className={styles.menu}><Link href='/profile'><FaCircleUser size={23}/><span>프로필</span></Link></li>
                 <li className={styles.menu}><Link href='/my_activity/all'><FaRotateLeft size={23}/><span>내 활동</span></Link></li>
                 <hr className={styles.menu_line}></hr>
-                <li className={styles.menu}><Link href="/"><FaGear size={23}/><span>설정</span></Link></li>
+                <li className={styles.menu}><Link href="/accounts/edit"><FaGear size={23}/><span>설정</span></Link></li>
                 <li className={styles.menu}><Link href="/"><FaHeadset size={23}/><span>고객센터</span></Link></li>
                 <li className={styles.menu}><Link href="https://schooler-corp.com"><FaCircleInfo size={23}/><span>스쿨러 정보</span></Link></li>
             </div>

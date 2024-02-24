@@ -2,7 +2,6 @@
 
 import { Fragment, useEffect, useRef, useState } from 'react';
 import styles from './contactLayout.module.css';
-import { useGetQuery } from '@/hooks/useGetQuery';
 import useObserver from '@/hooks/useObserver';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
@@ -10,7 +9,6 @@ import { identify } from '@/utils/identity';
 import Loader from '@/components/Utils/Loader/Loader';
 import BlankWrapper from '@/components/Utils/Blank/BlankWrapper';
 import { FaChevronLeft, FaUser } from 'react-icons/fa6';
-import { useChatSocket } from '@/hooks/useChatSocket';
 import { useChatQuery } from '@/hooks/useChatQuery';
 import { GoBackHeader } from '@/components/Header/Top/TopHeader';
 
@@ -69,6 +67,7 @@ export default function ContactLayout({ children }) {
 
     return (
         <div className={`${styles.page} ${pathname === "/contact" ? styles.menuPage : styles.chatPage}`}>
+            <GoBackHeader title={"컨택트"} button={<span></span>} mobile={true}/>
             <div className={styles.wrapper}>
                 <div className={styles.header}>
                     <div className={styles.navbar}>
@@ -76,9 +75,6 @@ export default function ContactLayout({ children }) {
                             <button onClick={() => router.push('/sharing/all')} className={styles.goBackBtn}><FaChevronLeft size={20} /></button>
                             <div className={styles.currentUser}><span>나의 컨택트</span></div>
                         </div>
-                        <div className={styles.mobileHeader}>
-                            <GoBackHeader title={"컨택트"} button={<span></span>}/>
-                        </div>  
                         <div className={styles.menuheader}>
                             <div className={styles.menuWrapper}>
                                 {menu.map((item, i) => (
@@ -113,8 +109,10 @@ export default function ContactLayout({ children }) {
 
 function MenuItem({data}) {
 
+    const pathname = usePathname();
+
     return (
-        <Link href={`/contact/${data.room.room_id}`} className={styles.roomItem}>
+        <Link href={`/contact/${data.room.room_id}`} className={`${styles.roomItem} ${pathname === `/contact/${data.room.room_id}` && styles.active}`}>
             <div className={styles.roomItemWrapper}>
                 <div className={styles.roomTitle}>
                     <div className={styles.roomName}><span>{new identify(data.room.room_info[0]?.title).text(23)}</span></div>

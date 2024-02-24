@@ -1,6 +1,6 @@
 import styles from "./Loader.module.css";
 
-export default function Loader({size, border}) {
+export default function Loader({size, border }) {
 
     const loaderStyle = {
         width : size + "px",

@@ -148,6 +148,10 @@
     display: none;
 }
 
+.header.mobile {
+    display: none;
+}
+
 @media screen and (max-width : 450px) {
     .title {
         display: flex;
@@ -179,6 +183,9 @@
         display: flex;
     }
     .sharing_navbar {
+        display: flex;
+    }
+    .header.mobile {
         display: flex;
     }
 }

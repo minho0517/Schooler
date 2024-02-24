@@ -1,0 +1,38 @@
+.page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.wrapper {
+    width: 85%;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.pageHeader {
+    margin: 41px 0;
+}
+.pageTitle {
+    font-size: 21px;
+}
+.mobileHeader {
+    width: 100%;
+    display: none;
+}
+
+
+@media screen and (max-width : 450px) {
+    .pageHeader {
+        display: none;
+    }
+    .wrapper {
+        width: 100%;
+        padding: 0 15px;
+    }
+    .mobileHeader {
+        display: block;
+    }
+}

@@ -17,6 +17,7 @@ export default function ProfileBtn() {
     }
 
     const modalMenu = [
+        { title : "설정", component : "link", link : `/accounts`}, 
         { title : "로그아웃", component : "button", handler : logoutHandler}, 
     ];
 

@@ -2,7 +2,7 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    overflow: hidden;
+    flex-direction: column;
 }
 .wrapper {
     height: 100%;
@@ -13,8 +13,9 @@
 .header {
     width: 320px;
     height: 100%;
-    padding-right: 15px;
+    padding: 0 15px;
     border-right: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
     display: flex;
     flex-direction: column;
 }
@@ -114,12 +115,15 @@
 }
 .roomItem {
     width: 100%;
-    border-radius: 7px;
+    border-radius: 10px;
     cursor: pointer;
     transition: all .2s;
 }
+.roomItem.active {
+    background-color: #efefef;
+}
 .roomItem:hover {
-    background-color: rgba(0,0,0, .02);
+    background-color: rgba(0, 0, 0, 0.05);
 }
 .roomItemWrapper {
     width: 100%;
@@ -162,7 +166,7 @@
 }
 
 .messageContainer {
-    width: calc(100% - 335px);
+    width: calc(100% - 352px);
     height: 100%;
 }
 

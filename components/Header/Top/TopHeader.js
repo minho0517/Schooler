@@ -58,7 +58,7 @@ function TopHeader({ isLogin, type }) {
     )
 }
 
-function GoBackHeader({ title, button, url }) {
+function GoBackHeader({ title, button, url, mobile }) {
 
     const router = useRouter();
 
@@ -87,7 +87,7 @@ function GoBackHeader({ title, button, url }) {
     }, []);
 
     return (
-        <div className={`${styles.header} ${isScrolled && styles.sticky}`}>
+        <div className={`${styles.header} ${isScrolled && styles.sticky} ${mobile && styles.mobile}`}>
             <div className={styles.wrapper}>
                 <div onClick={goBackHandler} className={styles.headerBtn}><div className={styles.gobackBtn}><FaChevronLeft size={20}/></div></div>
                 <span className={styles.pageTitle}>{title}</span>

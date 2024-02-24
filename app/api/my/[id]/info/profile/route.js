@@ -10,9 +10,8 @@ export async function GET(req, {params}) {
     try {
 
         await dbConnect();
-        const userInfo = await User.findById(id)
-        .select('id school name email');
-        
+        const userInfo = await User.findById(id);
+
         return NextResponse.json(userInfo, {status:200});
 
     } catch (err) {

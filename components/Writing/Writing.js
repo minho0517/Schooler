@@ -175,7 +175,6 @@ export default function Writing({data}) {
             axios.post('/api/share', uploadData)
             .then((res) => {
                 if(res.status === 200) {
-
                     alert("포스트가 완료되었습니다!");
                     router.replace(`/sharing/all`)
                 }
