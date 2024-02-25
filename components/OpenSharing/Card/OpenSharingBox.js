@@ -10,8 +10,12 @@ import Loader from "@/components/Utils/Loader/Loader";
 import BlankWrapper from "@/components/Utils/Blank/BlankWrapper";
 import { useQueryClient } from "@tanstack/react-query";
 import ChatItem from "@/components/Contact/ChatItem/ChatItem";
+import { useSession } from "next-auth/react";
+import { moveLogin } from "@/utils/moveLogin";
 
 export default function OpenSharingBox({ roomId}) {
+
+    const { data : session } = useSession();
 
     const [message, setMessage] = useState('');
     
@@ -55,8 +59,6 @@ export default function OpenSharingBox({ roomId}) {
         return;
     }
 
-    const queryClient = useQueryClient();
-
     const top = useRef();
 
     const onIntersect = ([entry]) => entry.isIntersecting && fetchNextPage();
@@ -85,7 +87,7 @@ export default function OpenSharingBox({ roomId}) {
             </div>
             <div className={styles.input}>
                 <form onSubmit={submitHandler} className={styles.inputBox}>
-                    <textarea value={message} onKeyPress={enterKeyHandler} onChange={onWritingHandler} placeholder="메시지를 입력해주세요" rows={2} className={styles.chatInput}></textarea>
+                    <textarea value={message} onKeyPress={enterKeyHandler} disabled={!session} onChange={onWritingHandler} placeholder="메시지를 입력해주세요" rows={2} className={styles.chatInput}></textarea>
                 </form>
             </div>
         </div>

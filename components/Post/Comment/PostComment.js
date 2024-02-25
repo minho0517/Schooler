@@ -8,8 +8,12 @@ import { useInfiniteQuery, useMutation, useQueryClient } from "@tanstack/react-q
 import { CommentItem } from "./CommentItem/CommentItem";
 import Loader from "@/components/Utils/Loader/Loader";
 import BlankWrapper from "@/components/Utils/Blank/BlankWrapper";
+import { useSession } from "next-auth/react";
+import { moveLogin } from "@/utils/moveLogin";
 
 export default function PostComment({postId, countTotal, countRecomments}) {
+
+    const { data : session } = useSession();
 
     // 댓글 입력 창
     const [activeBtn, setActiveBtn] = useState(true);
@@ -28,6 +32,10 @@ export default function PostComment({postId, countTotal, countRecomments}) {
         }
     };
     const focusInputHandler = () => {
+        if(!session) {
+            inputBox.current.blur();
+            return moveLogin();
+        };
         btnGroup.current.style.maxHeight = "100px";
     };
     const unfocusInputHandler = () => {

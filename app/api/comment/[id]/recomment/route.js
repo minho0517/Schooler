@@ -20,17 +20,24 @@ export async function GET(req, {params}) {
     const query = req.nextUrl.searchParams;
     const page = query.get('page');
     const perPage = query.get('per');
-    const user = (await getServerSession(authOptions)).user.id;
+    const user = (await getServerSession(authOptions))?.user.id;
     try {
 
         await dbConnect();
         const commentList = await CommentItem.find({ parent_id : id }).sort({ _id : -1 }).skip((page - 1) * perPage).limit(perPage)
-        .populate('user_id', 'id school').populate('likes')
-        commentList.map((comment) => {
-            if(String(comment.user_id._id) === user) comment._doc.mine = true;
-            comment.user_id.id = new identify(comment.user_id.id).name();
-            comment._doc.isLiked = comment.likes.some((like) => String(like.user_id) === user)
-        });
+        .populate('user_id', 'id school').populate('likes');
+        if(!user) {
+            commentList.map((comment) => {
+                comment.user_id.id = new identify(comment.user_id.id).name();
+            });
+        } else {
+            commentList.map((comment) => {
+                if(String(comment.user_id._id) === user) comment._doc.mine = true;
+                comment.user_id.id = new identify(comment.user_id.id).name();
+                comment._doc.isLiked = comment.likes.some((like) => String(like.user_id) === user)
+            });
+        }
+   
         return NextResponse.json(commentList, {status : 200});
         
     } catch (err) {

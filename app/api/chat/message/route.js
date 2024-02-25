@@ -10,7 +10,7 @@ import mongoose from "mongoose";
 export async function GET(req) {
     try {
 
-        const userId = (await getServerSession(authOptions)).user.id;
+        const userId = (await getServerSession(authOptions))?.user.id;
         const query = req.nextUrl.searchParams;
         const page = query.get('page');
         const roomId = query.get('roomId');
@@ -38,9 +38,9 @@ export async function GET(req) {
         })
         .sort({ 'chatItems.createdAt': -1 })
         .addFields({
-            '_id.mine': {
+            '_id.mine': userId ? {
                 $eq: ['$_id.user_id', new mongoose.Types.ObjectId(userId)]
-            },
+            } : false,
             '_id.id': new identify('$chatItems.user.id').name(),
         })
         .lookup({
@@ -100,6 +100,7 @@ export async function GET(req) {
         
         return NextResponse.json(chatList, {status : 200})
     } catch(err) {
-        return new NextResponse("에러 발생", {status : 500})
+        console.log(err)
+        return NextResponse.json("에러 발생", {status : 500})
     }
 }   

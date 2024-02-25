@@ -12,8 +12,12 @@ import MenuModal from '@/components/Utils/Modal/MenuModal';
 import { createPortal } from 'react-dom';
 import { useRouter } from 'next/navigation';
 import useObserver from '@/hooks/useObserver';
+import { moveLogin } from '@/utils/moveLogin';
+import { useSession } from 'next-auth/react';
 
 export default function PostMain({data, countTotal, isLiked, isBookmark}) {
+
+    const { data : session } = useSession();
 
     const [pastTime, setPastTime] = useState(new identify(data.createdAt).pastTime());
 
@@ -32,6 +36,7 @@ export default function PostMain({data, countTotal, isLiked, isBookmark}) {
     const [countLike, setCountLike] = useState(data.likes.length);
 
     const likeHandler = (e) => {
+        if(!session) return moveLogin();
         e.preventDefault()
 
         if(isLike) {
@@ -42,7 +47,7 @@ export default function PostMain({data, countTotal, isLiked, isBookmark}) {
             setCountLike(countLike + 1);
         }
 
-        axios.post(`/api/post/${data._id}/like?whose=${data.user_id}`)
+        axios.post(`/api/post/${data._id}/like?whose=${data.user_id}`);
     }
 
 
@@ -50,6 +55,7 @@ export default function PostMain({data, countTotal, isLiked, isBookmark}) {
     const [isBookmarked, setIsBookmarked] = useState(isBookmark);
 
     const bookmarkBtnHandler = (event) => {
+        if(!session) return moveLogin();
         event.preventDefault();
     
         if(isBookmarked) {

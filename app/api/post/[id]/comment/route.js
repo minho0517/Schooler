@@ -15,19 +15,24 @@ export async function GET(req, {params}) {
     const { id } = params;
     const query = req.nextUrl.searchParams;
     const page = query.get('page');
-    const user = (await getServerSession(authOptions)).user.id;
+    const user = (await getServerSession(authOptions))?.user.id;
     try {
-
+        let commentList;
         await dbConnect();
-        const userInfo = await User.findById(user).exec();
-        const commentList = await CommentItem.find({ post_id : id, depth : 0 }).sort({ _id : -1 }).skip((page - 1) * 5).limit(5)
+        commentList = await CommentItem.find({ post_id : id, depth : 0 }).sort({ _id : -1 }).skip((page - 1) * 5).limit(5)
         .populate('user_id', 'id school').populate('likes').populate('recomments','parent_id');
-        commentList.map((comment) => {
-            if(String(comment.user_id._id) === user || userInfo.role === "Admin") comment._doc.mine = true;
-            comment.user_id.id = new identify(comment.user_id.id).name();
-            comment._doc.isLiked = comment.likes.some((like) => String(like.user_id) === user)
-        });
-
+        if(!user) {
+            commentList.map((comment) => {
+                comment.user_id.id = new identify(comment.user_id.id).name();
+            });
+        } else {
+            const userInfo = await User.findById(user).exec();
+            commentList.map((comment) => {
+                if(String(comment.user_id._id) === user || userInfo.role === "Admin") comment._doc.mine = true;
+                comment.user_id.id = new identify(comment.user_id.id).name();
+                comment._doc.isLiked = comment.likes.some((like) => String(like.user_id) === user)
+            });
+        }
         return NextResponse.json(commentList, {status : 200});
 
 

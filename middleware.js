@@ -15,7 +15,6 @@ export default async function middleware(request) {
 
 export const config = {
     matcher : [
-        '/post/:path*', 
         '/share', 
         '/edit/:path*', 
         '/profile/:path*', 

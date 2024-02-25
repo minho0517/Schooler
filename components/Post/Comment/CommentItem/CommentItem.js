@@ -13,8 +13,12 @@ import Loader from "@/components/Utils/Loader/Loader";
 import useModal from "@/hooks/useModal";
 import { createPortal } from "react-dom";
 import MenuModal from "@/components/Utils/Modal/MenuModal";
+import { useSession } from "next-auth/react";
+import { moveLogin } from "@/utils/moveLogin";
 
 export function CommentItem({commentData, countRecomment, commentDeleteHandler}) {
+
+    const { data : session } = useSession();
 
     // 댓글 입력 창
     const [activeBtn, setActiveBtn] = useState(true);
@@ -33,6 +37,10 @@ export function CommentItem({commentData, countRecomment, commentDeleteHandler})
         }
     };
     const openInputHandler = () => {
+        if(!session) {
+            inputBox.current.blur();
+            return moveLogin();
+        }
         inputBox.current.focus()
         inputGroup.current.style.maxHeight = "300px";
     };
@@ -135,6 +143,7 @@ export function CommentItem({commentData, countRecomment, commentDeleteHandler})
     const [isLike, setIsLike] = useState(commentData.isLiked)
     
     const commentLikeHandler = () => {
+        if(!session) return moveLogin();
         if(isLike) {
             setIsLike(false);
             setCountLike(countLike - 1);

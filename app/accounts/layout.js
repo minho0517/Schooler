@@ -55,7 +55,7 @@ export default function AccountsLayout({ children }) {
                     <div className={styles.list}>
                         <div className={styles.listWrapper}>
                             {menu.map((e, i) => (
-                                <Link href={e.link} className={`${styles.menuItem} ${pathname === e.link && styles.active}`}>
+                                <Link href={e.link} key={i} className={`${styles.menuItem} ${pathname === e.link && styles.active}`}>
                                     {e.icon}
                                     <span>{e.title}</span>
                                 </Link>

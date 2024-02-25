@@ -17,19 +17,36 @@ export async function GET(req, {params}) {
     const userId = query.get('user');
     
     try {
+
         await dbConnect();
-        const userInfo = await User.findById(userId).exec();
-        const post = await PostItem.findById(id).populate('user_id', 'id school').populate('likes','_id').exec();
+        let post,
+            totalComments,
+            totalRecomments,
+            isLiked,
+            isBookmark,
+            isJoined,
+            countMember;
+
+        post = await PostItem.findById(id).populate('user_id', 'id school').populate('likes','_id').exec();
+
+        if(userId === "none") {
+            if(post.scope === "우리학교") return NextResponse.json(new Error('권한이 없습니다'), {status : 404});
+            if(post.deleted) return NextResponse.json(new Error('삭제된 게시물입니다'), {status : 404});
+        } else {
+            const userInfo = await User.findById(userId).exec();
+            if(post.deleted && post.user_id._id !== userId && userInfo.role !== "Admin") return NextResponse.json(new Error('삭제된 게시물입니다'), {status : 404});
+            if(post.scope === "우리학교" && String(post.school) !== String(userInfo.school.schoolCode)) return NextResponse.json(new Error('권한이 없습니다'), {status : 404});
+            isLiked = await LikeItem.exists({ like_what : id, user_id : userId });
+            isBookmark = await BookmarkItem.exists({ bookmark_what : id, user_id : userId});
+            isJoined = await JoinChatItem.exists({ user_id : userId, room_id : id });
+            if(String(post.user_id._id) === userId || userInfo.role === "Admin") post._doc.mine = true;
+        }
+        totalComments = await CommentItem.countDocuments({ post_id : id });
+        totalRecomments = await CommentItem.countDocuments({ post_id : id, depth : 1});
+        countMember = await JoinChatItem.countDocuments({ room_id : id});
+
         if(!post) return NextResponse.json({status : 404});
-        if(post.deleted && post.user_id._id !== userId && userInfo.role !== "Admin") return NextResponse.json(new Error('삭제된 게시물입니다'), {status : 404});
-        if(post.scope === "우리학교" && String(post.school) !== String(userInfo.school.schoolCode)) return NextResponse.json(new Error('권한이 없습니다'), {status : 404});
-        const totalComments = await CommentItem.countDocuments({ post_id : id });
-        const totalRecomments = await CommentItem.countDocuments({ post_id : id, depth : 1});
-        const isLiked = await LikeItem.exists({ like_what : id, user_id : userId });
-        const isBookmark = await BookmarkItem.exists({ bookmark_what : id, user_id : userId});
-        const isJoined = await JoinChatItem.exists({ user_id : userId, room_id : id });
-        const countMember = await JoinChatItem.countDocuments({ room_id : id});
-        if(String(post.user_id._id) === userId || userInfo.role === "Admin") post._doc.mine = true;
+
 
         return NextResponse.json({
             data : post, 
@@ -40,6 +57,7 @@ export async function GET(req, {params}) {
             isJoined : isJoined ? true : false,
             countMember,
         }, {status : 200});
+
     } catch (err) {
         return NextResponse.json(err, {status : 500})
     }
@@ -47,10 +65,7 @@ export async function GET(req, {params}) {
 
 export async function POST(req, {params}) {
     const {id} = params;
-    const user = (await getServerSession(authOptions)).user.id;
     try {
-
-        if(!user) return NextResponse.json({status : 400});
 
         await PostItem.findOneAndUpdate({ _id : id } , { $inc : { views: 1 } })
 

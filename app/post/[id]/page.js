@@ -10,8 +10,8 @@ import MoblieOpenSharingCard from "@/components/OpenSharing/Card/OpenSharingCard
 import PostRecommand from "@/components/Post/Recommand/PostRecommand";
 
 export async function fetchData(id) {
-    const user = (await getServerSession(authOptions)).user.id;
-    const response = await fetch(`${process.env.ABSOLUTE_URL}/api/post/${id}?user=${user}` , { cache : 'no-store', method : "GET"})
+    const user = (await getServerSession(authOptions))?.user.id;
+    const response = await fetch(`${process.env.ABSOLUTE_URL}/api/post/${id}?user=${user ? user : "none"}` , { cache : 'no-store', method : "GET"})
     const data = await response.json();
     if(data.status === 404) {
         notFound();
@@ -20,8 +20,7 @@ export async function fetchData(id) {
     } else {
         return data;
     }
-    
-}
+}  
 
 export async function generateMetadata({ params : {id} } ) {
    

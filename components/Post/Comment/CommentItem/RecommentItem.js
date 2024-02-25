@@ -9,8 +9,12 @@ import axios from "axios";
 import useModal from "@/hooks/useModal";
 import { createPortal } from "react-dom";
 import MenuModal from "@/components/Utils/Modal/MenuModal";
+import { useSession } from "next-auth/react";
+import { moveLogin } from "@/utils/moveLogin";
 
 export default function RecommentItem({recommentData, deleteHandler}) {
+
+    const { data : session } = useSession();
 
     // 시간 경과 정보
     const [pastTime, setPastTime] = useState(new identify(recommentData.createdAt).pastTime())
@@ -21,7 +25,7 @@ export default function RecommentItem({recommentData, deleteHandler}) {
     const [isLike, setIsLike] = useState(recommentData.isLiked)
 
     const commentLikeHandler = () => {
-
+        if(!session) return moveLogin();
         if(isLike) {
             setIsLike(false);
             setCountLike(countLike - 1);
