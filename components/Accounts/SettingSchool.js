@@ -59,6 +59,7 @@ export default function SettingSchool({ name, address }) {
         }
     }
     const cancelHandler = () => {
+        setSchoolKeyword('');
         setSchool({ schoolName : '', schoolCode : '', schoolOffice : '' });
         registerBtnHandler();
         setOpen(false);
