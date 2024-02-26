@@ -67,7 +67,7 @@ export default function ContactLayout({ children }) {
 
     return (
         <div className={`${styles.page} ${pathname === "/contact" ? styles.menuPage : styles.chatPage}`}>
-            <GoBackHeader title={"컨택트"} button={<span></span>} mobile={true}/>
+            {pathname === "/contact" && <GoBackHeader title={"컨택트"} button={<span></span>} mobile={true}/>}
             <div className={styles.wrapper}>
                 <div className={styles.header}>
                     <div className={styles.navbar}>

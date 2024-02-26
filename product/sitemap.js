@@ -1,5 +1,17 @@
-import { BASE_URL } from '@/app/lib/constants'
-import { getPosts } from '@/utils/sitemap/getData'
+export const getPosts = async () => {
+    return fetch(`${process.env.ABSOLUTE_URL}/api/sitemap/post`, {
+        next: { revalidate: 60 * 10 },
+    })
+    .then((res) => {
+        if (!res.ok) {
+        return Promise.reject();
+        }
+        return res.json();
+    })
+    .catch(() => {
+        return [];
+    });
+}
 
 export default async function sitemap() {
 
@@ -13,7 +25,7 @@ export default async function sitemap() {
         },
         ...posts.map((post) => {
             return {
-                url: `https://schooler-us.site/post/${post._id.toString()}`,
+                url: `https://schooler-us.site/post/${post._id}`,
                 lastModified: new Date(post.createdTime),
             }
         }),
