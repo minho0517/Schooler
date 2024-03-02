@@ -37,7 +37,7 @@
     align-items: center;
     padding: 15px;
     border-radius: 10px;
-    background-color: #f5f7f8;
+    background-color: var(--chat-input-bg);
 }
 .chatInput {
     width: 100%;
@@ -45,6 +45,7 @@
     border: none;
     background-color: transparent;
     font-size: 15px;
+    color: var(--text-main);
 }
 
 .joinBtn {

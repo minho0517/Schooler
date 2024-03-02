@@ -4,6 +4,7 @@
     box-shadow: 0 0 20px 0 rgba(0,0,0,.05);
     border-radius: 10px;
     overflow: hidden;
+    background-color: var(--bg-sub);
 }
 .wrapper {
     display: flex;
@@ -18,13 +19,14 @@
     justify-content: space-between;
     align-items: center;
     padding-bottom: 20px;
-    border-bottom: 1px solid #efefef;
+    border-bottom: 1px solid var(--line-main);
 }
 .title {
     font-size: 20px;
     font-weight: 700;
     position: relative;
     top: 1.5px;
+    color: var(--text-main);
 }
 
 .noticeContainer {

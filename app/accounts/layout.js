@@ -25,7 +25,7 @@ export default function AccountsLayout({ children }) {
             link : "/accounts/notification"
         },
         {
-            title : "다크 모드",
+            title : "화면 테마",
             icon : <FaRegMoon size={20}/>,
             link : "/accounts/darkmode"
         },

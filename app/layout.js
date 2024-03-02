@@ -5,6 +5,7 @@ import LoadingProviders from '@/components/Provider/loading-provider';
 import Layout from '@/components/Layout/Layout';
 import { SocketProvider } from '@/components/Provider/socket-provider';
 import AuthSession from '@/components/Provider/auth-provider';
+import { cookies } from 'next/headers'
 
 export const metadata = { 
   title: '스쿨러 - 우리들만의 커뮤니케이션',
@@ -16,8 +17,10 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
 
+  let cookie = cookies().get('mode')
+
   return (
-    <html lang="ko">
+    <html lang="ko" className={'light'}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
@@ -29,7 +32,7 @@ export default async function RootLayout({ children }) {
         <link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'></link>
         <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Gugi&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet"></link>  
       </head>
-      <body>
+      <body className={ cookie != undefined && cookie.value == 'dark' ? 'dark-mode': ''}>
         <AuthSession>
           <Providers>
             <LoadingProviders>

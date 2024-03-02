@@ -24,6 +24,7 @@
     font-weight: 600;
     font-size: 18px;
     margin-bottom: 7px;
+    color: var(--text-main);
 }
 .headerInfo {
     margin-top: 50px;

@@ -38,7 +38,7 @@
     z-index: 3;
     width: 370px;
     border-radius: 10px;
-    background-color: #ffffff;
+    background-color: var(--bg-main);
     transform: translateY(50px);
     opacity: 0;
     transition: all .15s;
@@ -71,7 +71,7 @@
 .title {
     font-weight: 600;
     font-size: 19px;
-    color: #222;
+    color: var(--text-main);
 }
 .description {
     font-size: 15px;
@@ -96,14 +96,14 @@
     margin: 0 5px;
     background-color: transparent;
     transition: all .25s;
-    color: #222;
+    color: var(--text-main);
 }
 .button:hover {
     background-color: rgba(0,0,0,.05);
 }
 .deleteBtn {
     color: white;
-    background-color: #FD6F22;
+    background-color: var(--primary-color);
 }
 .deleteBtn:hover {
     background-color: #fd6f22c3;
@@ -115,7 +115,7 @@
     font-weight: 600;
     border: none;
     padding: 20px 0;
-    color: #222;
+    color: var(--text-main);
     background-color: transparent;
     border-radius: 10px;
     cursor: pointer;

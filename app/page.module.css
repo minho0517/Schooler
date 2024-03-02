@@ -29,7 +29,7 @@
     display: flex;
     align-items: center;
     padding: 5px 0;
-    color: #222;
+    color: var(--text-main);
     width: auto;
 }
 .section_title > h3 {
@@ -50,7 +50,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #222;
+    color: var(--text-main);
 }
 #update {
     margin-right: 15px;

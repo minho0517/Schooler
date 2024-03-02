@@ -20,6 +20,15 @@ function Providers({ children }) {
         setUpServiceWorker();
     }, []);
 
+    useEffect(()=>{
+        const isDark = localStorage.getItem('dark-mode');
+        if(isDark === "true") {
+            localStorage.setItem('dark-mode', 'true')
+        } else {
+            localStorage.setItem('dark-mode', 'false')
+        }
+    },[]);
+
     useEffect(() => {
         async function setPushEnabled() {
             const subscription = await getCurrentPushSubscription();

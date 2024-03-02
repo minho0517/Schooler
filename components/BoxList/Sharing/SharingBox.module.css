@@ -12,6 +12,7 @@
     border-radius: 15px;
     box-shadow: 0 0 20px 0 rgba(0,0,0,.05);
     margin-top: 20px;
+    background-color: var(--bg-sub);
 }
 .home {
     width: calc(50% - 10px);
@@ -33,16 +34,16 @@
 .topicTitle {
     font-size: 18px;
     font-weight: 700;
-    color: #222;
+    color: var(--text-main);
     display: flex;
     align-items: center;
 }
 .topic {
     margin-right: 7px;
-    color: #FD6F22;
+    color: var(--primary-color);
 }
 .moveBtn {
-    color: #222;
+    color: var(--text-main);
     padding: 2px;
     position: relative;
     top: 2px;
@@ -59,7 +60,7 @@
     display: flex;
     height: 50px;
     border-radius: 10px;
-    background-color: rgba(0,0,0,.02);
+    background-color: var(--home-item-bg);
     margin-bottom: 5px;
 }
 .itemWrapper {
@@ -78,6 +79,7 @@
     overflow: hidden;
     color: #111;
     white-space: nowrap;
+    color: var(--text-main);
 }
 .activeGroup {
     width: 130px;
@@ -87,7 +89,7 @@
 .activeRecord {
     display: flex;
     align-items: center;
-    color: #FD6F22;
+    color: var(--primary-color);
     margin-left: 10px;
 }
 .activeRecord > span {

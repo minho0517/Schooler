@@ -2,8 +2,8 @@
     box-sizing: content-box;
     width: 100%;
     height: 85px;
-    background-color: #fff;
-    border-bottom: solid 1px #efefef;
+    background-color: var(--b-main);;
+    border-bottom: solid 1px var(--line-main);
     display: flex;
     overflow: hidden;
     justify-content: space-between;
@@ -17,7 +17,7 @@
 .goBackBtn {
     display: none;
     align-items: center;
-    color: #222;
+    color: var(--text-main);
     padding: 5px;
     cursor: pointer;
     background-color: transparent;
@@ -43,13 +43,13 @@
 .topic {
     font-size: 18px;
     font-weight: 600;
-    color: #FD6F22;
+    color: var(--primary-color);
     margin-right: 10px;
     white-space: nowrap;
 }
 .title {
     font-size: 20px;
-    color: #111;
+    color: var(--text-main);
     font-weight: 700;
     white-space: nowrap;
     overflow: hidden;
@@ -73,7 +73,7 @@
 .content {
     width: 100%;
     font-size: 15px;
-    color: #555;
+    color: var(--text-sub);
     height: 20px;
     font-weight: 400;
 }
@@ -90,7 +90,7 @@
     align-items: center;
     border: none;
     background-color: transparent;
-    color: #222;
+    color: var(--text-main);
     cursor: pointer;
     transition: all .2s;
     padding: 0;

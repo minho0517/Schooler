@@ -39,8 +39,8 @@
     font-weight: 500;
     font-size: 15px;
     border-radius: 10px;
-    border: solid 1px #e0e0e0;
-    color: #222;
+    border: solid 1px var(--border-bg);
+    color: var(--text-main);
     cursor: pointer;
 }
 #topic:focus {
@@ -52,7 +52,7 @@
     width: 100%;
     box-sizing: border-box;
     border-radius: 10px;
-    border: solid 1px #e0e0e0;
+    border: solid 1px var(--border-bg);
     background-size: 20px;
     cursor: pointer;
     display: flex;
@@ -83,7 +83,7 @@
     left: -1px;
     width: calc(100% + 2px);
     height: auto;
-    background-color: white;
+    background-color: var(--bg-main);
     padding: 0;
     border-radius: 10px;
     overflow: scroll;
@@ -101,9 +101,9 @@
     text-align: left;
     font-size: 15px;
     font-weight: 600;
-    background-color: white;
     cursor: pointer;
-    color: #111;
+    background-color: var(--bg-main);
+    color: var(--text-main);
 }
 .selectBox .optionItem:hover {
     background-color: rgb(0 0 0 / 8%);
@@ -115,10 +115,10 @@
 }
 
 .label.selected {
-    color: #222;
+    color: var(--text-main);
 }
 .selectBox .optionItem {
-    border-bottom: 1px solid #efefef;
+    border-bottom: 1px solid var(--line-main);
     transition: .1s;
 }
 
@@ -140,12 +140,13 @@
 .input {
     width: 100%;
     border-radius: 10px;
-    border: solid 1px #e0e0e0;
+    border: solid 1px var(--border-bg);
     padding: 20px;
     resize: none;
     overflow: hidden;
     box-sizing: border-box;
-    color: #111;
+    background-color: transparent;
+    color: var(--text-main);
     margin-bottom: 5px;
     line-height: 1.75rem;
 }
@@ -172,6 +173,7 @@
     box-shadow: 0 0 20px 0 rgba(0,0,0, 0.05);
     box-sizing: border-box;
     display: flex;
+    background-color: var(--bg-sub);
 }
 .submit_wrapper {
     width: 100%;
@@ -202,7 +204,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    border: 1px solid #efefef;
+    border: 1px solid var(--line-main);
     border-radius: 7px;
 }
 .slideBtn {
@@ -212,7 +214,7 @@
     z-index: 3;
     font-size: 15px;
     font-weight: 600;
-    color: #111;
+    color: var(--text-main);
     padding: 15px 0;
     cursor: pointer;
     transition: all .2s;
@@ -228,7 +230,7 @@
     border-radius: 7px;
     box-shadow: 0 0 10px 0 rgba(0,0,0, 0.1);
     transition: all .2s;
-    background-color: #FD6F22;
+    background-color: var(--primary-color);
 }
 .slideBg.cgAll {
     transform: translateX(0);
@@ -238,7 +240,7 @@
 }
 
 .tagBox {
-    border: solid 1px #e0e0e0;
+    border: solid 1px var(--border-bg);
     padding: 5px 10px;
     border-radius: 7px;
     display: flex;
@@ -274,7 +276,8 @@
     box-sizing: border-box;
     font-weight: 500;
     font-size: 15px;
-    color: #111;
+    color: var(--text-main);
+    background-color: transparent;
     vertical-align: middle;
     padding: 0 5px;
     height: 35px;
@@ -286,7 +289,7 @@
 }
 
 .settingWrapper {
-    border: solid 1px #e0e0e0;
+    border: solid 1px var(--border-bg);
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -300,7 +303,7 @@
     font-weight: 700;
     font-size: 14px;
     margin-left: 5px;
-    color: #333;
+    color: var(--user-text);
     cursor: pointer;
 }
 .settingAbout {
@@ -345,7 +348,7 @@
 }
 
 input:checked + .checkSlider {
-    background-color: #FD6F22;
+    background-color: var(--primary-color);
 }
 
 input:focus + .checkSlider {
@@ -377,7 +380,7 @@ input:checked + .checkSlider:before {
     transition: all .15s;
 }
 #post {
-    background-color: #FD6F22;
+    background-color: var(--primary-color);
     color: white;
 }
 #post:hover {

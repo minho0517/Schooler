@@ -27,7 +27,7 @@
 .title   {
     display: flex;
     align-items: center;
-    color: #222;
+    color: var(--text-main);
 }
 .title > h4 {
     font-size: 17px;

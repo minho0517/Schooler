@@ -1,5 +1,5 @@
 .settingBtn {
-    color: #222;
+    color: var(--text-main);
     transition: all .2s;
     display: flex;
     justify-content: center;

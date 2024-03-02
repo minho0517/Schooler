@@ -71,7 +71,7 @@
 }
 .submitBtn {
     margin-top: 15px;
-    background-color: #FD6F22;
+    background-color: var(--primary-color);
     color: white;
     font-weight: 500;
     border: none;
@@ -94,7 +94,7 @@
     margin: 15px 0;
 }
 .helpLink > a {
-    color: #777;
+    color: var(--text-sub);
     font-size: 14px;
 }
 .helpLink > hr {
@@ -117,7 +117,7 @@
 }
 .moveLink > a {
     margin-left: 7px;
-    color: #FD6F22;
+    color: var(--primary-color);
     font-weight: 500;
 }
 

@@ -15,7 +15,7 @@
 .topic {
     font-weight: 600;
     font-size: 13px;
-    color: #FD6F22; /* fd6f22b4 */
+    color: var(--primary-color); /* fd6f22b4 */
 }
 
 .content {
@@ -24,14 +24,14 @@
     width: 100%;
 }
 .title {
-    color: #222;
+    color: var(--text-main);
     margin: 5px 0;
     height: 45px;
     font-size: 18px;
     font-weight: 700;
 }
 .previewContent {
-    color: #777;
+    color: var(--text-sub);
     font-weight: 400;
     line-height: 1.5;
     margin: 10px 0;
@@ -64,7 +64,7 @@
 .activeRecord {
     display: flex;
     align-items: center;
-    color: #FD6F22;
+    color: var(--primary-color);
     margin-left: 10px;
 }
 .activeRecord > span {

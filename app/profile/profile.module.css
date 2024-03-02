@@ -46,18 +46,18 @@
 .infoId {
     font-size: 30px;
     font-weight: 700;
-    color: #111;
+    color: var(--text-main);
     margin-bottom: 2px;
 }
 .infoSchool {
     font-size: 17px;
     font-weight: 500;
-    color: #FD6F22;
+    color: var(--primary-color);
 }
 .infoName {
     font-size: 17px;
     font-weight: 500;
-    color: #333;
+    color: var(--user-text);
     margin-bottom: 3px;
 }
 
@@ -97,8 +97,8 @@
     font-weight: 600;
     padding: 10px 22px;
     border-radius: 7px;
-    background-color: #eee;
-    color: #111;
+    background-color: var(--button-main);
+    color: var(--text-main);
     transition: all .2s;
     text-wrap: nowrap;
 }
@@ -106,7 +106,7 @@
     margin: 0 7px;
 }
 .profileBtn:hover, .profileBtn:active {
-    background-color: rgba(0,0,0, .1);
+    background-color: var(--hover-postBtn-bg);
 }
 
 .myActivity {

@@ -14,8 +14,8 @@
     width: 320px;
     height: 100%;
     padding: 0 15px;
-    border-right: 1px solid #e0e0e0;
-    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid var(--border-bg);
+    border-left: 1px solid var(--border-bg);
     display: flex;
     flex-direction: column;
 }
@@ -38,7 +38,7 @@
 .goBackBtn {
     display: none;
     align-items: center;
-    color: #222;
+    color: var(--text-main);
     padding: 7px;
     cursor: pointer;
     background-color: transparent;
@@ -47,14 +47,15 @@
 .currentUser {
     font-size: 25px;
     font-weight: 700;
+    color: var(--text-main);
 }
 .menuheader {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #efefef;
-    background-color: white;
+    border-bottom: 1px solid var(--line-main);
+    background-color: var(--bg-main);
     position: relative;
 }
 .menuWrapper {
@@ -73,9 +74,10 @@
     display: flex;
     justify-content: center;
     transition: all .15s ;
+    color: var(--text-main);
 }
 .menu.active {
-    color: #FD6F22;
+    color: var(--primary-color);
     font-weight: 600;
 }
 .underline {
@@ -85,7 +87,7 @@
     border-radius: 5px;
     width: auto;
     height: 3px;
-    background-color: #FD6F22;
+    background-color: var(--primary-color);
     transition: all .15s ease-out;
 }
 .loadingWrapper {
@@ -120,10 +122,10 @@
     transition: all .2s;
 }
 .roomItem.active {
-    background-color: #efefef;
+    background-color: var(--hover-bg);
 }
 .roomItem:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: var(--hover-bg);
 }
 .roomItemWrapper {
     width: 100%;
@@ -143,9 +145,10 @@
     font-size: 16px;
     overflow: hidden;
     height: 20px;
+    color: var(--text-main);
 }
 .count {
-    color: #777;
+    color: var(--text-sub);
     font-size: 14px;
 }
 .roomInfo {

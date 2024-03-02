@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--bg-sub);
 }
 .post_content_wrapper {
     width: 100%;
@@ -25,28 +26,30 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    color: #222;
+    color: var(--text-main);
     transition: all .2s;
     background-color: transparent;
 }
 .bookmarkBtn.active {
-    color: #FD6F22;
+    color: var(--primary-color);
 }
 
 .head {
     display: flex;
     flex-direction: column;
-    border-bottom: solid 1px #eee;
+    border-bottom: solid 1px var(--underline-bg);
     padding-bottom: 30px;
 }
 .topic {
     font-weight: 600;
     font-size: 14px;
+    color: var(--text-main);
 }
 .title {
     font-weight: 700;
     font-size: 25px;
     margin: 15px 0;
+    color: var(--text-main);
 }
 .name {
     display: flex;
@@ -57,7 +60,7 @@
 }
 .name > a {
     text-decoration: none;
-    color: #FD6F22;
+    color: var(--primary-color);
 }
 
 .info {
@@ -90,6 +93,7 @@
     line-height: 1.75rem;
     white-space: pre-wrap;
     margin-bottom: 50px;
+    color: var(--text-main);
 }
 .article > a {
     word-break: break-all;
@@ -103,7 +107,6 @@
 }
 .tag {
     border-radius: 10px;
-    background-color: white;
     color: #37acc9;
     font-size: 16px;
     font-weight: 500;
@@ -121,7 +124,7 @@
 }
 .actionBtn {
     border: none;
-    background-color: #f2f2f2;
+    background-color: var(--postBtn-bg);
     border-radius: 25px;
     padding: 9px 15px;
     cursor: pointer;
@@ -129,13 +132,13 @@
     margin-right: 10px;
     display: flex;
     align-items: center;
-    color: #111;
+    color: var(--text-main);
 }
 .actionBtn:hover {
-    background-color: rgba(0, 0, 0, .09);
+    background-color: var(--hover-postBtn-bg);
 }
 .actionBtn.active {
-    background-color: #FD6F22;
+    background-color: var(--primary-color);
     color: white;
 }
 .actionBtn > span {

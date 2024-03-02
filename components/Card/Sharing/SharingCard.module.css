@@ -5,6 +5,7 @@
     border-radius: 10px;
     margin: 10px 0;
     position: relative;
+    background-color: var(--bg-sub);
 }
 .wrapper {
     width: 100%;
@@ -23,7 +24,7 @@
 .topic {
     font-weight: 600;
     font-size: 13px;
-    color: #FD6F22; /* fd6f22b4 */
+    color: var(--primary-color); /* fd6f22b4 */
 }
 .bookmarkBtn {
     position: absolute;
@@ -40,10 +41,10 @@
     transition: all .2s;
 }
 .bookmarkBtn.active {
-    color: #FD6F22;
+    color: var(--primary-color);
 }
 .bookmarkBtn.active:hover {
-    color: #FD6F22;
+    color: var(--primary-color);
 }
 .bookmarkBtn:hover {
     color: #666;
@@ -55,14 +56,14 @@
     width: 100%;
 }
 .title {
-    color: #222;
+    color: var(--text-main);
     margin: 5px 0;
     height: 45px;
     font-size: 18px;
     font-weight: 700;
 }
 .previewContent {
-    color: #777;
+    color: var(--text-sub);
     font-weight: 400;
     line-height: 1.5;
     margin: 10px 0;
@@ -97,7 +98,7 @@
 .activeRecord {
     display: flex;
     align-items: center;
-    color: #FD6F22;
+    color: var(--primary-color);
     margin-left: 10px;
 }
 .activeRecord > span {
@@ -129,10 +130,10 @@
     border: none;
     text-align: center;
     padding: 13px 0;
-    background-color: #f2f2f2;
+    background-color:var(--button-main);
     font-size: 14px;
-    color: #222;
-    font-weight: 500;
+    color: var(--text-main);
+    font-weight: 600;
     margin: 5px 0;
     border-radius: 10px;
     cursor: pointer;
@@ -146,7 +147,7 @@
 }
 .cardBtn:hover {
     font-weight: 600;
-    background-color: rgba(0, 0, 0, .09);
+    background-color: var(--hover-postBtn-bg);
 }
 .cardBtn:hover > svg {
     transition: all .3s;

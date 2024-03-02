@@ -11,25 +11,25 @@
     align-items: center;
 }
 .icon {
-    color: #FD6F22;
+    color: var(--primary-color);
 }
 .title {
     font-size: 22px;
     font-weight: 600;
-    color: #222;
+    color: var(--text-main);
     margin: 10px 0 5px 0;
 }
 .description {
     font-size: 15px;
     font-weight: 500;
-    color: #555;
+    color: var(--message-main);
 }
 .moveBtn {
     margin-top: 15px;
     border-radius: 7px;
-    background-color: #FD6F22;
+    background-color: var(--primary-color);
     color: white;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 14px;
     padding: 9px 15px;
 }

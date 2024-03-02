@@ -13,8 +13,8 @@
     width: 320px;
     height: 100%;
     padding: 0 15px;
-    border-right: 1px solid #e0e0e0;
-    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid var(--border-bg);
+    border-left: 1px solid var(--border-bg);
     display: flex;
     flex-direction: column;
 }
@@ -27,6 +27,7 @@
 .currentUser {
     font-size: 25px;
     font-weight: 700;
+    color: var(--text-main);
 }
 .mobileHeader {
     display: none;
@@ -41,7 +42,7 @@
 .goBackBtn {
     display: none;
     align-items: center;
-    color: #222;
+    color: var(--text-main);
     padding: 7px;
     cursor: pointer;
     background-color: transparent;
@@ -74,6 +75,7 @@
     color: #111;
     transition: all .2s;
     cursor: pointer;
+    color: var(--text-main);
 }
 .menuItem > span {
     font-size: 16px;
@@ -83,10 +85,10 @@
     top: 1px;
 }
 .menuItem:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: var(--hover-item-bg);
 }
 .menuItem.active {
-    background-color: #efefef;
+    background-color: var(--hover-bg);
 }
 
 

@@ -28,7 +28,7 @@
     transition: all .15s
 }
 .option.active {
-    color: #FD6F22;
+    color: var(--primary-color);
 }
 .optionLine {
     width: 2px;
@@ -42,7 +42,7 @@
 }
 
 .mainBtn {
-    color: #FD6F22;
+    color: var(--primary-color);
     display: flex;
     justify-content: center;
     align-items: center;

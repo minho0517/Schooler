@@ -9,11 +9,12 @@
 .sectionTitle {
     font-size: 17px;
     font-weight: 700;
+    color: var(--text-main);
 }
 
 .school {
     border-radius: 15px;
-    background-color: #f5f5f5;
+    background-color: var(--bg-sub);
     width: 100%;
     align-items: center;
     overflow: hidden;
@@ -27,7 +28,7 @@
     box-sizing: border-box;
 }
 .schoolLogo {
-    color: #FD6F22;
+    color: var(--primary-color);
     margin-right: 30px;
 }
 .schoolInfo {
@@ -39,11 +40,13 @@
 .schoolName {
     font-size: 18px;
     font-weight: 700;
+    color: var(--text-main);
 }
 .schoolAddress {
     font-size: 15px;
     font-weight: 500;
     margin-top: 5px;
+    color: var(--text-main);
 }
 .schoolInput {
     width: 100%;
@@ -72,8 +75,9 @@
     width: 100%;
     padding: 16px 15px 15px 15px;
     border-radius: 5px;
-    border: solid 1px #e0e0e0;
+    border: solid 1px var(--border-bg);
     transition: all .1s;
+    color: var(--text-main);
     background-color: transparent;
 }
 .inputBox:focus {
@@ -112,7 +116,7 @@
 }
 .schoolTitle {
     font-size: 15px;
-    color: #222;
+    color: var(--text-main);
     font-weight: 500;
     margin-right: 7px;
 }
@@ -136,7 +140,7 @@
 }
 .actionBtn {
     border-radius: 10px;
-    background-color: #FD6F22;
+    background-color: var(--primary-color);
     color: white;
     font-weight: 600;
     padding: 10px 0;
@@ -157,7 +161,7 @@
     background-color: #fd6f2290;
 }
 .cancelBtn {
-    color: #222;
+    color: var(--text-main);
     font-weight: 600;
     font-size: 14px;
     white-space: nowrap;
@@ -167,11 +171,12 @@
 
 .setting {
     border-radius: 15px;
-    box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0,0,0,.04);
+    box-shadow: var(--shadow-main);
     display: flex;
+    background-color: var(--bg-sub);
 }
 .setting.disabled {
-    background-color: #efefef;
+    background-color: var(--item-bg-main);
 }
 .setting.disabled .textInput {
     color: #737373;
@@ -189,7 +194,7 @@
     background-color: transparent;
     width: 100%;
     font-size: 17px;
-    color: #111;
+    color: var(--text-main);
     font-weight: 600;
 }
 
@@ -230,7 +235,7 @@
 }
 
 input:checked + .checkSlider {
-    background-color: #FD6F22;
+    background-color: var(--primary-color);
 }
 input:focus + .checkSlider {
     box-shadow: 0 0 1px #FD6F22;

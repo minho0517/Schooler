@@ -8,9 +8,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #efefef;
+    border-bottom: 1px solid var(--line-main);
     margin-bottom: 15px;
-    background-color: white;
     position: relative;
 }
 .menuWrapper {
@@ -26,9 +25,10 @@
     margin-right: 20px;
     position: relative;
     transition: all .15s ;
+    color: var(--text-main);
 }
 .menu.active {
-    color: #FD6F22;
+    color: var(--primary-color);
     font-weight: 600;
 }
 .underline {
@@ -38,7 +38,7 @@
     border-radius: 5px;
     width: auto;
     height: 3px;
-    background-color: #FD6F22;
+    background-color: var(--primary-color);
     transition: all .15s ease-out;
 }
 .listWrapper {

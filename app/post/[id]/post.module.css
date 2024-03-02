@@ -24,6 +24,7 @@
     width: calc(32% - 10px);
     border-radius: 10px;
     height: 570px;
+    background-color: var(--bg-sub);
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
 }
 .livechatCard.mobile {

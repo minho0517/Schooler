@@ -7,7 +7,7 @@
     position: sticky;
 }
 .header.sticky {
-    background-color: white;
+    background-color: var(--bg-main);
     top: 0;
 }
 
@@ -43,7 +43,7 @@
     transition: all .15s
 }
 .sharing_option.active {
-    color: #FD6F22;
+    color: var(--primary-color);
     font-weight: 800;
 }
 .sharing_optionLine {
@@ -102,14 +102,14 @@
 }
 
 .pageTitle {
-    color: #333;
+    color: var(--text-main);
     font-size: 20px;
     font-weight: 800;
 }
 .headerBtn {
     display: flex;
     align-items: center;
-    color: #222;
+    color: var(--text-main);
     width: 50px;
     cursor: pointer;
 }
@@ -123,7 +123,7 @@
 }
 .utilBtn {
     display: flex;
-    color: #222;
+    color: var(--text-main);
     border-radius: 50%;
     justify-content: center;
     align-items: center;

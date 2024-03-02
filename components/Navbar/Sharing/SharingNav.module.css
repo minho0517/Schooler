@@ -21,8 +21,8 @@
     text-decoration: none;
     font-weight: 600;
     /* font-weight: 700; */
-    color: #222;
-    background-color: #efefef;
+    color: var(--text-main);
+    background-color: var(--item-bg-main);
     /* padding: 10px 20px 7px 20px; */
     padding: 8px 20px;
     text-align: center;
@@ -38,7 +38,7 @@
     font-weight: 600;
 }
 .topic:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--hover-item-bg);
 }
 .topic.active:hover {
     background-color: #fd6f22dd;
@@ -58,7 +58,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #fff;
+    background-color: var(--bg-main);;
 }
 .slideBtn > button {
     border-radius: 50px;
@@ -67,14 +67,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: var(--bg-main);
     border: none;
-    color: #222;
+    color: var(--text-main);
     cursor: pointer;
     z-index: 2;
 }
 .slideBtn > button:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--hover-item-bg);
 }
 #next {
     right: 0;
@@ -86,7 +86,7 @@
     right: 40px;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1) 70%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 30%, var(--bg-main) 70%);
 }
 #prev {
     left: 0;
@@ -98,7 +98,7 @@
     left: 40px;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1) 70%);
+    background: linear-gradient(to left, rgba(255, 255, 255, 0) 30%, var(--bg-main) 70%);
 }
 
 @media screen and (max-width : 450px) {

@@ -11,6 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: var(--bg-sub);
 }
 .card:hover .type {
     color: #fd6f22 ;
@@ -50,7 +51,7 @@
     padding: 13px 0 5px 0;
 }
 .topic {
-    color: #fd6f22;
+    color: var(--primary-color);
     font-size: 15px;
     font-weight: 500;
     margin-right: 7px;
@@ -64,7 +65,7 @@
 .message {
     font-size: 15px;
     font-weight: 500;
-    color: #555;
+    color: var(--message-main);
 }
  
 .activityInfo {
@@ -76,13 +77,13 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 1.75rem;
-    color: #111;   
+    color: var(--text-main);   
     margin-bottom: 20px;
 }
 .content {
     font-size: 14px;
     font-weight: 400;
-    color: #777;
+    color: var(--text-sub);
     margin-bottom: 10px;
     line-height: 1.5;
     height: 45px;
@@ -107,7 +108,7 @@
 
 .likeContent {
     margin-right: 10px;
-    color: #222;
+    color: var(--text-main);
     display: flex;
     align-items: center;
     margin-bottom: 7px;
@@ -127,7 +128,7 @@
 .parent {
     font-size: 15px;
     font-weight: 500;
-    color: #222;
+    color: var(--text-main);
     line-height: 1.75em;
     margin-right: 10px;
 }
@@ -136,7 +137,7 @@
     font-size: 16.5px;
     font-weight: 700;
     line-height: 1.75rem;
-    color: #111;
+    color: var(--text-main);
     margin-bottom: 10px;
 }
 

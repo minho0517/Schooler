@@ -10,7 +10,7 @@
 .utilBtn {
     position: relative;
     display: flex;
-    color: #222;
+    color: var(--text-main);
     border-radius: 50%;
     justify-content: center;
     align-items: center;
@@ -35,7 +35,7 @@
     top: 6px;
     right: 8px;
     border-radius: 50%;
-    background-color: #FD6F22;
+    background-color: var(--primary-color);
 }
 
 @media screen and (max-width : 450px) {
