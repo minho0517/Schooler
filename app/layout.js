@@ -5,7 +5,11 @@ import LoadingProviders from '@/components/Provider/loading-provider';
 import Layout from '@/components/Layout/Layout';
 import { SocketProvider } from '@/components/Provider/socket-provider';
 import AuthSession from '@/components/Provider/auth-provider';
-import { cookies } from 'next/headers'
+import { getServerSession } from 'next-auth';
+import { authOptions } from './api/auth/[...nextauth]/route';
+import { cookies } from 'next/headers';
+
+export const dynamic = "force-dynamic";
 
 export const metadata = { 
   title: '스쿨러 - 우리들만의 커뮤니케이션',
@@ -17,7 +21,9 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
 
-  let cookie = cookies().get('mode')
+  const user = await getServerSession(authOptions);
+
+  const cookie = cookies().get('mode');
 
   return (
     <html lang="ko" className={'light'}>

@@ -2,12 +2,15 @@
     display: flex;
     width: 350px;
     height: 240px;
-    background-color: white;
+    background-color: var(--bg-sub);
     border-radius: 15px;
     transition: all 0.2s;
     box-shadow: 0 0 20px 0 rgba(0,0,0,.05);
     cursor: pointer;
     margin-right: 20px;
+}
+.card:last-child {
+    margin: 0;
 }
 .wrapper {
     width: 100%;

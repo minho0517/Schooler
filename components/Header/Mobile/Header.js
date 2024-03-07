@@ -39,8 +39,6 @@ export default function MoblieHeader() {
         };
     }, []);
 
-    console.log(isFullScreen, device)
-
     return (
         <header className={`${styles.header} ${device === "IOS" && isFullScreen && styles.ios}`}>
             <div className={styles.wrapper}>

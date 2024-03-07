@@ -20,6 +20,7 @@ export async function POST(req) {
                 name : data.school.schoolName,
                 apiCode : data.school.schoolCode ? data.school.schoolCode : '',
                 office : data.school.schoolOffice,
+                officeCode : data.school.schoolOfficeCode,
                 type : data.school.schoolCode ? "regular" : "alternative",
             });
             const insertData = await newSchoolItem.save();

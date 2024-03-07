@@ -1,8 +1,17 @@
+"use client";
+
 import { FaAngleRight } from "react-icons/fa6";
 import styles from "./SchoolBox.module.css";
 import { TbCalendarTime } from "react-icons/tb";
+import { useGetQuery } from "@/hooks/useGetQuery";
 
 export default function SchoolTimetableBox() {
+
+    const apiUrl = `/api/school/info/timetable?`;
+    const queryKey = ['get-schoolTimetable'];
+    const { data, fetchNextPage, status, isFetchingNextPage } = useGetQuery({ apiUrl, queryKey });
+
+    console.log(data)
 
     return (
         <div className={styles.box}>
@@ -15,7 +24,7 @@ export default function SchoolTimetableBox() {
                     <div className={styles.moveBtn}><FaAngleRight size={18}/></div>
                 </div>
                 <div className={styles.list}>
-                    <span className={styles.blank}>2월 24일 업데이트 예정</span>
+                    <span className={styles.blank}>{data?.pages[0].length === 0 && "시간표 정보 없음"}</span>
                 </div>
             </div>
         </div>

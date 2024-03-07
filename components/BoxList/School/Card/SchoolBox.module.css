@@ -5,6 +5,7 @@
     box-sizing: border-box;
     box-shadow: 0 0 20px 0 rgba(0,0,0,.05);
     display: flex;
+    background-color: var(--bg-sub);
 }
 .box:first-child {
     width: calc(45% - 5px);
@@ -24,12 +25,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 18px;
 }
 .title {
     font-size: 18px;
     font-weight: 700;
     display: flex;
     align-items: center;
+    color: var(--text-main);
 }
 .titleIcon {
     display: flex;
@@ -59,15 +62,93 @@
     height: 100%;
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     box-sizing: border-box;
+    overflow: scroll;
+    border-radius: 7px;
+}
+.list::-webkit-scrollbar {
+    display: none;
 }
 .blank {
     font-weight: 500;
     color: #999;
     font-size: 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
+
+.mealItem {
+    width: 100%;
+    height: calc(100% / 5);
+    border-radius: 7px;
+    margin-bottom: 5px;
+    background-color: var(--home-item-bg); 
+    font-size: 15px;
+    color: var(--text-main);
+    padding: 10px 12px;
+    font-weight: 600;
+    box-sizing: border-box;
+    display:  flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.likeBtn {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    color: var(--text-main);
+    cursor: pointer;
+}
+
+.sharingItem {
+    width: 100%;
+    display: flex;
+    height: 50px;
+    border-radius: 10px;
+    background-color: var(--home-item-bg);
+    margin-bottom: 5px;
+}
+.sharingItemWrapper {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+}
+.sharingTitle {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    overflow: hidden;
+    color: #111;
+    white-space: nowrap;
+    color: var(--text-main);
+}
+.activeGroup {
+    width: 130px;
+    display: flex;
+    align-items: center;
+}
+.activeRecord {
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    margin-left: 10px;
+}
+.activeRecord > span {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 5px;
+    text-align: center;
+    vertical-align: middle;
+}
+
 
 @media screen and (max-width : 450px) {
     .box {

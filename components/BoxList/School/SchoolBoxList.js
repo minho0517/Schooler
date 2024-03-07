@@ -4,7 +4,7 @@ import axios from "axios";
 import styles from "./SchoolBoxList.module.css";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import SchoolNoticeBox from "./Card/SchoolNoticeBox";
+import SchoolSharingBox from "./Card/SchoolSharingBox";
 import SchoolLunchBox from "./Card/SchoolLunchBox";
 import SchoolTimetableBox from "./Card/SchoolTimetableBox";
 
@@ -21,7 +21,7 @@ export default async function SchoolBoxList() {
     return (
         <div className={styles.list}>
             <div className={styles.wrapper}>
-                <SchoolNoticeBox school={data} />
+                <SchoolSharingBox school={data} />
                 <SchoolLunchBox />
                 <SchoolTimetableBox />
             </div>

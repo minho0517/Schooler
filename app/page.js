@@ -1,12 +1,11 @@
 import styles from './page.module.css'
-import { getServerSession } from 'next-auth';
-import { authOptions } from './api/auth/[...nextauth]/route';
 import { TopHeader } from '@/components/Header/Top/TopHeader';
 import Landing from '@/components/Home/Landing/Landing';
-import SharingBoxList from '@/components/BoxList/Sharing/SharingBoxList';
 import SchoolBoxList from '@/components/BoxList/School/SchoolBoxList';
+import SharingBoxList from '@/components/BoxList/Sharing/SharingBoxList';
+import { getServerSession } from 'next-auth';
+import { authOptions } from './api/auth/[...nextauth]/route';
 import OpenSharingList from '@/components/BoxList/OpenSharing/OpenSharingList';
-
 
 export default async function Home() {
 

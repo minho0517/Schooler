@@ -34,11 +34,10 @@
 }
 
 .box {
-    background-color: white;
     z-index: 3;
     width: 370px;
     border-radius: 10px;
-    background-color: var(--bg-main);
+    background-color: var(--bg-sub);
     transform: translateY(50px);
     opacity: 0;
     transition: all .15s;
@@ -99,7 +98,7 @@
     color: var(--text-main);
 }
 .button:hover {
-    background-color: rgba(0,0,0,.05);
+    background-color: var(--hover-bg);
 }
 .deleteBtn {
     color: white;
@@ -128,12 +127,12 @@
     color: #ED4956;
 }
 .menuBtn:hover {
-    background-color: rgba(0,0,0,.03);
+    background-color: var(--hover-bg);
 }
 .menuUnderline {
     width: 100%;
     height: 1px;
-    background-color: #eee;
+    background-color: var(--line-main);
     border-radius: 1px;
     border: none;
 }

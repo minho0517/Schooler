@@ -10,8 +10,14 @@ const SchoolSchema = new Schema({
         default : 'regular',
         enum : ['regular', 'alternative'],
     },
+    classType : {
+        type : String,
+    },
     apiCode : {
         type : String,
+    },
+    officeCode : {
+        type : String
     },
     office : {
         type : String,

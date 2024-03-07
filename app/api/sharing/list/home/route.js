@@ -2,8 +2,9 @@ import dbConnect from "@/config/db";
 import PostItem from "@/config/schema/PostItem";
 import { NextResponse } from "next/server";
 
+export const dynamic = "force-dynamic"; 
 
-export async function GET() {
+export async function GET(req) {
     try {
         await dbConnect();
         const sharingData = await PostItem.aggregate(
@@ -26,8 +27,10 @@ export async function GET() {
         .group({ _id: '$topic', posts: { $push: '$$ROOT' } })
         .project({ _id: 0, topic: '$_id', posts: { $slice: ['$posts', 5] } })
         .exec();
+
         return NextResponse.json(sharingData, {status : 200});
     } catch (err) {
+        console.log(err)
         return NextResponse.json({status : 500})
     }
 }

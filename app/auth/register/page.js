@@ -105,7 +105,7 @@ export default function Page() {
         setName({ value : event.target.value.replace(/\s+/g, ''), vaildate : regExp.test(event.target.value) });
     }
 
-    const [school, setSchool] = useState({ schoolName : '', schoolCode : '', schoolOffice : ''});
+    const [school, setSchool] = useState({ schoolName : '', schoolCode : '', schoolOffice : '', schoolOfficeCode : ''});
 
     const [schoolKeyword, setSchoolKeyword] = useState('');
     const [schoolList, setSchoolList] = useState([]);
@@ -130,11 +130,11 @@ export default function Page() {
 
     const selectSchool = (data) => {
         setSchoolKeyword('')
-        setSchool({schoolName : data.SCHUL_NM || data.name, schoolCode : data.SD_SCHUL_CODE, schoolOffice : data.ATPT_OFCDC_SC_NM || "대안학교"});
+        setSchool({schoolName : data.SCHUL_NM || data.name, schoolCode : data.SD_SCHUL_CODE, schoolOffice : data.ATPT_OFCDC_SC_NM, schoolOfficeCode : data.ATPT_OFCDC_SC_CODE || "대안학교"});
         setSchoolList([]);
     }
     const cancelSelectSchool = (event) => {
-        setSchool({ schoolName : '', schoolCode : '', schoolOffice : '' });
+        setSchool({ schoolName : '', schoolCode : '', schoolOffice : '', schoolOfficeCode : '' });
         registerBtnHandler();
         event.target.parentNode.children[0].focus();
     }

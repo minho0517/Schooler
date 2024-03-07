@@ -1,4 +1,4 @@
-
+export const dynamic = 'force-dynamic';
 
 import { GoBackHeader } from "@/components/Header/Top/TopHeader";
 import styles from "../accounts.module.css";

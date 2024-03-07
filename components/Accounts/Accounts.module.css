@@ -14,7 +14,7 @@
 
 .school {
     border-radius: 15px;
-    background-color: var(--bg-sub);
+    background-color: var(--setting-school-bg);
     width: 100%;
     align-items: center;
     overflow: hidden;

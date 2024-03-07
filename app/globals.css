@@ -40,6 +40,7 @@
     --postBtn-bg : #f2f2f2;
     --setting-bg : #f5f5f5;
     --shadow-main : 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0,0,0,.04);
+    --setting-school-bg : #efefef;
 }
 
 .dark-mode {
@@ -63,6 +64,7 @@
     --message-main : #999;
     --setting-bg : #2e2e31;
     --shadow-main : none;
+    --setting-school-bg : #2e2e31;
 }   
 
 a, span, h1, h2, h3, h4, h5, p, textarea, button, input {
