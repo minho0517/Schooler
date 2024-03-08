@@ -24,7 +24,7 @@ export default function SchoolTimetableBox() {
                     <div className={styles.moveBtn}><FaAngleRight size={18}/></div>
                 </div>
                 <div className={styles.list}>
-                    <span className={styles.blank}>{data?.pages[0].length === 0 && "시간표 정보 없음"}</span>
+                    {data?.pages[0].length === 0 &&<span className={styles.blank}>시간표 정보 없음</span>}
                 </div>
             </div>
         </div>

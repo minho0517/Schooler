@@ -4,31 +4,33 @@ import Link from 'next/link';
 import styles from './OpensharingCard.module.css';
 import {FaRegCommentDots, FaHashtag, FaUser} from "react-icons/fa6"
 
-export default function OpensharingCard() {
+export default function OpensharingCard({ data }) {
     
     return (
-        <Link className={styles.card} href='/'>
+        <Link className={styles.card} href={'/contact/' + data._id}>
             <div className={styles.wrapper}>
                 <div className={styles.top}>
                     <div className={styles.title}>
-                        <p>-</p>
+                        <p>{data.room.title}</p>
                     </div>
                     <div className={styles.activeUser}>
                         <FaUser size={12}/>
-                        <span>-</span>
+                        <span>{data.memberCount}</span>
                     </div>
                 </div>
                 <div className={styles.tagList}>
-                    <span className={styles.tag}><FaHashtag size={11}/>테스트</span>
+                    {data.room.hashtag.map((e, i) => (
+                        <span key={i} className={styles.tag}><FaHashtag size={11}/>{e}</span>
+                    ))}
                 </div>
                 <div className={styles.previewChat}>
                     <div className={styles.previewChat_wrapper}>
-                        <p>현재 개발 중에 있습니다. 오픈셰어링은 각 게시물에서 참여할 수 있습니다</p>
+                        <p>{data.latestMessages[0] ? data.latestMessages[0].content : "오픈셰어링에 참여해보세요!"}</p>
                     </div>
                 </div>
                 <div className={styles.activeChat}>
-                    <FaRegCommentDots size={18}/>
-                    <span>-</span>
+                    <FaRegCommentDots size={15}/>
+                    <span>{data.chatCount}</span>
                 </div>
             </div>
         </Link>

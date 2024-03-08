@@ -38,6 +38,7 @@ export default function SchoolLunchBox() {
                             ))
                         ))
                     ))}
+                    {data?.pages[0].length === 0 &&<span className={styles.blank}>급식 정보 없음</span>}
                 </div>
             </div>
         </div>

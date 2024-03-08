@@ -17,3 +17,24 @@
     box-sizing: content-box;
     height: auto;
 }
+.item {
+    display: flex;
+    width: 350px;
+    height: 210px;
+    background-color: var(--bg-sub);
+    border-radius: 15px;
+    transition: all 0.2s;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.05);
+    cursor: pointer;
+    margin-right: 20px;    
+}
+
+@media screen and (max-width : 450px) {
+    .wrapper {
+        padding: 15px 15px 15px 15px;
+    }
+    .item {
+        width: 300px;
+        height: 190px;
+    }
+}

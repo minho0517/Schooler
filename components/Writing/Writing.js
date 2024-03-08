@@ -11,6 +11,9 @@ export default function Writing({data}) {
 
     const router = useRouter();
 
+    const topicData = require("/public/data/topic.json");
+    const topicList = topicData.slice(1,);
+
     const [topic, setTopic] = useState(data ? data.topic : "")
  
     const [postBtn, setPostBtn] = useState(true);
@@ -192,19 +195,9 @@ export default function Writing({data}) {
                         <div ref={selectBox} className={`${styles.selectBox} ${(active ? styles.active : '')}`}>
                             <button onClick={openOptionList} className={`${styles.label} ${topic ? styles.selected : ""}`}>{topic ? topic : "토픽을 선택하세요"}<FaCaretDown size={20}/></button>
                             <div ref={optionList} className={styles.optionList}>
-                                <input type="submit" onClick={selectOption} className={styles.optionItem} value="수다"></input>
-                                <input type="submit" onClick={selectOption} className={styles.optionItem} value="연애·썸"></input>
-                                <input type="submit" onClick={selectOption} className={styles.optionItem} value="인간관계"></input>
-                                <input type="submit" onClick={selectOption} className={styles.optionItem} value="공부·성적"></input>
-                                <input type="submit" onClick={selectOption} className={styles.optionItem} value="학교생활"></input>
-                                <input type="submit" onClick={selectOption} className={styles.optionItem} value="입시"></input>
-                                <input type="submit" onClick={selectOption} className={styles.optionItem} value="진로"></input>
-                                <input type="submit" onClick={selectOption} className={styles.optionItem} value="쇼핑·소비"></input>
-                                <input type="submit" onClick={selectOption} className={styles.optionItem} value="게임"></input>
-                                <input type="submit" onClick={selectOption} className={styles.optionItem} value="여가·취미"></input>
-                                <input type="submit" onClick={selectOption} className={styles.optionItem} value="학원"></input>
-                                <input type="submit" onClick={selectOption} className={styles.optionItem} value="스포츠"></input>
-                                <input type="submit" onClick={selectOption} className={styles.optionItem} value="흑역사"></input>
+                                {topicList.map((e, i) => (
+                                    <input key={i} type="submit" onClick={selectOption} className={styles.optionItem} value={e.title}></input>
+                                ))}
                             </div>
                         </div>
                     </div>

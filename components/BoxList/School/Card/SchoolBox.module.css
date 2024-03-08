@@ -153,16 +153,31 @@
 @media screen and (max-width : 450px) {
     .box {
         width: 280px;
-        height: 250px;
+        height: 280px;
         margin-right: 15px;
     }
     .box:first-child {
-        width: 280px;
+        width: 340px;
     }
     .wrapper {
         padding: 18px 15px;
     }
     .title {
         font-size: 17px;
+    }
+    .sharingTitle {
+        font-size: 15px;
+    }
+    .activeGroup {
+        width: auto;
+    }
+    .activeRecord {
+        display: none;
+    }
+    .activeRecord:first-child {
+        display: flex;
+    }
+    .activeRecord > span {
+        font-size: 13px;
     }
 }
