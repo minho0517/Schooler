@@ -97,6 +97,7 @@
 }
 .article > a {
     word-break: break-all;
+    color: var(--primary-color);
 }
 .tags {
     display: flex;
