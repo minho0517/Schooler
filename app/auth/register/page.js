@@ -114,6 +114,7 @@ export default function Page() {
     useEffect(() => {
         async function fetchRecommend() {
             const response = await axios.get(`/api/search/school?query=${debouncedQuery}`);
+            console.log(response.data)
             setSchoolList(response.data);
         }   
         if (debouncedQuery && schoolKeyword.length > 0) fetchRecommend();
@@ -130,7 +131,7 @@ export default function Page() {
 
     const selectSchool = (data) => {
         setSchoolKeyword('')
-        setSchool({schoolName : data.SCHUL_NM || data.name, schoolCode : data.SD_SCHUL_CODE, schoolOffice : data.ATPT_OFCDC_SC_NM, schoolOfficeCode : data.ATPT_OFCDC_SC_CODE || "대안학교"});
+        setSchool({schoolName : data.SCHUL_NM || data.name, schoolCode : data.SD_SCHUL_CODE, schoolOffice : data.ATPT_OFCDC_SC_NM || "대안학교", schoolOfficeCode : data.ATPT_OFCDC_SC_CODE});
         setSchoolList([]);
     }
     const cancelSelectSchool = (event) => {

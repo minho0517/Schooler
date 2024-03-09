@@ -11,8 +11,6 @@ export default function SchoolTimetableBox() {
     const queryKey = ['get-schoolTimetable'];
     const { data, fetchNextPage, status, isFetchingNextPage } = useGetQuery({ apiUrl, queryKey });
 
-    console.log(data)
-
     return (
         <div className={styles.box}>
             <div className={styles.wrapper}>

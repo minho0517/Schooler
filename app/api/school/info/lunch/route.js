@@ -21,14 +21,14 @@ export async function GET(req) {
             const date = new identify().today();
             const response = await axios.get(`https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=${process.env.SCHOOL_API_KEY}&Type=json&pIndex=1&pSize=1&SD_SCHUL_CODE=${schoolData.apiCode}&ATPT_OFCDC_SC_CODE=${schoolData.officeCode}&MLSV_YMD=${date}`);
             const mealData = await response.data;   
-            return NextResponse.json(mealData.mealServiceDietInfo[1].row, {status : 200});
+            const meal = mealData.mealServiceDietInfo ? mealData.mealServiceDietInfo[1].row : [];
+            return NextResponse.json(meal, {status : 200});
         }
 
 
         return NextResponse.json([], {status : 200});
 
     } catch (err) {
-        console.log(err)
         return NextResponse.json(err, { status : 500 })
     }
 }
