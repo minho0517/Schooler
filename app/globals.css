@@ -17,6 +17,11 @@
     -webkit-tap-highlight-color : transparent !important;
 }
 
+html {
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
 :root {
     --primary-color : #FD6F22;
     --primary-hover-color : #fd6f22b1;

@@ -1,8 +1,6 @@
 {
     "name": "스쿨러 Schooler",
     "short_name": "스쿨러",
-    "theme_color": "#fff",
-    "background_color": "#fff",
     "display": "standalone",
     "scope": "/",
     "start_url": "/",

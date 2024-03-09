@@ -21,6 +21,7 @@ export default function Page() {
     },[]);
 
     const buttonHandler = () => {
+        document.cookie = 'mode=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
         if (!dark) {
             document.cookie = 'mode=dark; max-age=' + (3600 * 24 * 400)
             setDark(true)

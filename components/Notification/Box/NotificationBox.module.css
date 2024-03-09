@@ -131,6 +131,8 @@ input:checked + .checkSlider:before {
         height: 100%;
         top: 20px;
         left: 0;
+        background-color: var(--bg-main);
+        border-radius: 0;
     }
     .mobileHeader {
         display: flex;

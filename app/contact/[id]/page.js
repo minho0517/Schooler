@@ -13,6 +13,23 @@ export async function fetchData(id) {
     return data;
 }
 
+export async function generateMetadata({ params : {id} } ) {
+   
+    const data = await fetchData(id);
+   
+    return {
+        title: "스쿨러 | 오픈셰어링" + " - " + data.opensharing.title,
+        openGraph: {
+        title: "스쿨러 | 오픈셰어링" + " - " + data.opensharing.title,
+        description: '청소년을 위한 커뮤니티 플랫폼',
+        siteName: "스쿨러 | 오픈셰어링" + " - " + data.opensharing.title,
+        type: 'website',
+        locale: 'ko-KR',
+        },
+    }
+}
+   
+
 export default async function Page({ params : {id} }) {
 
     const data = await fetchData(id);
