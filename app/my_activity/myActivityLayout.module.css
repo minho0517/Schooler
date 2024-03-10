@@ -55,6 +55,7 @@
 }
 .main {
     width: calc(68% - 15px);
+    min-height: 550px;
     display: flex;
     flex-direction: column;
 }

@@ -159,7 +159,7 @@
     font-weight: 700;
 }
 #content {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     min-height: 400px;
     overflow: scroll;
@@ -275,7 +275,7 @@
     overflow: hidden;
     box-sizing: border-box;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 16px;
     color: var(--text-main);
     background-color: transparent;
     vertical-align: middle;

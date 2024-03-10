@@ -4,6 +4,7 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
+    "orientation" : "portrait",
     "gcm_sender_id": "BPxJkfyVAdLhc6KxiWc84rSplJh-lY1o63EcAi4L0acEa3ASnbJ_weWzip3o-7f2YxjXigsiQ0wofZowomDL0-w",
     "gcm_user_visible_only": true,
     "icons": [
