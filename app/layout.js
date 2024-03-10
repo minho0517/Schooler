@@ -32,8 +32,8 @@ export default async function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
         <link rel="manifest" href="/manifest.json" />
         <meta name='theme-color' content={cookie != undefined && cookie.value == "dark" ? "#1c1c20" : '#fff'}/>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1, width=device-width, viewport-fit=cover, user-scalable=no" />
         <meta name="HandheldFriendly" content="true"/>
-        <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1, width=device-width" />
         <meta name="google-site-verification" content="prJR6Uu3G2AAOd2mj5RtiK2z5MFsyXhRT8dT1yhK444" />
         <meta name="naver-site-verification" content="c0ecc2397cb5e71fbfda6de23e0059150d1ad38a" />
         <link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'></link>
